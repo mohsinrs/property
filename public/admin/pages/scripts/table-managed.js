@@ -43,8 +43,14 @@ var TableManaged = function () {
             }, {
                 "orderable": false
             }, {
-                "orderable": true
+                "orderable": false
             }, {
+                "orderable": true
+            },{
+                "orderable": false
+            },{
+                "orderable": false
+            },{
                 "orderable": false
             }],
             "lengthMenu": [
