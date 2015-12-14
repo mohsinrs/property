@@ -247,8 +247,12 @@
                                             <div class="col-md-6">
                                                     <div class="form-group">
                                                             <label>From Date</label>
-                                                            <select class="form-control">
-                                                            </select>
+                                                           <div class="input-group date date-picker" data-date-format="dd-mm-yyyy">
+												<input type="text" class="form-control" readonly name="datepicker">
+												<span class="input-group-btn">
+												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
+												</span>
+											</div>
                                                     </div>
                                             </div>
                                             <!--/span-->
