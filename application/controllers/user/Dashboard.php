@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User_Dashboard extends Base_Controller {
+class Dashboard extends Base_Controller {
 
     /**
      * Index Page for this controller.
@@ -25,7 +25,7 @@ class User_Dashboard extends Base_Controller {
 //        $data['result'] = $this->Offer_model->fetchAllRotation();
         $data['title'] = "Dashboard";
         
-        $this->render('user/dashboard/index', $data);
+        $this->render('user/dashboard', $data);
     }
 
 }
