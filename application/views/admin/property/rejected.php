@@ -94,7 +94,7 @@
                                 <td>Rent</td>
                                 <td>10/11/2015</td>
                                 <td><a href="#">Jhon Wick</a></td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-success">Approve</a></td>
+                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-success">Approve</a><a href="#" class="btn btn-default btn-danger">Delete</a></td>
                             </tr>
                             <tr class="odd gradeX">
                                 <td>15644</td>
@@ -105,7 +105,7 @@
                                 <td>Rent</td>
                                 <td>10/11/2015</td>
                                 <td><a href="#">Jhon Wick</a></td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-success">Approve</a></td>
+                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-success">Approve</a><a href="#" class="btn btn-default btn-danger">Delete</a></td>
                             </tr>
                             <tr class="odd gradeX">
                                 <td>15644</td>
@@ -116,7 +116,7 @@
                                 <td>Rent</td>
                                 <td>10/11/2015</td>
                                 <td><a href="#">Jhon Wick</a></td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-success">Approve</a></td>
+                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-success">Approve</a><a href="#" class="btn btn-default btn-danger">Delete</a></td>
                             </tr>
                             <tr class="odd gradeX">
                                 <td>15644</td>
@@ -127,7 +127,7 @@
                                 <td>Rent</td>
                                 <td>10/11/2015</td>
                                 <td><a href="#">Jhon Wick</a></td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-success">Approve</a></td>
+                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-success">Approve</a><a href="#" class="btn btn-default btn-danger">Delete</a></td>
                             </tr>
                             <tr class="odd gradeX">
                                 <td>15644</td>
@@ -138,7 +138,7 @@
                                 <td>Rent</td>
                                 <td>10/11/2015</td>
                                 <td><a href="#">Jhon Wick</a></td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-success">Approve</a></td>
+                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-success">Approve</a><a href="#" class="btn btn-default btn-danger">Delete</a></td>
                             </tr>
                             <tr class="odd gradeX">
                                 <td>15644</td>
@@ -149,7 +149,7 @@
                                 <td>Rent</td>
                                 <td>10/11/2015</td>
                                 <td><a href="#">Jhon Wick</a></td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-success">Approve</a></td>
+                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-success">Approve</a><a href="#" class="btn btn-default btn-danger">Delete</a></td>
                             </tr>
 
 
