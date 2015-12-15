@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Profile extends Base_Controller {
+class advertisement extends Base_Controller {
 
     /**
      * Index Page for this controller.
@@ -23,26 +23,17 @@ class Profile extends Base_Controller {
 
         $data = array();
 //        $data['result'] = $this->Offer_model->fetchAllRotation();
-        $data['title'] = "My Profile";
+        $data['title'] = "Add Advertisement";
         
-        $this->render('admin/profile/index', $data);
+        $this->render('admin/advertisement/index', $data);
     }
     
-    public function change_password() {
+        public function add_new() {
 
         $data = array();
 //        $data['result'] = $this->Offer_model->fetchAllRotation();
-        $data['title'] = "Change Password";
+        $data['title'] = "Add Advertisement";
         
-        $this->render('admin/profile/change_password', $data);
-    }
-    
-     public function user_profile() {
-
-        $data = array();
-//        $data['result'] = $this->Offer_model->fetchAllRotation();
-        $data['title'] = "User Profile";
-        
-        $this->render('admin/profile/user_profile', $data);
+        $this->render('admin/advertisement/new', $data);
     }
 }

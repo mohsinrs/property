@@ -42,50 +42,50 @@
     <h3 class="page-title">
         Property Management</h3>
     <!-- END PAGE HEADER-->
-  <div class="row">
+    <div class="row">
         <div class="col-md-12">
-        <!-- BEGIN EXAMPLE TABLE PORTLET-->
-        <div class="portlet box grey-cascade">
+            <!-- BEGIN EXAMPLE TABLE PORTLET-->
+            <div class="portlet box grey-cascade">
                 <div class="portlet-title">
-                        <div class="caption">
-                                <i class="fa fa-globe"></i>Approved Properties
-                        </div>
-                         </div>
+                    <div class="caption">
+                        <i class="fa fa-globe"></i>Approved Properties
+                    </div>
+                </div>
                 <div class="portlet-body">
-                        <table class="table table-striped table-bordered table-hover" id="sample_1">
+                    <table class="table table-striped table-bordered table-hover" id="sample_1">
                         <thead>
-                        <tr>
+                            <tr>
                                 <th>
-                                         ID
+                                    ID
                                 </th>
                                 <th>
-                                         Type
+                                    Type
                                 </th>
                                 <th>
-                                         Location
+                                    Location
                                 </th>
                                 <th>
-                                         Price
+                                    Price
                                 </th>
                                 <th>
-                                         Area
+                                    Area
                                 </th>
                                 <th>
-                                         Purpose
+                                    Purpose
                                 </th>
                                 <th>
-                                         Listed Date
+                                    Listed Date
                                 </th>
                                 <th>
-                                         User
+                                    User
                                 </th>
                                 <th>
-                                         Actions
+                                    Actions
                                 </th>
-                        </tr>
+                            </tr>
                         </thead>
                         <tbody>
-                        <tr class="odd gradeX">
+                            <tr class="odd gradeX">
                                 <td>15644</td>
                                 <td>House</td>
                                 <td>Cantt, Lahore</td>
@@ -95,8 +95,8 @@
                                 <td>10/11/2015</td>
                                 <td><a href="#">Jhon Wick</a></td>
                                 <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
-                        </tr>
-                        <tr class="odd gradeX">
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td>15644</td>
                                 <td>House</td>
                                 <td>Cantt, Lahore</td>
@@ -106,8 +106,8 @@
                                 <td>10/11/2015</td>
                                 <td><a href="#">Jhon Wick</a></td>
                                 <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
-                        </tr>
-                        <tr class="odd gradeX">
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td>15644</td>
                                 <td>House</td>
                                 <td>Cantt, Lahore</td>
@@ -117,8 +117,8 @@
                                 <td>10/11/2015</td>
                                 <td><a href="#">Jhon Wick</a></td>
                                 <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
-                        </tr>
-                        <tr class="odd gradeX">
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td>15644</td>
                                 <td>House</td>
                                 <td>Cantt, Lahore</td>
@@ -128,8 +128,8 @@
                                 <td>10/11/2015</td>
                                 <td><a href="#">Jhon Wick</a></td>
                                 <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
-                        </tr>
-                        <tr class="odd gradeX">
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td>15644</td>
                                 <td>House</td>
                                 <td>Cantt, Lahore</td>
@@ -139,8 +139,8 @@
                                 <td>10/11/2015</td>
                                 <td><a href="#">Jhon Wick</a></td>
                                 <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
-                        </tr>
-                        <tr class="odd gradeX">
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td>15644</td>
                                 <td>House</td>
                                 <td>Cantt, Lahore</td>
@@ -150,14 +150,14 @@
                                 <td>10/11/2015</td>
                                 <td><a href="#">Jhon Wick</a></td>
                                 <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
-                        </tr>
-                        
-                        
+                            </tr>
+
+
                         </tbody>
-                        </table>
+                    </table>
                 </div>
+            </div>
+            <!-- END EXAMPLE TABLE PORTLET-->
         </div>
-        <!-- END EXAMPLE TABLE PORTLET-->
-</div>
     </div>
 </div>

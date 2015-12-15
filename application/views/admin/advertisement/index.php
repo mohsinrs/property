@@ -26,11 +26,11 @@
         <ul class="page-breadcrumb">
             <li>
                 <i class="fa fa-home"></i>
-                <a href="#">My Account</a>
+                <a href="#">Tools</a>
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <a href="#">Approved User</a>
+                <a href="#">Advertisement</a>
             </li>
         </ul>
         <div class="page-toolbar">
@@ -40,7 +40,7 @@
         </div>
     </div>
     <h3 class="page-title">
-        Users Account</h3>
+        All Advertisement</h3>
     <!-- END PAGE HEADER-->
   <div class="row">
         <div class="col-md-12">
@@ -48,7 +48,7 @@
         <div class="portlet box grey-cascade">
                 <div class="portlet-title">
                         <div class="caption">
-                                <i class="fa fa-globe"></i>Approved Users
+                                <i class="fa fa-globe"></i>All Advertisement
                         </div>
                          </div>
                 <div class="portlet-body">
@@ -59,7 +59,7 @@
                                          ID
                                 </th>
                                 <th>
-                                         Name
+                                         User Name
                                 </th>
                                 <th>
                                          Email
@@ -68,10 +68,10 @@
                                          Phone
                                 </th>
                                 <th>
-                                         Role
+                                         Listed Date
                                 </th>
                                 <th>
-                                         Date
+                                         Expiry Date
                                 </th>
                                 <th>
                                          Actions
@@ -84,9 +84,36 @@
                                 <td>Jhon Wick</td>
                                 <td>jhonwick@gmail.com</td>
                                 <td>+1 23 456789</td>
-                                <td>Broker</td>
+                                <td>11/11/2015</td>
                                 <td>07/12/2015</td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
+                                <td><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
+                        </tr>
+                        <tr class="odd gradeX">
+                                <td>15644</td>
+                                <td>Jhon Wick</td>
+                                <td>jhonwick@gmail.com</td>
+                                <td>+1 23 456789</td>
+                                <td>11/11/2015</td>
+                                <td>07/12/2015</td>
+                                <td><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
+                        </tr>
+                        <tr class="odd gradeX">
+                                <td>15644</td>
+                                <td>Jhon Wick</td>
+                                <td>jhonwick@gmail.com</td>
+                                <td>+1 23 456789</td>
+                                <td>11/11/2015</td>
+                                <td>07/12/2015</td>
+                                <td><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
+                        </tr>
+                        <tr class="odd gradeX">
+                                <td>15644</td>
+                                <td>Jhon Wick</td>
+                                <td>jhonwick@gmail.com</td>
+                                <td>+1 23 456789</td>
+                                <td>11/11/2015</td>
+                                <td>07/12/2015</td>
+                                <td><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
                         </tr>
                         <tr class="odd gradeX">
                                 <td>15644</td>
@@ -94,80 +121,53 @@
                                 <td>jhonwick@gmail.com</td>
                                 <td>+1 23 456789</td>
                                 <td>Broker</td>
-                                <td>07/12/2015</td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
+                                <td>11/11/2015</td>
+                                <td><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
                         </tr>
                         <tr class="odd gradeX">
                                 <td>15644</td>
                                 <td>Jhon Wick</td>
                                 <td>jhonwick@gmail.com</td>
                                 <td>+1 23 456789</td>
-                                <td>Broker</td>
+                                <td>11/11/2015</td>
                                 <td>07/12/2015</td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
+                                <td><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
                         </tr>
                         <tr class="odd gradeX">
                                 <td>15644</td>
                                 <td>Jhon Wick</td>
                                 <td>jhonwick@gmail.com</td>
                                 <td>+1 23 456789</td>
-                                <td>Broker</td>
+                                <td>11/11/2015</td>
                                 <td>07/12/2015</td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
+                                <td><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
                         </tr>
                         <tr class="odd gradeX">
                                 <td>15644</td>
                                 <td>Jhon Wick</td>
                                 <td>jhonwick@gmail.com</td>
                                 <td>+1 23 456789</td>
-                                <td>Broker</td>
+                                <td>11/11/2015</td>
                                 <td>07/12/2015</td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
+                                <td><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
                         </tr>
                         <tr class="odd gradeX">
                                 <td>15644</td>
                                 <td>Jhon Wick</td>
                                 <td>jhonwick@gmail.com</td>
                                 <td>+1 23 456789</td>
-                                <td>Broker</td>
+                                <td>11/11/2015</td>
                                 <td>07/12/2015</td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
+                                <td><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
                         </tr>
                         <tr class="odd gradeX">
                                 <td>15644</td>
                                 <td>Jhon Wick</td>
                                 <td>jhonwick@gmail.com</td>
                                 <td>+1 23 456789</td>
-                                <td>Broker</td>
+                                <td>11/11/2015</td>
                                 <td>07/12/2015</td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
-                        </tr>
-                        <tr class="odd gradeX">
-                                <td>15644</td>
-                                <td>Jhon Wick</td>
-                                <td>jhonwick@gmail.com</td>
-                                <td>+1 23 456789</td>
-                                <td>Broker</td>
-                                <td>07/12/2015</td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
-                        </tr>
-                        <tr class="odd gradeX">
-                                <td>15644</td>
-                                <td>Jhon Wick</td>
-                                <td>jhonwick@gmail.com</td>
-                                <td>+1 23 456789</td>
-                                <td>Broker</td>
-                                <td>07/12/2015</td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
-                        </tr>
-                        <tr class="odd gradeX">
-                                <td>15644</td>
-                                <td>Jhon Wick</td>
-                                <td>jhonwick@gmail.com</td>
-                                <td>+1 23 456789</td>
-                                <td>Broker</td>
-                                <td>07/12/2015</td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
+                                <td><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
                         </tr>
                         </tbody>
                         </table>

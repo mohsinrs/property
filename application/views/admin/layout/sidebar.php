@@ -99,7 +99,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="<?php echo base_url('admin/advertisement/new'); ?>">Add Advertisement</a>
+                                    <a href="<?php echo base_url('admin/advertisement/add_new'); ?>">Add Advertisement</a>
                                 </li>
                                 <li>
                                     <a href="<?php echo base_url('admin/advertisement/index'); ?>">All Advertisement</a>

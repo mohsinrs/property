@@ -32,8 +32,26 @@ class Users extends Base_Controller {
 
         $data = array();
 //        $data['result'] = $this->Offer_model->fetchAllRotation();
-        $data['title'] = "Approved";
+        $data['title'] = "Approved Users";
         
         $this->render('admin/users/approved', $data);
+    }
+    
+      public function pending() {
+
+        $data = array();
+//        $data['result'] = $this->Offer_model->fetchAllRotation();
+        $data['title'] = "Pendung Users";
+        
+        $this->render('admin/users/pending', $data);
+    }
+    
+     public function rejected() {
+
+        $data = array();
+//        $data['result'] = $this->Offer_model->fetchAllRotation();
+        $data['title'] = "Rejected Users";
+        
+        $this->render('admin/users/rejected', $data);
     }
 }

@@ -30,7 +30,7 @@
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <a href="#">Approved User</a>
+                <a href="#">Rejected User</a>
             </li>
         </ul>
         <div class="page-toolbar">
@@ -48,7 +48,7 @@
         <div class="portlet box grey-cascade">
                 <div class="portlet-title">
                         <div class="caption">
-                                <i class="fa fa-globe"></i>Approved Users
+                                <i class="fa fa-globe"></i>Rejected Users
                         </div>
                          </div>
                 <div class="portlet-body">
@@ -86,7 +86,7 @@
                                 <td>+1 23 456789</td>
                                 <td>Broker</td>
                                 <td>07/12/2015</td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
+                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-success">Approve</a><a href="#" class="btn btn-default btn-danger">Delete</a></td>
                         </tr>
                         <tr class="odd gradeX">
                                 <td>15644</td>
@@ -95,7 +95,7 @@
                                 <td>+1 23 456789</td>
                                 <td>Broker</td>
                                 <td>07/12/2015</td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
+                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-success">Approve</a><a href="#" class="btn btn-default btn-danger">Delete</a></td>
                         </tr>
                         <tr class="odd gradeX">
                                 <td>15644</td>
@@ -104,7 +104,7 @@
                                 <td>+1 23 456789</td>
                                 <td>Broker</td>
                                 <td>07/12/2015</td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
+                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-success">Approve</a><a href="#" class="btn btn-default btn-danger">Delete</a></td>
                         </tr>
                         <tr class="odd gradeX">
                                 <td>15644</td>
@@ -113,7 +113,7 @@
                                 <td>+1 23 456789</td>
                                 <td>Broker</td>
                                 <td>07/12/2015</td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
+                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-success">Approve</a><a href="#" class="btn btn-default btn-danger">Delete</a></td>
                         </tr>
                         <tr class="odd gradeX">
                                 <td>15644</td>
@@ -122,7 +122,7 @@
                                 <td>+1 23 456789</td>
                                 <td>Broker</td>
                                 <td>07/12/2015</td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
+                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-success">Approve</a><a href="#" class="btn btn-default btn-danger">Delete</a></td>
                         </tr>
                         <tr class="odd gradeX">
                                 <td>15644</td>
@@ -131,7 +131,7 @@
                                 <td>+1 23 456789</td>
                                 <td>Broker</td>
                                 <td>07/12/2015</td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
+                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-success">Approve</a><a href="#" class="btn btn-default btn-danger">Delete</a></td>
                         </tr>
                         <tr class="odd gradeX">
                                 <td>15644</td>
@@ -140,7 +140,7 @@
                                 <td>+1 23 456789</td>
                                 <td>Broker</td>
                                 <td>07/12/2015</td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
+                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-success">Approve</a><a href="#" class="btn btn-default btn-danger">Delete</a></td>
                         </tr>
                         <tr class="odd gradeX">
                                 <td>15644</td>
@@ -149,7 +149,7 @@
                                 <td>+1 23 456789</td>
                                 <td>Broker</td>
                                 <td>07/12/2015</td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
+                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-success">Approve</a><a href="#" class="btn btn-default btn-danger">Delete</a></td>
                         </tr>
                         <tr class="odd gradeX">
                                 <td>15644</td>
@@ -158,7 +158,7 @@
                                 <td>+1 23 456789</td>
                                 <td>Broker</td>
                                 <td>07/12/2015</td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
+                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-success">Approve</a><a href="#" class="btn btn-default btn-danger">Delete</a></td>
                         </tr>
                         <tr class="odd gradeX">
                                 <td>15644</td>
@@ -167,7 +167,7 @@
                                 <td>+1 23 456789</td>
                                 <td>Broker</td>
                                 <td>07/12/2015</td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
+                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default">Edit</a><a href="#" class="btn btn-default btn-success">Approve</a><a href="#" class="btn btn-default btn-danger">Delete</a></td>
                         </tr>
                         </tbody>
                         </table>
