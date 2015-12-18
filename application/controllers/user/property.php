@@ -19,13 +19,40 @@ class property extends Base_Controller {
      * map to /index.php/welcome/<method_name>
      * @see http://codeigniter.com/user_guide/general/urls.html
      */
-    public function add_new() {
+    public function add_new_advance() {
 
         $data = array();
 //        $data['result'] = $this->Offer_model->fetchAllRotation();
         $data['title'] = "Post New Listing";
 
-        $this->render('user/property/add_new', $data);
+        $this->render('user/property/add_new_advance', $data);
+    }
+
+    public function active() {
+
+        $data = array();
+//        $data['result'] = $this->Offer_model->fetchAllRotation();
+        $data['title'] = "Expired Listing";
+
+        $this->render('user/property/active', $data);
+    }
+
+    public function for_approval() {
+
+        $data = array();
+//        $data['result'] = $this->Offer_model->fetchAllRotation();
+        $data['title'] = "Expired Listing";
+
+        $this->render('user/property/for_approval', $data);
+    }
+
+    public function not_approved() {
+
+        $data = array();
+//        $data['result'] = $this->Offer_model->fetchAllRotation();
+        $data['title'] = "Expired Listing";
+
+        $this->render('user/property/not_approved', $data);
     }
 
     public function expired() {
