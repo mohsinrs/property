@@ -28,14 +28,14 @@ h1 {
 Fix link outlines after click
 ***/
 a {
-	color: #E02222;
+	color: #3178DD;
 }
 a, a:focus, a:hover, a:active {
 	outline: 0;
  	text-decoration: none;
 }
 a:hover {
-	color: #E02222;
+	color: #3178DD;
 	text-decoration: underline;
 }
 
@@ -338,7 +338,7 @@ Pre-Header and pre-header elements
 	color: #616b76;
 }
 .pre-header a:hover {
-	color: #E02222;
+	color: #3178DD;
 }
 .pre-header a:focus {
 	text-decoration: none;
@@ -367,7 +367,7 @@ Pre-Header and pre-header elements
 	margin-right: 0;
 }
 .shop-currencies a.current {
-	color: #E02222;
+	color: #3178DD;
 }
 
 /* langs block */
@@ -874,7 +874,7 @@ Sidebar
 	color: #3E4D5C;
 }
 .sidebar a:hover {
-	color: #E02222;
+	color: #3178DD;
 }
  .sidebar-menu a {
 	display: block;
@@ -893,7 +893,7 @@ Sidebar
     color: #3E4D5C;
 }
 .sidebar .dropdown.open .dropdown-toggle:hover {
-	color: #E02222;
+	color: #3178DD;
 }
 .sidebar .dropup.open > .dropdown-toggle, .dropdown.open > .dropdown-toggle {
     border-color: none !important;
@@ -951,7 +951,7 @@ Sidebar
 }
 .sidebar-menu .dropdown-menu li > a:hover, .sidebar-menu .dropdown-menu li > a:focus, .sidebar-menu li.active > a, .sidebar-menu li.active > a:hover {
 	background: none !important;
-	color: #E02222;
+	color: #3178DD;
 }
 .sidebar .dropdown-menu > li > a .fa-angle-down {
 	position: absolute;
@@ -1207,10 +1207,10 @@ steps block and steps block elements
 }
 .content-page a:hover, 
 .sidebar2 a:hover {
-	color: #E02222;
+	color: #3178DD;
 }
 .content-page .link, .content-page .link:hover, .content-page .link:active {
-	color: #E02222;
+	color: #3178DD;
 }
 .content-page h2, 
 .content-page h3, 
@@ -1262,7 +1262,7 @@ steps block and steps block elements
 	line-height: 128px;
 	font-size: 128px;
 	font-weight: 300;
-	color: #E02222;
+	color: #3178DD;
 	text-align: right;
 }
 .page-404 .details {
@@ -1286,7 +1286,7 @@ steps block and steps block elements
 	line-height: 128px;
 	font-size: 128px;
 	font-weight: 300;
-	color: #E02222;
+	color: #3178DD;
 	text-align: right;
 }
 .page-500 .details {
@@ -1305,7 +1305,7 @@ div.content-form-page {
 	color: #767F88;
 }
 .content-form-page a:hover {
-	color: #E02222;
+	color: #3178DD;
 }
 .form-without-legend {
 	padding-top: 25px;
@@ -2081,7 +2081,7 @@ Demo Utils
   background: none;
 }
 .quote-v1 a.btn-transparent:hover {
-  background: #E02222;
+  background: #3178DD;
   color: #fff;
   transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -2107,7 +2107,7 @@ Demo Utils
 	color: #3e4d5c;
 }
 .recent-work h2 a:hover {
-	color: #E02222;
+	color: #3178DD;
 }
 .recent-work-item {
 	padding-left: 10px;
@@ -2165,7 +2165,7 @@ Demo Utils
     -webkit-transition: all 0.6s ease;	
 }
 .recent-work .recent-work-item .fa:hover {
-	color: #E02222;
+	color: #3178DD;
 }
 .recent-work .recent-work-item .fa-link {
 	left: -100px;
@@ -2278,7 +2278,7 @@ Demo Utils
 	color: #3e4d5c;
 }
 .our-clients h2 a:hover {
-	color: #E02222;
+	color: #3178DD;
 }
 .our-clients .client-item {
 	background: #f8f8f8;
@@ -2369,7 +2369,7 @@ Demo Utils
   line-height:40px;
 }
 .front-team h3 strong {
-  color: #E02222;
+  color: #3178DD;
   font-size: 20px;
   font-weight: 400; 
 }
