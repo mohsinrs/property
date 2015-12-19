@@ -30,6 +30,7 @@ class Base_Controller extends CI_Controller {
             $data['user_name'] = $this->user->name;
             $data['user_email'] = $this->user->email;
             $data['user_image'] = $this->user->profile_pic;
+            $data['user_type'] = $this->user->user_type;
 
             $data['content'] = $this->load->view($file, $viewData, TRUE);
 //                $data['admin'] = $this->session->userdata('USER');
@@ -42,9 +43,9 @@ class Base_Controller extends CI_Controller {
         $this->enableLayout = false;
     }
     
-//    public function setLayout($layout = 'main') {
-//        
-//        $this->layout = 'layout/'.$layout;
-//    }
+    public function setLayout($layout = 'main') {
+        
+        $this->layout = 'layout/'.$layout;
+    }
 
 }
