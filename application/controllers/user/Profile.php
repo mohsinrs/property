@@ -28,22 +28,4 @@ class Profile extends Base_Controller {
         $this->render('user/profile/index', $data);
     }
 
-    public function change_password() {
-
-        $data = array();
-//        $data['result'] = $this->Offer_model->fetchAllRotation();
-        $data['title'] = "Change Password";
-
-        $this->render('user/profile/change_password', $data);
-    }
-
-    public function roles() {
-
-        $data = array();
-//        $data['result'] = $this->Offer_model->fetchAllRotation();
-        $data['title'] = "User Profile";
-
-        $this->render('user/profile/roles', $data);
-    }
-
 }

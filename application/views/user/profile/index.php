@@ -42,134 +42,385 @@
     <h3 class="page-title">
         My Profile</h3>
     <!-- END PAGE HEADER-->
-    <div class="row">
-        <div class="col-md-12 col-sm-12">
-            <!-- BEGIN Form-->
-            <div class="portlet box blue">
-                <div class="portlet-title">
-                    <div class="caption">
-                        <i class="fa fa-gift"></i>Personal info
-                    </div>
+    <!--    <div class="row">
+            <div class="col-md-12 col-sm-12">
 
-                </div>
-                <div class="portlet-body form">
-                    <!-- BEGIN FORM-->
-                    <form class="horizontal-form" action="#">
-                        <div class="form-body">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Name</label>
-                                        <input type="text" class="form-control">
+                <div class="portlet box blue">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-gift"></i>Personal info
+                        </div>
+
+                    </div>
+                    <div class="portlet-body form">
+
+                        <form class="horizontal-form" action="#">
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Name</label>
+                                            <input type="text" class="form-control">
+                                        </div>
                                     </div>
-                                </div>
-                                <!--/span-->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Email</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <!--/span-->
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Cell No.</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <!--/span-->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Phone</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <!--/span-->
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Address</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <!--/span-->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Zipcode</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <!--/span-->
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label">City</label>
-                                        <select class="form-control select2me " data-placeholder="Select...">
-                                            <option value="AL">Alabama</option>
-                                            <option value="WY">Wyoming</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <!--/span-->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label">Location</label>
-                                        <select class="form-control select2me " data-placeholder="Select...">
-                                            <option value="AL">Alabama</option>
-                                            <option value="WY">Wyoming</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <!--/span-->
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>About Yourself</label>
-                                        <textarea name="remarks" rows="3" class="form-control"></textarea>                                    </div>
-                                </div>
-                                <!--/span-->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="fileinput fileinput-new" data-provides="fileinput">
-                                            <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""/>
-                                            </div>
-                                            <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
-                                            </div>
-                                            <div>
-                                                <span class="btn default btn-file">
-                                                    <span class="fileinput-new">
-                                                        Select image </span>
-                                                    <span class="fileinput-exists">
-                                                        Change </span>
-                                                    <input type="file" name="...">
-                                                </span>
-                                                <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput">
-                                                    Remove </a>
-                                            </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input type="text" class="form-control">
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Cell No.</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Phone</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Address</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Zipcode</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">City</label>
+                                            <select class="form-control select2me " data-placeholder="Select...">
+                                                <option value="AL">Alabama</option>
+                                                <option value="WY">Wyoming</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Location</label>
+                                            <select class="form-control select2me " data-placeholder="Select...">
+                                                <option value="AL">Alabama</option>
+                                                <option value="WY">Wyoming</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>About Yourself</label>
+                                            <textarea name="remarks" rows="3" class="form-control"></textarea>                                    </div>
+                                    </div>
+
+                                </div>
+
                             </div>
-                            <!--/span-->
-
-                        </div>
-                        <div class="form-actions right">
-                            <button class="btn blue" type="submit"><i class="fa fa-check"></i> Update</button>
-                        </div>
 
 
-                    </form>
+
+                        </form>
+                    </div>
+
                 </div>
-                <!-- END FORM-->
             </div>
+
+        </div>-->
+
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN PROFILE SIDEBAR -->
+            <div class="profile-sidebar">
+                <!-- PORTLET MAIN -->
+                <div class="portlet light profile-sidebar-portlet">
+                    <!-- SIDEBAR USERPIC -->
+                    <div class="profile-userpic">
+                        <img src="<?php echo base_url('/public/admin/pages/media/profile/profile_user.jpg') ?>" class="img-responsive" alt="">
+                    </div>
+                    <!-- END SIDEBAR USERPIC -->
+                    <!-- SIDEBAR USER TITLE -->
+                    <div class="profile-usertitle">
+                        <div class="profile-usertitle-name">
+                            Marcus Doe
+                        </div>
+                        <br>
+                    </div>
+                    <!-- END SIDEBAR USER TITLE -->
+                </div>
+                <!-- END PORTLET MAIN -->
+
+            </div>
+            <!-- END BEGIN PROFILE SIDEBAR -->
+            <!-- BEGIN PROFILE CONTENT -->
+            <div class="profile-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="portlet light">
+                            <div class="portlet-title tabbable-line">
+                                <div class="caption caption-md">
+                                    <i class="icon-globe theme-font hide"></i>
+                                    <span class="caption-subject font-blue-madison bold uppercase">Profile Account</span>
+                                </div>
+                                <ul class="nav nav-tabs">
+                                    <li class="active">
+                                        <a href="#tab_1_1" data-toggle="tab">Personal Info</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab_1_2" data-toggle="tab">Change Avatar</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab_1_3" data-toggle="tab">Change Password</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab_1_4" data-toggle="tab">Privacy Settings</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="portlet-body">
+                                <div class="tab-content">
+                                    <!-- PERSONAL INFO TAB -->
+                                    <div class="tab-pane active" id="tab_1_1">
+                                        <form class="horizontal-form" action="#">
+                                            <div class="form-body">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Name</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Email</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Cell No.</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Phone</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Address</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Zipcode</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label">City</label>
+                                                            <select class="form-control select2me " data-placeholder="Select...">
+                                                                <option value="AL">Alabama</option>
+                                                                <option value="WY">Wyoming</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label">Location</label>
+                                                            <select class="form-control select2me " data-placeholder="Select...">
+                                                                <option value="AL">Alabama</option>
+                                                                <option value="WY">Wyoming</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>About Yourself</label>
+                                                            <textarea name="remarks" rows="3" class="form-control"></textarea>                                    </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="margiv-top-10">
+                                                    <a href="javascript:;" class="btn green-haze">
+                                                        Save Changes </a>
+                                                    <a href="javascript:;" class="btn default">
+                                                        Cancel </a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- END PERSONAL INFO TAB -->
+                                    <!-- CHANGE AVATAR TAB -->
+                                    <div class="tab-pane" id="tab_1_2">
+                                        <form action="#" role="form">
+                                            <div class="form-group">
+                                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                    <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                                        <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""/>
+                                                    </div>
+                                                    <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
+                                                    </div>
+                                                    <div>
+                                                        <span class="btn default btn-file">
+                                                            <span class="fileinput-new">
+                                                                Select image </span>
+                                                            <span class="fileinput-exists">
+                                                                Change </span>
+                                                            <input type="file" name="...">
+                                                        </span>
+                                                        <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput">
+                                                            Remove </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="margin-top-10">
+                                                <a href="javascript:;" class="btn green-haze">
+                                                    Submit </a>
+                                                <a href="javascript:;" class="btn default">
+                                                    Cancel </a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- END CHANGE AVATAR TAB -->
+                                    <!-- CHANGE PASSWORD TAB -->
+                                    <div class="tab-pane" id="tab_1_3">
+                                        <form action="#">
+                                            <div class="form-group">
+                                                <label class="control-label">Current Password</label>
+                                                <input type="password" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">New Password</label>
+                                                <input type="password" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">Re-type New Password</label>
+                                                <input type="password" class="form-control"/>
+                                            </div>
+                                            <div class="margin-top-10">
+                                                <a href="javascript:;" class="btn green-haze">
+                                                    Change Password </a>
+                                                <a href="javascript:;" class="btn default">
+                                                    Cancel </a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- END CHANGE PASSWORD TAB -->
+                                    <!-- PRIVACY SETTINGS TAB -->
+                                    <div class="tab-pane" id="tab_1_4">
+                                        <form class="horizontal-form" action="#">
+                                            <div class="form-body">
+
+
+
+
+                                                <!--/span-->
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <h3 class="form-section">Individual</h3>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <div class="input-group">
+                                                                    <div class="icheck-list">
+                                                                        <label>
+                                                                            <input type="checkbox" class="icheck"> Owner/ Investor </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <div class="input-group">
+                                                                    <div class="icheck-list">
+                                                                        <label>
+                                                                            <input type="checkbox" class="icheck"> Tenant </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <h3 class="form-section">Company</h3>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <div class="input-group">
+                                                                    <div class="icheck-list">
+                                                                        <label>
+                                                                            <input type="checkbox" class="icheck"> Agent/Broker </label>
+                                                                        <label>
+                                                                            <input type="checkbox" checked class="icheck"> Appraiser </label>
+                                                                        <label>
+                                                                            <input type="checkbox" class="icheck"> Builder </label>
+                                                                        <label>
+                                                                            <input type="checkbox" class="icheck"> Mortgage Broker </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <div class="input-group">
+                                                                    <div class="icheck-list">
+                                                                        <label>
+                                                                            <input type="checkbox" class="icheck"> Developer </label>
+                                                                        <label>
+                                                                            <input type="checkbox" checked class="icheck"> Researcher </label>
+                                                                        <label>
+                                                                            <input type="checkbox" class="icheck"> Property Manager </label>
+                                                                        <label>
+                                                                            <input type="checkbox" class="icheck"> Corporate Investor </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-actions right">
+                                                <button class="btn green-haze" type="submit"><i class="fa fa-check"></i>Submit</button>
+                                            </div>
+
+
+                                        </form>
+                                    </div>
+                                    <!-- END PRIVACY SETTINGS TAB -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END PROFILE CONTENT -->
         </div>
-        <!-- END Form-->
     </div>
 
 </div>
