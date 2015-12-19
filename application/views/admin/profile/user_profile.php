@@ -148,7 +148,7 @@
                                                 Temple Road
                                             </p>
                                         </div>
-                                    </div>                                   
+                                    </div>
                                 </div>
                                 <!--/span-->
 
@@ -159,14 +159,14 @@
                                     <div class="form-group">
                                         <label class="control-label col-md-3">Listing Quota:</label>
                                         <div class="col-md-9">
-                                            <select class="form-control">
+                                            <select name="listing_quota_id" id="listing_quota_id" class="form-control">
                                                 <option>5</option>
                                                 <option>10</option>
                                                 <option>15</option>
                                                 <option>20</option>
                                             </select>
                                         </div>
-                                    </div>   
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -178,7 +178,7 @@
                                                 <option>Architect</option>
                                             </select>
                                         </div>
-                                    </div>  
+                                    </div>
                                 </div>
                             </div>
                         </div>
