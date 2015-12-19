@@ -122,25 +122,10 @@
             <div class="portlet box grey-cascade">
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-globe"></i>For Approval Properties
+                        <i class="fa fa-globe"></i>Pending Properties
                     </div>
-
                 </div>
                 <div class="portlet-body">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-group">
-
-                                <select class="form-control">
-                                    <option>All</option>
-                                    <option>For Sale</option>
-                                    <option>For Rent</option>
-                                    <option>Wanted</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
                     <table class="table table-striped table-bordered table-hover" id="sample_1">
                         <thead>
                             <tr>
@@ -166,7 +151,7 @@
                                     Listed Date
                                 </th>
                                 <th>
-                                    View
+                                    User
                                 </th>
                                 <th>
                                     Actions
@@ -182,8 +167,8 @@
                                 <td>5 Marla</td>
                                 <td>Rent</td>
                                 <td>10/11/2015</td>
-                                <td><a href="#">115</a></td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Delete</a></td>
+                                <td><a href="#">Jhon Wick</a></td>
+                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-success">Approve</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
                             </tr>
                             <tr class="odd gradeX">
                                 <td>15644</td>
@@ -193,8 +178,8 @@
                                 <td>5 Marla</td>
                                 <td>Rent</td>
                                 <td>10/11/2015</td>
-                                <td><a href="#">115</a></td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Delete</a></td>
+                                <td><a href="#">Jhon Wick</a></td>
+                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-success">Approve</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
                             </tr>
                             <tr class="odd gradeX">
                                 <td>15644</td>
@@ -204,8 +189,8 @@
                                 <td>5 Marla</td>
                                 <td>Rent</td>
                                 <td>10/11/2015</td>
-                                <td><a href="#">115</a></td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Delete</a></td>
+                                <td><a href="#">Jhon Wick</a></td>
+                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-success">Approve</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
                             </tr>
                             <tr class="odd gradeX">
                                 <td>15644</td>
@@ -215,8 +200,8 @@
                                 <td>5 Marla</td>
                                 <td>Rent</td>
                                 <td>10/11/2015</td>
-                                <td><a href="#">115</a></td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Delete</a></td>
+                                <td><a href="#">Jhon Wick</a></td>
+                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-success">Approve</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
                             </tr>
                             <tr class="odd gradeX">
                                 <td>15644</td>
@@ -226,8 +211,8 @@
                                 <td>5 Marla</td>
                                 <td>Rent</td>
                                 <td>10/11/2015</td>
-                                <td><a href="#">115</a></td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Delete</a></td>
+                                <td><a href="#">Jhon Wick</a></td>
+                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-success">Approve</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
                             </tr>
                             <tr class="odd gradeX">
                                 <td>15644</td>
@@ -237,8 +222,8 @@
                                 <td>5 Marla</td>
                                 <td>Rent</td>
                                 <td>10/11/2015</td>
-                                <td><a href="#">115</a></td>
-                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-default">Edit</a><a href="#" class="btn btn-default btn-danger">Delete</a></td>
+                                <td><a href="#">Jhon Wick</a></td>
+                                <td><a href="#" class="btn btn-default btn-primary">View</a><a href="#" class="btn btn-default btn-success">Approve</a><a href="#" class="btn btn-default btn-danger">Reject</a></td>
                             </tr>
 
 
