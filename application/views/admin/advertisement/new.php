@@ -77,18 +77,18 @@
                                                     Remove </a>
                                             </div>
                                         </div>
-                                    </div>  
+                                    </div>
 
                                 </div>
                                 <!--/span-->
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">User Name</label>
-                                        <select class="select2_category form-control" data-placeholder="Choose a Category" tabindex="1">
-                                            <option value="Category 1">User 1</option>
-                                            <option value="Category 2">User 2</option>
-                                            <option value="Category 3">User 5</option>
-                                            <option value="Category 4">User 4</option>
+                                        <select class="select2_category form-control">
+                                            <option value="">User 1</option>
+                                            <option value="">User 2</option>
+                                            <option value="">User 5</option>
+                                            <option value="">User 4</option>
                                         </select>
                                     </div>
                                     <div class="form-group">

@@ -24,16 +24,17 @@ class advertisement extends Base_Controller {
         $data = array();
 //        $data['result'] = $this->Offer_model->fetchAllRotation();
         $data['title'] = "Add Advertisement";
-        
+
         $this->render('admin/advertisement/index', $data);
     }
-    
-        public function add_new() {
+
+    public function add_new() {
 
         $data = array();
 //        $data['result'] = $this->Offer_model->fetchAllRotation();
         $data['title'] = "Add Advertisement";
-        
+
         $this->render('admin/advertisement/new', $data);
     }
+
 }

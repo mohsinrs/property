@@ -112,91 +112,172 @@
 
 
 
+            <?php if ($user_type == 1): ?>
+
+                <li class="start active">
+                    <a href="<?php echo base_url('admin/dashboard'); ?>">
+                        <i class="icon-home"></i>
+                        <span class="title">Dashboard</span>
+                        <span class="selected"></span>
+                        <span class="arrow open"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="icon-basket"></i>
+                        <span class="title">Property Management</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="<?php echo base_url('admin/search/index'); ?>">Inventory Search</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('admin/property/approved'); ?>">Approved Listing</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('admin/property/pending'); ?>">Pending Listing</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('admin/property/rejected'); ?>">Rejected Listing</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="icon-rocket"></i>
+                        <span class="title">My Account</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="<?php echo base_url('admin/profile/index'); ?>">My Profile</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('admin/profile/change_password'); ?>">Change Password</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('admin/users/roles'); ?>">User Role Approval</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('admin/users/approved'); ?>">Approved Users</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('admin/users/pending'); ?>">Pending User</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('admin/users/rejected'); ?>">Rejected Users</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="icon-diamond"></i>
+                        <span class="title">Tools</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="<?php echo base_url('admin/advertisement/add_new'); ?>">Add Advertisement</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('admin/advertisement/index'); ?>">All Advertisement</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('admin/alerts/index'); ?>">All Alert</a>
+                        </li>
+                    </ul>
+                </li>
+
+            <?php else: ?>
 
 
-            <li class="start active">
-                <a href="<?php echo base_url('user/dashboard'); ?>">
-                    <i class="icon-home"></i>
-                    <span class="title">Dashboard</span>
-                    <span class="selected"></span>
-                    <span class="arrow open"></span>
-                </a>
-            </li>
-            <li>
-                <a href="javascript:;">
-                    <i class="icon-basket"></i>
-                    <span class="title">Property Management</span>
-                    <span class="arrow "></span>
-                </a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="<?php echo base_url('user/search/index'); ?>">Inventory Search</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url('user/property/add_new'); ?>">Post New Listing</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url('user/property/active'); ?>">Active Listing</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url('user/property/for_approval'); ?>">For Approval Listing</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url('user/property/not_approved'); ?>">Not Approval Listing</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url('user/property/expired'); ?>">Expired Listing</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="javascript:;">
-                    <i class="icon-rocket"></i>
-                    <span class="title">My Account</span>
-                    <span class="arrow "></span>
-                </a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="<?php echo base_url('user/profile/index'); ?>">My Profile</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="javascript:;">
-                    <i class="icon-diamond"></i>
-                    <span class="title">Reports</span>
-                    <span class="arrow "></span>
-                </a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="<?php echo base_url('user/traffic/index'); ?>">Traffic Summary</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="javascript:;">
-                    <i class="icon-diamond"></i>
-                    <span class="title">Tools</span>
-                    <span class="arrow "></span>
-                </a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="<?php echo base_url('user/favourite/index'); ?>">Favourites</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url('user/alert/index'); ?>">Create Alert</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url('user/alert/manage'); ?>">Manage Alert</a>
-                    </li>
-                </ul>
-            </li>
+                <li class="start active">
+                    <a href="<?php echo base_url('user/dashboard'); ?>">
+                        <i class="icon-home"></i>
+                        <span class="title">Dashboard</span>
+                        <span class="selected"></span>
+                        <span class="arrow open"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="icon-basket"></i>
+                        <span class="title">Property Management</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="<?php echo base_url('user/search/index'); ?>">Inventory Search</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('user/property/add_new'); ?>">Post New Listing</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('user/property/active'); ?>">Active Listing</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('user/property/for_approval'); ?>">For Approval Listing</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('user/property/not_approved'); ?>">Not Approval Listing</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('user/property/expired'); ?>">Expired Listing</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="icon-rocket"></i>
+                        <span class="title">My Account</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="<?php echo base_url('user/profile/index'); ?>">My Profile</a>
+                        </li>
 
+                        <li>
+                            <a href="<?php echo base_url('user/profile/change_password'); ?>">Change Password</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('user/profile/roles'); ?>">User Role</a>
+                        </li>
 
-
-
-
-
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="icon-diamond"></i>
+                        <span class="title">Reports</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="<?php echo base_url('user/traffic/index'); ?>">Traffic Summary</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="icon-diamond"></i>
+                        <span class="title">Tools</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="<?php echo base_url('user/favourite/index'); ?>">Favourites</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('user/alert/index'); ?>">Create Alert</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('user/alert/manage'); ?>">Manage Alert</a>
+                        </li>
+                    </ul>
+                </li>
+            <?php endif; ?>
         </ul>
         <!-- END SIDEBAR MENU -->
     </div>

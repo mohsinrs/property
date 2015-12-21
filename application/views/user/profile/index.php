@@ -42,106 +42,6 @@
     <h3 class="page-title">
         My Profile</h3>
     <!-- END PAGE HEADER-->
-    <!--    <div class="row">
-            <div class="col-md-12 col-sm-12">
-
-                <div class="portlet box blue">
-                    <div class="portlet-title">
-                        <div class="caption">
-                            <i class="fa fa-gift"></i>Personal info
-                        </div>
-
-                    </div>
-                    <div class="portlet-body form">
-
-                        <form class="horizontal-form" action="#">
-                            <div class="form-body">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Name</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Email</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Cell No.</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Phone</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Address</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Zipcode</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">City</label>
-                                            <select class="form-control select2me " data-placeholder="Select...">
-                                                <option value="AL">Alabama</option>
-                                                <option value="WY">Wyoming</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">Location</label>
-                                            <select class="form-control select2me " data-placeholder="Select...">
-                                                <option value="AL">Alabama</option>
-                                                <option value="WY">Wyoming</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>About Yourself</label>
-                                            <textarea name="remarks" rows="3" class="form-control"></textarea>                                    </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
-
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>-->
-
-
-
-
     <div class="row">
         <div class="col-md-12">
             <!-- BEGIN PROFILE SIDEBAR -->
@@ -187,7 +87,7 @@
                                         <a href="#tab_1_3" data-toggle="tab">Change Password</a>
                                     </li>
                                     <li>
-                                        <a href="#tab_1_4" data-toggle="tab">Privacy Settings</a>
+                                        <a href="#tab_1_4" data-toggle="tab">User Roles</a>
                                     </li>
                                 </ul>
                             </div>
