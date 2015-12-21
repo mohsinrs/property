@@ -23,7 +23,6 @@ class Login extends Base_Controller {
 
         $data = array();
         $data['title'] = "Login";
-        
         $this->load->view('admin/login', $data);
     }
     

@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Register extends CI_Controller {
 
     /**
      * Index Page for this controller.
@@ -20,11 +20,26 @@ class Welcome extends CI_Controller {
      * @see http://codeigniter.com/user_guide/general/urls.html
      */
     public function index() {
+        
+        $this->load->model('misc_model');
         $data = array();
+        $data['cities'] = $this->misc_model->getCities(1); // country_id
         $data['result'] = array();
-        $data['content'] = $this->load->view('index', $data['result'], TRUE);
+        $data['content'] = $this->load->view('register', $data, TRUE);
         $this->load->view('layout/main', $data);
-//        $this->load->view('welcome_message');
+    }
+    
+    public function process() {
+
+        $this->load->model('misc_model');
+        $result = $this->misc_model->register();
+        if (!$result) {
+            setNotification('danger', 'Error. Coudn\'t register. Try later.');
+            redirect(base_url('register'));
+        } else {
+            setNotification('success', 'Your account created.');
+            redirect(base_url('welcome'));
+        }
     }
 
 }

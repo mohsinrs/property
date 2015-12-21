@@ -404,7 +404,7 @@ Header and header elements
 	color: #3e4d5c;
 }
 .product-item h3 a:hover {
-	color: #E02222;
+	color: #3178DD;
 }
 .pi-price {
 	color: #e84d1c;
@@ -413,7 +413,7 @@ Header and header elements
 	padding-top: 1px;
 }
 .product-item .add2cart {
-	float: right;
+	float: none;
 	color: #a8aeb3;
 	border: 1px #ededed solid;
 	padding: 3px 6px;
@@ -604,7 +604,7 @@ Header and header elements
     color: #767F88;
 }
 .checkout-page a:hover {
-	color: #E02222;
+	color: #3178DD;
 }
 .checkout-page h3 {
 	font: 23px 'PT Sans Narrow', sans-serif;
