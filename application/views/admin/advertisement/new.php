@@ -54,7 +54,7 @@
                 </div>
                 <div class="portlet-body form">
                     <!-- BEGIN FORM-->
-                    <form class="horizontal-form" action="#">
+                    <form class="horizontal-form" action="<?php echo base_url() ?>admin/advertisement/add_new" method="POST">
                         <div class="form-body">
                             <div class="row">
                                 <div class="col-md-3">

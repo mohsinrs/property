@@ -29,12 +29,35 @@ class advertisement extends Base_Controller {
     }
 
     public function add_new() {
+        $this->load->model('advertisement_model');
+        $this->load->helper(array('form', 'url'));
 
+        $this->load->library('form_validation');
         $data = array();
 //        $data['result'] = $this->Offer_model->fetchAllRotation();
-        $data['title'] = "Add Advertisement";
+        $viewdata['title'] = "Add Advertisement";
+        $this->form_validation->set_rules('datepicker1', 'Date Picker', 'required');
+        if ($this->form_validation->run() == FALSE) {
 
-        $this->render('admin/advertisement/new', $data);
+            $this->render('admin/advertisement/new');
+            //$this->form_validation->set_message('Date Picker', 'The %s field can not be the word "test"');
+        } else {
+            $data['from_date'] = $this->input->post('datepicker1');
+            $data['to_date'] = $this->input->post('datepicker1');
+            //var_dump($data);
+            //die;
+//            $array = array(
+//                'user_id' => $data['user_id'],
+//                'from_date' => $data['from_date'],
+//                'to_date' => $data['to_date'],
+//                'image_name' => $data['image_name'],
+//                'is_deleted' => 0,
+//                'created_on' => $data['created_on']
+//            );
+
+            $this->advertisement_model->insert($data, 'update');
+            $this->render('admin/advertisement/new');
+        }
     }
 
 }

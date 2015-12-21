@@ -23,17 +23,11 @@ class Advertisement_model extends CI_Model {
     }
 
     function insert() {
-        $data = $this->input->post();
-        $array = array(
-            'user_id' => $data['user_id'],
-            'from_date' => $data['from_date'],
-            'to_date' => $data['to_date'],
-            'image_name' => $data['image_name'],
-            'is_deleted' => 0,
-            'created_on' => $data['created_on']
-        );
-
-        $this->db->insert('advertisement', $array);
+        if ($type == 'new') {
+            $this->db->insert('advertisement', $array);
+        } else {
+            $this->db->update('advertisement', $array);
+        }
         return ($this->db->affected_rows() != 1) ? false : true;
     }
 
