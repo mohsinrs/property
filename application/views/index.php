@@ -1,89 +1,262 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Welcome to CodeIgniter</title>
+        <div class="main">
+            <div class="container">
+                <!--BEGIN BLOCKQUOTE BLOCK -->
+                <div class = "row quote-v1 margin-bottom-30">
+                    <div class = "col-md-9">
+                        <span>Want to Sale Your Property? Start Now!</span>
+                    </div>
+                    <div class = "col-md-3 text-right">
+                        <a class = "btn-transparent" href = "#" target = "_blank"><i class = "fa fa-rocket margin-right-10"></i>Add Property</a>
+                    </div>
+                </div>
+                <!--END BLOCKQUOTE BLOCK -->
 
-        <style type="text/css">
+                <!--BEGIN RECENT WORKS -->
+                <div class = "row recent-work margin-bottom-40">
+                    <div class = "col-md-4">
+                        <h2><a href = "#">Featured Properties</a></h2>
+                        <p>Lorem ipsum dolor sit amet, dolore eiusmod quis tempor incididunt ut et dolore Ut veniam unde voluptatem. Sed unde omnis iste natus error sit voluptatem.</p>
+                    </div>
+                    <div class = "col-md-8">
+                        <div class = "owl-carousel owl-carousel3">
+                            <div class = "recent-work-item">
+                                <em>
+                                    <img src = "<?php echo base_url('/public/frontend/pages/img/house/isl.jpg') ?>" alt = "Amazing Project" class = "img-responsive">
+                                    <a href = "#"><i class = "fa fa-link"></i></a>
+                                    <a href = "<?php echo base_url('/public/frontend/pages/img/house/isl.jpg') ?>" class = "fancybox-button" title = "Project Name #1" data-rel = "fancybox-button"><i class = "fa fa-search"></i></a>
+                                </em>
+                                <a class = "recent-work-description" href = "javascript:;">
+                                    <strong>House in Islamabad</strong>
+                                    <b>Sector E-7</b>
+                                </a>
+                            </div>
+                            <div class = "recent-work-item">
+                                <em>
+                                    <img src = "<?php echo base_url('/public/frontend/pages/img/house/amz.jpg') ?>" alt = "Amazing Project" class = "img-responsive">
+                                    <a href = "#"><i class = "fa fa-link"></i></a>
+                                    <a href = "<?php echo base_url('/public/frontend/pages/img/house/amz.jpg') ?>" class = "fancybox-button" title = "Project Name #2" data-rel = "fancybox-button"><i class = "fa fa-search"></i></a>
+                                </em>
+                                <a class = "recent-work-description" href = "javascript:;">
+                                    <strong>Amazing Project</strong>
+                                    <b>Agenda corp.</b>
+                                </a>
+                            </div>
+                            <div class = "recent-work-item">
+                                <em>
+                                    <img src = "<?php echo base_url('/public/frontend/pages/img/house/flat.jpg') ?>" alt = "Amazing Project" class = "img-responsive">
+                                    <a href = "#"><i class = "fa fa-link"></i></a>
+                                    <a href = "<?php echo base_url('/public/frontend/pages/img/house/flat.jpg') ?>" class = "fancybox-button" title = "Project Name #3" data-rel = "fancybox-button"><i class = "fa fa-search"></i></a>
+                                </em>
+                                <a class = "recent-work-description" href = "javascript:;">
+                                    <strong>Flat On Muree Road</strong>
+                                    <b>Aries Tower</b>
+                                </a>
+                            </div>
+                            <div class = "recent-work-item">
+                                <em>
+                                    <img src = "<?php echo base_url('/public/frontend/pages/img/house/isl.jpg') ?>" alt = "Amazing Project" class = "img-responsive">
+                                    <a href = "#"><i class = "fa fa-link"></i></a>
+                                    <a href = "<?php echo base_url('/public/frontend/pages/img/house/isl.jpg') ?>" class = "fancybox-button" title = "Project Name #1" data-rel = "fancybox-button"><i class = "fa fa-search"></i></a>
+                                </em>
+                                <a class = "recent-work-description" href = "javascript:;">
+                                    <strong>Luxury House</strong>
+                                    <b>Bahria Town</b>
+                                </a>
+                            </div>
 
-            ::selection { background-color: #E13300; color: white; }
-            ::-moz-selection { background-color: #E13300; color: white; }
+                            <div class = "recent-work-item">
 
-            body {
-                background-color: #fff;
-                margin: 40px;
-                font: 13px/20px normal Helvetica, Arial, sans-serif;
-                color: #4F5155;
-            }
+                                <em>
+                                    <img src = "<?php echo base_url('/public/frontend/pages/img/house/amz.jpg') ?>" alt = "Amazing Project" class = "img-responsive">
+                                    <a href = "#"><i class = "fa fa-link"></i></a>
+                                    <a href = "<?php echo base_url('/public/frontend/pages/img/house/amz.jpg') ?>" class = "fancybox-button" title = "Project Name #2" data-rel = "fancybox-button"><i class = "fa fa-search"></i></a>
+                                </em>
+                                <a class = "recent-work-description" href = "javascript:;">
+                                    <strong>Amazing Project</strong>
+                                    <b>Agenda corp.</b>
+                                </a>
+                            </div>
+                            <div class = "recent-work-item">
+                                <em>
+                                    <img src = "<?php echo base_url('/public/frontend/pages/img/house/flat.jpg') ?>" alt = "Amazing Project" class = "img-responsive">
+                                    <a href = "#"><i class = "fa fa-link"></i></a>
+                                    <a href = "<?php echo base_url('/public/frontend/pages/img/house/flat.jpg') ?>" class = "fancybox-button" title = "Project Name #3" data-rel = "fancybox-button"><i class = "fa fa-search"></i></a>
+                                </em>
+                                <a class = "recent-work-description" href = "javascript:;">
+                                    <strong>Flat On Muree Road</strong>
+                                    <b>Aries Tower</b>
+                                </a>
+                            </div>
+                            <div class = "recent-work-item">
+                                <em>
+                                    <img src = "<?php echo base_url('/public/frontend/pages/img/house/isl.jpg') ?>" alt = "Amazing Project" class = "img-responsive">
+                                    <a href = "#"><i class = "fa fa-link"></i></a>
+                                    <a href = "<?php echo base_url('/public/frontend/pages/img/house/isl.jpg') ?>" class = "fancybox-button" title = "Project Name #1" data-rel = "fancybox-button"><i class = "fa fa-search"></i></a>
+                                </em>
+                                <a class = "recent-work-description" href = "javascript:;">
+                                    <strong>Luxury House</strong>
+                                    <b>Bahria Town</b>
+                                </a>
+                            </div>
 
-            a {
-                color: #003399;
-                background-color: transparent;
-                font-weight: normal;
-            }
 
-            h1 {
-                color: #444;
-                background-color: transparent;
-                border-bottom: 1px solid #D0D0D0;
-                font-size: 19px;
-                font-weight: normal;
-                margin: 0 0 14px 0;
-                padding: 14px 15px 10px 15px;
-            }
+                        </div>
+                    </div>
+                </div>
+                <!--END RECENT WORKS -->
 
-            code {
-                font-family: Consolas, Monaco, Courier New, Courier, monospace;
-                font-size: 12px;
-                background-color: #f9f9f9;
-                border: 1px solid #D0D0D0;
-                color: #002166;
-                display: block;
-                margin: 14px 0 14px 0;
-                padding: 12px 10px 12px 10px;
-            }
+                <!--BEGIN SALE PRODUCT & NEW ARRIVALS -->
+                <div class = "row margin-bottom-40">
+                    <!--BEGIN SALE PRODUCT -->
+                    <div class = "col-md-9 sale-product">
+                        <h2>Latest Properties</h2>
+                        <div class = "owl-carousel owl-carousel3">
+                            <div>
+                                <div class = "product-item">
+                                    <div class = "pi-img-wrapper">
+                                        <img src = "<?php echo base_url('/public/frontend/pages/img/advert/6.jpg') ?>" class = "img-responsive" >
+                                        <div>
+                                        </div>
+                                    </div>
+                                    <h3><a href = "shop-item.html">Home For Sale On Ideal Location</a></h3>
+                                    <div class = "pi-price">Rs 63, 50, 000</div>
+                                    <a href = "javascript:;" class = "btn btn-default add2cart">View Detail</a>
+                                </div>
+                            </div>
+                            <div>
+                                <div class = "product-item">
+                                    <div class = "pi-img-wrapper">
+                                        <img src = "<?php echo base_url('/public/frontend/pages/img/advert/5.jpg') ?>" class = "img-responsive" >
+                                        <div>
+                                        </div>
+                                    </div>
+                                    <h3><a href = "shop-item.html">Home For Sale On Ideal Location</a></h3>
+                                    <div class = "pi-price">Rs 63, 50, 000</div>
+                                    <a href = "javascript:;" class = "btn btn-default add2cart">View Detail</a>
+                                </div>
+                            </div>
+                            <div>
+                                <div class = "product-item">
+                                    <div class = "pi-img-wrapper">
+                                        <img src = "<?php echo base_url('/public/frontend/pages/img/advert/4.jpg') ?>" class = "img-responsive" >
+                                        <div>
+                                        </div>
+                                    </div>
+                                    <h3><a href = "shop-item.html">Home For Sale On Ideal Location</a></h3>
+                                    <div class = "pi-price">Rs 63, 50, 000</div>
+                                    <a href = "javascript:;" class = "btn btn-default add2cart">View Detail</a>
+                                </div>
+                            </div>
+                            <div>
+                                <div class = "product-item">
+                                    <div class = "pi-img-wrapper">
+                                        <img src = "<?php echo base_url('/public/frontend/pages/img/advert/3.jpg') ?>" class = "img-responsive" >
+                                        <div>
+                                        </div>
+                                    </div>
+                                    <h3><a href = "shop-item.html">Home For Sale On Ideal Location</a></h3>
+                                    <div class = "pi-price">Rs 63, 50, 000</div>
+                                    <a href = "javascript:;" class = "btn btn-default add2cart"> View Detail</a>
+                                </div>
+                            </div>
 
-            #body {
-                margin: 0 15px 0 15px;
-            }
+                        </div>
 
-            p.footer {
-                text-align: right;
-                font-size: 11px;
-                border-top: 1px solid #D0D0D0;
-                line-height: 32px;
-                padding: 0 10px 0 10px;
-                margin: 20px 0 0 0;
-            }
+                    </div>
+                    <div class = "col-md-3">
+                        <div class = "row margin-bottom-10">
+                            <h2 class = "text-center">Advertisement</h2>
+                            <div class = "col-md-6 col-sm-6">
+                                <img alt = "" src = "<?php echo base_url('/public/frontend/pages/img/advert/1.png') ?>" class = "img-responsive">
+                            </div>
+                            <div class = "col-md-6 col-sm-6">
+                                <img alt = "" src = "<?php echo base_url('/public/frontend/pages/img/advert/2.png') ?>" class = "img-responsive">
+                            </div>
+                        </div>
+                        <div class = "row margin-bottom-10">
+                            <div class = "col-md-6 col-sm-6">
+                                <img alt = "" src = "<?php echo base_url('/public/frontend/pages/img/advert/3.png') ?>" class = "img-responsive">
+                            </div>
+                            <div class = "col-md-6 col-sm-6">
+                                <img alt = "" src = "<?php echo base_url('/public/frontend/pages/img/advert/4.png') ?>" class = "img-responsive">
+                            </div>
+                        </div>
+                        <div class = "row margin-bottom-40">
+                            <div class = "col-md-6 col-sm-6">
+                                <img alt = "" src = "<?php echo base_url('/public/frontend/pages/img/advert/5.png') ?>" class = "img-responsive">
+                            </div>
+                            <div class = "col-md-6 col-sm-6">
+                                <img alt = "" src = "<?php echo base_url('/public/frontend/pages/img/advert/6.png') ?>" class = "img-responsive">
+                            </div>
+                        </div>
 
-            #container {
-                margin: 10px;
-                border: 1px solid #D0D0D0;
-                box-shadow: 0 0 8px #D0D0D0;
-            }
-        </style>
-    </head>
-    <body>
 
-        <div id="container">
-            <h1>Welcome to CodeIgniter!</h1>
+                    </div>
 
-            <div id="body">
-                <p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
 
-                <p>If you would like to edit this page you'll find it located at:</p>
-                <code>application/views/welcome_message.php</code>
+                    <!--END SALE PRODUCT -->
+                </div>
+                <!--END SALE PRODUCT & NEW ARRIVALS -->
 
-                <p>The corresponding controller for this page is found at:</p>
-                <code>application/controllers/Welcome.php</code>
-
-                <p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
+                <!--BEGIN CLIENTS -->
+                <div class = "row margin-bottom-40 our-clients">
+                    <div class = "col-md-3">
+                        <h2><a href = "javascript:;">Featured Agents</a></h2>
+                        <p>Lorem dipsum folor margade sitede lametep eiusmod psumquis dolore.</p>
+                    </div>
+                    <div class = "col-md-9">
+                        <div class = "owl-carousel owl-carousel6-brands">
+                            <div class = "client-item">
+                                <a href = "javascript:;">
+                                    <img src = "<?php echo base_url('/public/frontend/pages/img/clients/client_1_gray.png') ?>" class = "img-responsive" alt = "">
+                                    <img src = "<?php echo base_url('/public/frontend/pages/img/clients/client_1.png') ?>" class = "color-img img-responsive" alt = "">
+                                </a>
+                            </div>
+                            <div class = "client-item">
+                                <a href = "javascript:;">
+                                    <img src = "<?php echo base_url('/public/frontend/pages/img/clients/client_2_gray.png') ?>" class = "img-responsive" alt = "">
+                                    <img src = "<?php echo base_url('/public/frontend/pages/img/clients/client_2.png') ?>" class = "color-img img-responsive" alt = "">
+                                </a>
+                            </div>
+                            <div class = "client-item">
+                                <a href = "javascript:;">
+                                    <img src = "<?php echo base_url('/public/frontend/pages/img/clients/client_3_gray.png') ?>" class = "img-responsive" alt = "">
+                                    <img src = "<?php echo base_url('/public/frontend/pages/img/clients/client_3.png') ?>" class = "color-img img-responsive" alt = "">
+                                </a>
+                            </div>
+                            <div class = "client-item">
+                                <a href = "javascript:;">
+                                    <img src = "<?php echo base_url('/public/frontend/pages/img/clients/client_4_gray.png') ?>" class = "img-responsive" alt = "">
+                                    <img src = "<?php echo base_url('/public/frontend/pages/img/clients/client_4.png') ?>" class = "color-img img-responsive" alt = "">
+                                </a>
+                            </div>
+                            <div class = "client-item">
+                                <a href = "javascript:;">
+                                    <img src = "<?php echo base_url('/public/frontend/pages/img/clients/client_5_gray.png') ?>" class = "img-responsive" alt = "">
+                                    <img src = "<?php echo base_url('/public/frontend/pages/img/clients/client_5.png') ?>" class = "color-img img-responsive" alt = "">
+                                </a>
+                            </div>
+                            <div class = "client-item">
+                                <a href = "javascript:;">
+                                    <img src = "<?php echo base_url('/public/frontend/pages/img/clients/client_6_gray.png') ?>" class = "img-responsive" alt = "">
+                                    <img src = "<?php echo base_url('/public/frontend/pages/img/clients/client_6.png') ?>" class = "color-img img-responsive" alt = "">
+                                </a>
+                            </div>
+                            <div class = "client-item">
+                                <a href = "javascript:;">
+                                    <img src = "<?php echo base_url('/public/frontend/pages/img/clients/client_7_gray.png') ?>" class = "img-responsive" alt = "">
+                                    <img src = "<?php echo base_url('/public/frontend/pages/img/clients/client_7.png') ?>" class = "color-img img-responsive" alt = "">
+                                </a>
+                            </div>
+                            <div class = "client-item">
+                                <a href = "javascript:;">
+                                    <img src = "<?php echo base_url('/public/frontend/pages/img/clients/client_8_gray.png') ?>" class = "img-responsive" alt = "">
+                                    <img src = "<?php echo base_url('/public/frontend/pages/img/clients/client_8.png') ?>" class = "color-img img-responsive" alt = "">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--END CLIENTS -->
             </div>
-
-            <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo (ENVIRONMENT === 'development') ? 'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
         </div>
-
-    </body>
-</html>
