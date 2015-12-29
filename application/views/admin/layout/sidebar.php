@@ -127,7 +127,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="<?php echo base_url('admin/search/index'); ?>">Inventory Search</a>
+                        <a href="<?php echo base_url('admin/search'); ?>">Inventory Search</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url('admin/property/approved'); ?>">Approved Listing</a>
@@ -148,7 +148,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="<?php echo base_url('admin/profile/index'); ?>">My Profile</a>
+                        <a href="<?php echo base_url('admin/profile'); ?>">My Profile</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url('admin/profile/change_password'); ?>">Change Password</a>
@@ -175,20 +175,20 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="<?php echo base_url('admin/advertisement/add_new'); ?>">Add Advertisement</a>
+                        <a href="<?php echo base_url('admin/advertisement/view'); ?>">Add Advertisement</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('admin/advertisement/index'); ?>">All Advertisement</a>
+                        <a href="<?php echo base_url('admin/advertisement'); ?>">All Advertisement</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('admin/alerts/index'); ?>">All Alert</a>
+                        <a href="<?php echo base_url('admin/alerts'); ?>">All Alert</a>
                     </li>
                 </ul>
             </li>
             
             <?php else: ?>
 
-<li class="start active">
+            <li class="start active">
                 <a href="<?php echo base_url('user/dashboard'); ?>">
                     <i class="icon-home"></i>
                     <span class="title">Dashboard</span>

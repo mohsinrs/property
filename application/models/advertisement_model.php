@@ -8,26 +8,29 @@ class Advertisement_model extends CI_Model {
     }
 
     function fetchAll() {
-        $this->db->select('advertisement.advertisement_id, user.name, user.email, user.phone_no, advertisement.	from_date, advertisement.to_date');
+        $this->db->select('advertisement.advertisement_id, user.name, user.email, user.phone_no, advertisement.from_date, advertisement.to_date');
         $this->db->from('advertisement');
-        $this->db->where('is_deleted', 0);
+        $this->db->where('advertisement.is_deleted', 0);
         $this->db->join('user', 'advertisement.user_id = user.user_id');
         $query = $this->db->get();
 
         return $query->result();
     }
 
-    function getOne($id) {
+    function fetch($id) {
         $query = $this->db->get_where('advertisement', array('advertisement_id' => $id), NULL, NULL);
         return $query->result();
     }
 
     function insert() {
-        if ($type == 'new') {
-            $this->db->insert('advertisement', $array);
-        } else {
-            $this->db->update('advertisement', $array);
-        }
+        $data = $this->input->post();
+        $array = array(
+            'user_id' => $data['user_id'],
+            'from_date' => $data['from_date'],
+            'to_date' => $data['to_date'],
+            'image_name' => $data['image_name']
+        );
+        $this->db->insert('advertisement', $array);
         return ($this->db->affected_rows() != 1) ? false : true;
     }
 
@@ -38,7 +41,6 @@ class Advertisement_model extends CI_Model {
             'from_date' => $data['from_date'],
             'to_date' => $data['to_date'],
             'image_name' => $data['image_name'],
-            'is_deleted' => 0,
             'modified_on' => $data['modified_on']
         );
 
@@ -57,6 +59,16 @@ class Advertisement_model extends CI_Model {
         $this->db->update('advertisement', $array);
 
         return ($this->db->affected_rows() != 1) ? false : true;
+    }
+
+    function do_upload($id) {
+        $config['upload_path'] = './uploads/';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size'] = '100';
+        $config['max_width'] = '1024';
+        $config['max_height'] = '768';
+
+        $this->load->library('upload', $config);
     }
 
 }

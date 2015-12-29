@@ -3,10 +3,11 @@
                 <!-- BEGIN BLOCKQUOTE BLOCK -->   
                 <div class="row">
                     <h1>Create an account</h1>
+                    <?php renderNotification() ?>
                     <div class="content-form-page">
                         
-                        <form class="form-horizontal" role="form" action="<?php echo base_url('register/process') ?>" enctype="">
-                            <?php echo renderNotification() ?>
+                        <form class="form-horizontal" role="form" action="" method="post" enctype="">
+                            <?php renderNotification() ?>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -31,7 +32,7 @@
                                     <div class="form-group">
                                         <label for="password" class="col-lg-4 control-label"> Password <span class="require">*</span></label>
                                         <div class="col-lg-8">
-                                            <input type="text" class="form-control" id="password" name="password">
+                                            <input type="password" class="form-control" id="password" name="password">
                                         </div>
                                     </div>
                                 </div>
@@ -39,7 +40,7 @@
                                     <div class="form-group">
                                         <label for="confirm_password" class="col-lg-4 control-label"> Confirm Password <span class="require">*</span></label>
                                         <div class="col-lg-8">
-                                            <input type="text" class="form-control" id="confirm_password" name="confirm_password">
+                                            <input type="password" class="form-control" id="confirm_password" name="confirm_password">
                                         </div>
                                     </div>
                                 </div>
@@ -135,7 +136,7 @@
                             
                             <div class="row">
                                 <div class="col-lg-8 col-md-offset-4 padding-left-0 padding-top-20">                        
-                                    <button type="submit" class="btn btn-primary">Create account</button>
+                                    <button type="submit" name="submit" value="submit" class="btn btn-primary">Create account</button>
                                     <button type="button" class="btn btn-default">Cancel</button>
                                 </div>
                             </div>

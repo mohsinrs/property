@@ -1,5 +1,6 @@
         <div class="main">
             <div class="container">
+                <?php renderNotification() ?>
                 <!--BEGIN BLOCKQUOTE BLOCK -->
                 <div class = "row quote-v1 margin-bottom-30">
                     <div class = "col-md-9">

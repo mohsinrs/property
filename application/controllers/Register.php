@@ -22,24 +22,24 @@ class Register extends CI_Controller {
     public function index() {
         
         $this->load->model('misc_model');
+        
+        if ($this->input->post('submit')) {
+            try {
+                $result = $this->misc_model->register();
+                if ($result == true) {
+                    setNotification('success', 'Your account created sucessfully.');
+                    redirect(base_url('welcome'));
+                }
+            } catch (Exception $e) {
+                setNotification('danger', 'Error. Coudn\'t register. Try later.');
+            }
+        }
+        
         $data = array();
         $data['cities'] = $this->misc_model->getCities(1); // country_id
         $data['result'] = array();
         $data['content'] = $this->load->view('register', $data, TRUE);
         $this->load->view('layout/main', $data);
-    }
-    
-    public function process() {
-
-        $this->load->model('misc_model');
-        $result = $this->misc_model->register();
-        if (!$result) {
-            setNotification('danger', 'Error. Coudn\'t register. Try later.');
-            redirect(base_url('register'));
-        } else {
-            setNotification('success', 'Your account created.');
-            redirect(base_url('welcome'));
-        }
     }
 
 }

@@ -21,42 +21,87 @@ class advertisement extends Base_Controller {
      */
     public function index() {
 
+        $this->load->model('advertisement_model');
         $data = array();
-//        $data['result'] = $this->Offer_model->fetchAllRotation();
-        $data['title'] = "Add Advertisement";
+        $data['result'] = $this->advertisement_model->fetchAll();
+        $data['title'] = "All Advertisement";
 
         $this->render('admin/advertisement/index', $data);
     }
 
-    public function add_new() {
-        $this->load->model('advertisement_model');
-        $this->load->helper(array('form', 'url'));
+    public function view($id = NULL) {
 
-        $this->load->library('form_validation');
         $data = array();
-//        $data['result'] = $this->Offer_model->fetchAllRotation();
-        $viewdata['title'] = "Add Advertisement";
-        $this->form_validation->set_rules('datepicker1', 'Date Picker', 'required');
-        if ($this->form_validation->run() == FALSE) {
+        $this->load->model('advertisement_model');
 
-            $this->render('admin/advertisement/new');
-            //$this->form_validation->set_message('Date Picker', 'The %s field can not be the word "test"');
-        } else {
-            $data['from_date'] = $this->input->post('datepicker1');
-            $data['to_date'] = $this->input->post('datepicker1');
-            //var_dump($data);
-            //die;
-//            $array = array(
-//                'user_id' => $data['user_id'],
-//                'from_date' => $data['from_date'],
-//                'to_date' => $data['to_date'],
-//                'image_name' => $data['image_name'],
-//                'is_deleted' => 0,
-//                'created_on' => $data['created_on']
-//            );
+        if ($this->input->post('submit') && $id !== NULL) {
+            try {
+                $result = $this->advertisement_model->update($id);
+                if ($result == true) {
+                    setNotification('success', 'Record updated successfully');
+                    redirect(base_url('admin/advertisement'));
+                }
+            } catch (Exception $e) {
+                setNotification('error', 'Error in updating record');
+            }
+        } else if ($this->input->post('submit') && $id == NULL) {
+            try {
+                $result = $this->advertisement_model->insert();
+                if ($result == true) {
+                    setNotification('success', 'Record added successfully');
+                    redirect(base_url('admin/advertisement'));
+                }
+            } catch (Exception $e) {
+                setNotification('error', 'Error in adding record');
+            }
+        }
 
-            $this->advertisement_model->insert($data, 'update');
-            $this->render('admin/advertisement/new');
+        if (!is_null($id)) {
+            $result = $this->advertisement_model->fetch($id);
+            if (isset($result[0])) {
+                $data['result'] = $result[0];
+            }
+        }
+
+        $data['title'] = ($id == NULL) ? "New Advertisement" : "Edit Advertisement";
+        $this->render('admin/advertisement/view');
+    }
+
+    public function delete($id) {
+        if (empty($id)) {
+            setNotification('notice', 'Record not found');
+            redirect(base_url('admin/advertisement'));
+        }
+
+        try {
+            $this->load->model('advertisement_model');
+            $result = $this->advertisement_model->delete($id);
+            if ($result == true) {
+                setNotification('success', 'Record deleted successfully');
+                redirect(base_url('admin/advertisement'));
+            }
+        } catch (Exception $e) {
+            setNotification('error', 'Error in deleting record');
+            redirect(base_url('admin/advertisement'));
+        }
+    }
+
+    public function do_upload($id) {
+        if (empty($id)) {
+            setNotification('notice', 'Record not found');
+            redirect(base_url('admin/advertisement'));
+        }
+
+        try {
+            $this->load->model('advertisement_model');
+            $result = $this->advertisement_model->do_upload($id);
+            if ($result == true) {
+                setNotification('success', 'Record deleted successfully');
+                redirect(base_url('admin/advertisement'));
+            }
+        } catch (Exception $e) {
+            setNotification('error', 'Error in deleting record');
+            redirect(base_url('admin/advertisement'));
         }
     }
 

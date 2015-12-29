@@ -44,7 +44,6 @@ class Misc_model extends CI_Model {
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => $data['password'],
-            'confirm_password' => $data['confirm_password'],
             'cell_no' => $data['cell_no'],
             'phone_no' => $data['phone_no'],
             'city_id' => $data['city_id'],

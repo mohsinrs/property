@@ -8,11 +8,13 @@ class User_model extends CI_Model {
         parent::__construct();
     }
 
-    function fetchAll()
+    function fetchAll($type = 1) // By defualt fetch Approved Users
     {
-        $this->db->select('user_id, name, email, phone, user_status, created_on');
+        $this->db->select('user_id, name, email, phone_no, user_status, created_on');
         $this->db->from('user');
         $this->db->where('is_deleted', 0);
+        $this->db->where('user_status', $type);
+        $this->db->where('user_type', 2);
         $query = $this->db->get();
         
         return $query->result();
