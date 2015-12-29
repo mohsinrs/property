@@ -31,8 +31,8 @@
                 </div>
                 <div class="portlet-body form">
                     <!-- BEGIN FORM-->
-                    <form class="horizontal-form" action="" method="POST" enctype="">
-                        <?php echo form_open_multipart('advertisement/do_upload'); ?>
+                    <form class="horizontal-form" action="" method="POST" enctype="multipart/form-data">
+                        <?php //echo form_open_multipart('advertisement/do_upload'); ?>
                         <div class="form-body">
                             <div class="row">
                                 <div class="col-md-3">
