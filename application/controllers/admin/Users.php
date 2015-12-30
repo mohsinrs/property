@@ -19,12 +19,15 @@ class Users extends Base_Controller {
      * map to /index.php/welcome/<method_name>
      * @see http://codeigniter.com/user_guide/general/urls.html
      */
+    function __construct() {
+        parent::__construct();
+        $this->load->model('user_model');
+    }
+    
     public function roles() {
 
         $data = array();
-//        $data['result'] = $this->Offer_model->fetchAllRotation();
         $data['title'] = "User Role Approval";
-
         $this->render('admin/users/roles', $data);
     }
 
@@ -39,7 +42,6 @@ class Users extends Base_Controller {
 
     public function pending() {
 
-        $this->load->model('user_model');
         $data = array();
         $data['result'] = $this->user_model->fetchAll(0);
         $data['title'] = "Pending Users";

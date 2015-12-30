@@ -17,8 +17,7 @@
             </div>
         </div>
     </div>
-    <h3 class="page-title">
-        Users Account</h3>
+    <h3 class="page-title">Users Account</h3>
     <!-- END PAGE HEADER-->
     <div class="row">
         <div class="col-md-12">
@@ -43,6 +42,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php //if(sizeof($result) > 0): ?>
                             <?php foreach($result as $user): ?>
                             <tr class="odd gradeX">
                                 <td><?php echo $user->user_id ?></td>
@@ -59,6 +59,7 @@
                                 </td>
                             </tr>
                             <?php endforeach; ?>
+                            <?php //endif; ?>
                         </tbody>
                     </table>
                 </div>
