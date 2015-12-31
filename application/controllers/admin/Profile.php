@@ -19,10 +19,15 @@ class Profile extends Base_Controller {
      * map to /index.php/welcome/<method_name>
      * @see http://codeigniter.com/user_guide/general/urls.html
      */
+    function __construct() {
+        parent::__construct();
+        $this->load->model('user_model');
+    }
+    
     public function index() {
 
         $data = array();
-//        $data['result'] = $this->Offer_model->fetchAllRotation();
+        $data['result'] = $this->Offer_model->fetchAllRotation();
         $data['title'] = "My Profile";
         
         $this->render('admin/profile/index', $data);
@@ -30,8 +35,18 @@ class Profile extends Base_Controller {
     
     public function change_password() {
 
+        if ($this->input->post('submit')) {
+            try {
+                $result = $this->misc_model->change_password($id);
+                if ($result == true) {
+                    setNotification('success', 'Record updated successfully');
+                    redirect(base_url('admin/advertisement'));
+                }
+            } catch (Exception $e) {
+                setNotification('error', 'Error in updating record');
+            }
+        }        
         $data = array();
-//        $data['result'] = $this->Offer_model->fetchAllRotation();
         $data['title'] = "Change Password";
         
         $this->render('admin/profile/change_password', $data);

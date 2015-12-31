@@ -116,6 +116,19 @@ class Misc_model extends CI_Model {
 //
 //        return true;
 //    }
+    
+    function change_password($id, $pass)
+    {
+        $array = array(
+            'ConfirmationSent' => 1 ,
+            'Password' => md5 ($pass)
+        );
+
+        $this->db->where('property_id', $id);
+        $this->db->update('property', $array);
+
+        return true;
+    }
 
     function delete($id)
     {

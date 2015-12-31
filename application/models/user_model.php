@@ -20,7 +20,7 @@ class User_model extends CI_Model {
         return $query->result();
     }
 
-    function getOne($id)
+    function fetch($id)
     {
         $query = $this->db->get_where('user', array('user_id' => $id), NULL, NULL);
         return $query->result();
@@ -55,12 +55,11 @@ class User_model extends CI_Model {
             'email' => $data['email'],
             'cell_no' => $data['cell_no'],
             'phone_no' => $data['phone_no'],
-            'address' => $data['address'],
-            'zipcode' => $data['zipcode'],
-            'country_id' => $data['country_id'],
             'city_id' => $data['city_id'],
             'location_id' => $data['location_id'],
-            'listing_quota_id' => $data['listing_quota_id']
+            'address' => $data['address'],
+            'zipcode' => $data['zipcode'],
+            'about' => $data['about']
         );
 
         $this->db->where('user_id', $id);

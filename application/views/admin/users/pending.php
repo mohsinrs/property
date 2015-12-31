@@ -8,7 +8,7 @@
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <a href="#">Pending User</a>
+                <a href="<?php echo base_url('admin/users/pending') ?>">Pending User</a>
             </li>
         </ul>
         <div class="page-toolbar">
@@ -17,8 +17,7 @@
             </div>
         </div>
     </div>
-    <h3 class="page-title">
-        Users Account</h3>
+    <h3 class="page-title">Users Account</h3>
     <!-- END PAGE HEADER-->
     <div class="row">
         <div class="col-md-12">
@@ -53,9 +52,9 @@
                                 <td>07/12/2015</td>
                                 <td>
                                     <a href="#" class="btn btn-default btn-primary">View</a>
-                                    <a href="#" class="btn btn-default">Edit</a>
-                                    <a href="#" class="btn btn-default btn-success">Approve</a>
-                                    <a href="#" class="btn btn-default btn-danger">Reject</a>
+                                    <a href="<?php echo base_url('admin/users/profile/'.$user->user_id) ?>" class="btn btn-default">Edit</a>
+                                    <a href="<?php echo base_url('admin/users/update_status/'.$user->user_id.'/1') ?>" class="btn btn-default btn-success">Approve</a>
+                                    <a href="<?php echo base_url('admin/users/update_status/'.$user->user_id.'/2') ?>" class="btn btn-default btn-danger">Reject</a>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
