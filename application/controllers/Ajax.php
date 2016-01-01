@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Login extends CI_Controller {
+class Ajax extends CI_Controller {
 
     /**
      * Index Page for this controller.
@@ -24,22 +24,13 @@ class Login extends CI_Controller {
         $this->load->model('misc_model');
     }
     
-    public function index() {
-        
-        if ($this->input->post('submit')) {
-            $this->load->model('login_model');
-            $result = $this->login_model->validate();
-            if (!$result) {
-                setNotification('danger', 'Invalid User name or Password.');
-                redirect(base_url('login'));
-            } else {
-                redirect(base_url('admin/dashboard'));
-            }
-        }
+    public function get_locations($city_id) {
         
         $data = array();
-        $data['content'] = $this->load->view('login', $data, TRUE);
-        $this->load->view('layout/main', $data);
+        $locations = $this->misc_model->getLocations($city_id);
+        exit(json_encode($locations));
+//        $data['content'] = $this->load->view('register', $data, TRUE);
+//        $this->load->view('layout/main', $data);
     }
 
 }

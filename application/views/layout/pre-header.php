@@ -9,7 +9,7 @@
                             <li><a href="#">Commercial</a></li>
                             <li><a href="<?php echo base_url('page/about'); ?>">About us</a></li>
                             <li><a href="<?php echo base_url('page/contact'); ?>">Contact us</a></li>
-                            <li><a href="<?php echo base_url('property/view'); ?>">Add property</a></li>
+                            <li><a href="<?php echo base_url('admin/property/view'); ?>" target="_blank">Add property</a></li>
                         </ul>
                     </div>
                     <!-- END TOP BAR LEFT PART -->

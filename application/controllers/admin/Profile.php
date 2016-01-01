@@ -27,7 +27,7 @@ class Profile extends Base_Controller {
     public function index() {
 
         $data = array();
-        $data['result'] = $this->Offer_model->fetchAllRotation();
+//        $data['result'] = $this->Offer_model->fetchAllRotation();
         $data['title'] = "My Profile";
         
         $this->render('admin/profile/index', $data);

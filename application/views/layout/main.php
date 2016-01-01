@@ -106,13 +106,14 @@ License: You must have a valid license purchased only from themeforest (the abov
         <script src="<?php echo base_url('/public/global/plugins/fancybox/source/jquery.fancybox.pack.js') ?>" type="text/javascript"></script><!-- pop up -->
         <script src="<?php echo base_url('/public/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.min.js') ?>" type="text/javascript"></script><!-- slider for products -->
 
-        <!-- BEGIN RevolutionSlider -->  
+        <!-- BEGIN RevolutionSlider -->
         <script src="<?php echo base_url('/public/global/plugins/slider-revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js') ?>" type="text/javascript"></script> 
         <script src="<?php echo base_url('/public/global/plugins/slider-revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js') ?>" type="text/javascript"></script> 
         <script src="<?php echo base_url('/public/frontend/pages/scripts/revo-slider-init.js') ?>" type="text/javascript"></script>
         <!-- END RevolutionSlider -->
 
         <script src="<?php echo base_url('/public/frontend/layout/scripts/layout.js') ?>" type="text/javascript"></script>
+        <script src="<?php echo base_url('/public/global/scripts/common.js') ?>" type="text/javascript"></script> 
         <script type="text/javascript">
             jQuery(document).ready(function () {
                 Layout.init();

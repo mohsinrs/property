@@ -1,26 +1,4 @@
 <div class="page-content">
-    <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-    <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                    <h4 class="modal-title">Modal title</h4>
-                </div>
-                <div class="modal-body">
-                    Widget settings form goes here
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn blue">Save changes</button>
-                    <button type="button" class="btn default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
-    <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
     <!-- BEGIN PAGE HEADER-->
     <div class="page-bar">
         <ul class="page-breadcrumb">
@@ -39,8 +17,7 @@
             </div>
         </div>
     </div>
-    <h3 class="page-title">
-        Property Management</h3>
+    <h3 class="page-title">Property Management</h3>
     <!-- END PAGE HEADER-->
     <div class="row">
         <div class="col-md-12 col-sm-12">
@@ -50,7 +27,6 @@
                     <div class="caption">
                         <i class="fa fa-gift"></i>Post New Listing
                     </div>
-
                 </div>
                 <div class="portlet-body form">
                     <!-- BEGIN FORM-->
@@ -78,7 +54,6 @@
                                             <span class="number"> 5 </span>
                                             <span class="desc"><i class="fa fa-check"></i> Status </span>
                                         </a></li>
-
                                 </ul>
                                 <div id="bar" class="progress progress-striped" role="progressbar">
                                     <div class="progress-bar progress-bar-success">
@@ -91,7 +66,11 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Purpose</label>
-                                                    <select class="form-control">
+                                                    <select class="form-control" name="property_purpose_id">
+                                                        <option>-- select --</option>
+                                                        <?php foreach($purpose_list as $purpose): ?>
+                                                        <option value="<?php echo $purpose->property_purpose_id ?>"><?php echo $purpose->name ?></option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -99,7 +78,11 @@
                                             <div class="col-md-6">                                    
                                                 <div class="form-group">
                                                     <label>Type</label>
-                                                    <select class="form-control">
+                                                    <select class="form-control" name="property_type_id">
+                                                        <option>-- select --</option>
+                                                        <?php foreach($type_list as $type): ?>
+                                                        <option value="<?php echo $type->property_type_id ?>"><?php echo $type->name ?></option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -109,14 +92,20 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>City</label>
-                                                    <input type="text" class="form-control">
+                                                    <select class="form-control" id="city_id" name="city_id">
+                                                        <option> -- Select -- </option>
+                                                        <?php foreach ($cities as $key => $city): ?>
+                                                        <option value="<?php echo $city->city_id ?>"><?php echo $city->name ?></option>
+                                                        <?php endforeach; ?>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <!--/span-->
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Location</label>
-                                                    <select class="form-control">
+                                                    <select class="form-control" id="location_id" name="location_id">
+                                                        <option> -- Select -- </option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -132,18 +121,18 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Title</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" name="title">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>All Inclusive Price (PKR)</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" name="price">
                                                 </div>
                                             </div>
                                             <!--/span-->
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Description</label>
-                                                    <textarea class="form-control" rows="4"></textarea>
+                                                    <textarea class="form-control" rows="4" name="description"></textarea>
                                                 </div>
                                             </div>
                                             <!--/span-->
@@ -152,14 +141,17 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Area</label>
-                                                    <select class="form-control">
-                                                    </select>
+                                                    <input type="text" class="form-control" name="area">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Area Unit</label>
-                                                    <select class="form-control">
+                                                    <select class="form-control" name="area_unit_id">
+                                                        <option> -- Select -- </option>
+                                                        <?php foreach ($area_units as $unit): ?>
+                                                        <option value="<?php echo $unit->area_unit_id ?>"><?php echo $unit->name ?></option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -176,7 +168,11 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Constructions Status</label>
-                                                    <select class="form-control">
+                                                    <select class="form-control" name="construction_status_id">
+                                                        <option> -- Select -- </option>
+                                                        <?php foreach ($construction_status as $status): ?>
+                                                        <option value="<?php echo $status->construction_status_id ?>"><?php echo $status->name ?></option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -241,7 +237,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label>Contact Person   </label>
+                                                    <label>Contact Person</label>
                                                     <input type="text" class="form-control">
                                                 </div>
                                             </div>
@@ -338,19 +334,9 @@
                                             <!--/span-->
                                         </div>
                                     </div>
-
-
-
-
-
-
                                 </div>
-
-
-
-
-
                             </div>
+                            
                             <div class="form-actions right">
                                 <div class="row">
                                     <div class="col-md-offset-3 col-md-9">

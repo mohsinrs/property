@@ -42,7 +42,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php //if(sizeof($result) > 0): ?>
                             <?php foreach($result as $user): ?>
                             <tr class="odd gradeX">
                                 <td><?php echo $user->user_id ?></td>
@@ -59,7 +58,6 @@
                                 </td>
                             </tr>
                             <?php endforeach; ?>
-                            <?php //endif; ?>
                         </tbody>
                     </table>
                 </div>

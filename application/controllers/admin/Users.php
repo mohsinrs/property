@@ -63,10 +63,10 @@ class Users extends Base_Controller {
         $result = $this->user_model->updateStatus($user_id, $status);
         if ($result) {
             setNotification('success', 'User status updated successfully');
-            redirect(base_url('admin/profile'));
+            redirect(base_url('admin/users/pending'));
         } else {
             setNotification('error', 'Error in updating record');
-            redirect(base_url('admin/profile'));
+            redirect(base_url('admin/users/pending'));
         }        
     }
     
@@ -85,7 +85,6 @@ class Users extends Base_Controller {
     public function profile($user_id) {
 
         if ($this->input->post('submit')) {
-//            var_dump($_FILES); exit;  
             $result = $this->user_model->update($user_id);
             if ($result) {
                 setNotification('success', 'User updated successfully');

@@ -19,6 +19,12 @@ class Property extends Base_Controller {
      * map to /index.php/welcome/<method_name>
      * @see http://codeigniter.com/user_guide/general/urls.html
      */
+    function __construct() {
+        parent::__construct();
+        $this->load->model('property_model');
+        $this->load->model('misc_model');
+    }
+    
     public function approved() {
 
         $data = array();
@@ -44,6 +50,19 @@ class Property extends Base_Controller {
         $data['title'] = "Rejected Properties";
         
         $this->render('admin/property/rejected', $data);
+    }
+    
+    public function view() {
+
+        $data = array();
+        $data['purpose_list'] = $this->misc_model->getPropertyPurpose();
+        $data['type_list'] = $this->misc_model->getPropertyType();
+        $data['cities'] = $this->misc_model->getCities(1); // country_id
+        $data['area_units'] = $this->misc_model->getAreaUnits();
+        $data['construction_status'] = $this->misc_model->getConstructionStatus();
+        $data['title'] = "Post New Listing";
+//        var_dump($data['purpose_list']); exit;
+        $this->render('user/property/add_new_advance', $data);
     }
 
 }

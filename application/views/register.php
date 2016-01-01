@@ -6,8 +6,7 @@
                     <?php renderNotification() ?>
                     <div class="content-form-page">
                         
-                        <form class="form-horizontal" role="form" action="" method="post" enctype="">
-                            <?php renderNotification() ?>
+                        <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -85,11 +84,6 @@
                                         <div class="col-lg-8">
                                             <select class="form-control" id="location_id" name="location_id">
                                                 <option> -- Select -- </option>
-                                                <option>Option 1</option>
-                                                <option>Option 2</option>
-                                                <option>Option 3</option>
-                                                <option>Option 4</option>
-                                                <option>Option 5</option>
                                             </select>
                                         </div>
                                     </div>
@@ -135,7 +129,7 @@
                             </div>
                             
                             <div class="row">
-                                <div class="col-lg-8 col-md-offset-4 padding-left-0 padding-top-20">                        
+                                <div class="col-lg-8 col-md-offset-2 padding-left-0 padding-top-20">                        
                                     <button type="submit" name="submit" value="submit" class="btn btn-primary">Create account</button>
                                     <button type="button" class="btn btn-default">Cancel</button>
                                 </div>

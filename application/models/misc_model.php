@@ -37,13 +37,53 @@ class Misc_model extends CI_Model {
         return $query->result();
     }
     
+    function getPropertyPurpose()
+    {
+        $this->db->select('property_purpose_id, name');
+        $this->db->from('property_purpose');
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
+    
+    function getPropertyType()
+    {
+        $this->db->select('property_type_id, parent_property_type_id, name');
+        $this->db->from('property_type');
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
+    
+    function getAreaUnits()
+    {
+        $this->db->select('area_unit_id, name');
+        $this->db->from('area_unit');
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
+    
+    function getConstructionStatus()
+    {
+        $this->db->select('construction_status_id, name');
+        $this->db->from('construction_status');
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
+    
     function register()
     {
         $data = $this->input->post();
+        if(isset($_FILES) && isset($_FILES['profile_pic'])) {
+            $data['profile_pic'] = $_FILES['profile_pic']['name'];
+        }
+
         $array = array(
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => $data['password'],
+            'password' => md5($data['password']),
             'cell_no' => $data['cell_no'],
             'phone_no' => $data['phone_no'],
             'city_id' => $data['city_id'],
@@ -51,7 +91,8 @@ class Misc_model extends CI_Model {
             'zipcode' => $data['zipcode'],
             'profile_pic' => $data['profile_pic'],
             'address' => $data['address'],
-            'about' => $data['about']
+            'about' => $data['about'],
+            'created_on' => date("Y-m-d H:i:s")
         );
 
         $this->db->insert('user', $array);
@@ -103,19 +144,6 @@ class Misc_model extends CI_Model {
         //return ($this->db->affected_rows() != 1) ? false : true;
         return true;
     }
-    
-//    function confirm($id, $pass)
-//    {
-//        $array = array(
-//            'ConfirmationSent' => 1 ,
-//            'Password' => md5 ($pass)
-//        );
-//
-//        $this->db->where('property_id', $id);
-//        $this->db->update('property', $array);
-//
-//        return true;
-//    }
     
     function change_password($id, $pass)
     {
