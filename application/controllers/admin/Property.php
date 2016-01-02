@@ -52,7 +52,7 @@ class Property extends Base_Controller {
         $this->render('admin/property/rejected', $data);
     }
     
-    public function view() {
+    public function advance() {
 
         $data = array();
         $data['purpose_list'] = $this->misc_model->getPropertyPurpose();
@@ -62,7 +62,20 @@ class Property extends Base_Controller {
         $data['construction_status'] = $this->misc_model->getConstructionStatus();
         $data['title'] = "Post New Listing";
 //        var_dump($data['purpose_list']); exit;
-        $this->render('user/property/add_new_advance', $data);
+        $this->render('admin/property/advance', $data);
+    }
+    
+    public function quick() {
+
+        $data = array();
+        $data['purpose_list'] = $this->misc_model->getPropertyPurpose();
+        $data['type_list'] = $this->misc_model->getPropertyType();
+        $data['cities'] = $this->misc_model->getCities(1); // country_id
+        $data['area_units'] = $this->misc_model->getAreaUnits();
+        $data['construction_status'] = $this->misc_model->getConstructionStatus();
+        $data['title'] = "Post New Listing";
+//        var_dump($data['purpose_list']); exit;
+        $this->render('admin/property/quick', $data);
     }
 
 }

@@ -134,6 +134,19 @@
                         <a href="<?php echo base_url('user/search/index'); ?>">Inventory Search</a>
                     </li>
                     <li>
+                        <a href="javascript:;">
+                        Add New Property <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="<?php echo base_url('admin/property/advance'); ?>">Advance</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url('admin/property/quick'); ?>">Quick</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
                         <a href="<?php echo base_url('admin/property/view'); ?>">Post New Listing</a>
                     </li>
                     <li>

@@ -23,4 +23,26 @@
                     }
                 });
             });
+            
+            jQuery(document).on('change', "#is_client_property", function(){
+                
+                var IsChecked = jQuery("#is_client_property").prop('checked');
+                if(IsChecked) {
+                    jQuery("#client_block").removeClass('display-none');
+                } else {
+                    jQuery("#client_block").addClass('display-none');
+                }
+            });
+            
+            jQuery(document).on('change', "input[name=is_new_client]", function(){
+                    
+                    console.log($(this).val());
+//                var IsChecked = jQuery("#is_client_property").prop('checked');
+//                if(IsChecked) {
+//                    jQuery("#client_block").removeClass('display-none');
+//                } else {
+//                    jQuery("#client_block").addClass('display-none');
+//                }
+            });
+            
         });
