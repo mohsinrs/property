@@ -173,12 +173,12 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- BEGIN PAGE LEVEL STYLES -->
         <script src="<?php echo base_url('/public/admin/pages/scripts/table-managed.js') ?>"></script>
         <script src="<?php echo base_url('/public/admin/pages/scripts/components-dropdowns.js') ?>"></script>
-        <script src="<?php echo base_url('/public/admin/pages/scripts/form-wizard.js ') ?>" ></script>
+        <script src="<?php echo base_url('/public/admin/pages/scripts/form-wizard.js') ?>" ></script>
 
         <!-- END PAGE LEVEL STYLES -->
 
         <!-- END PAGE LEVEL SCRIPTS -->
-        <script src="<?php echo base_url('/public/global/scripts/common.js ') ?>" ></script>
+        <script src="<?php echo base_url('/public/global/scripts/common.js') ?>" ></script>
         <script>
             jQuery(document).ready(function () {
                 Metronic.init(); // init metronic core componets

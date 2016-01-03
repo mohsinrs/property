@@ -147,19 +147,16 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('admin/property/view'); ?>">Post New Listing</a>
+                        <a href="<?php echo base_url('admin/property/active'); ?>">Active Listing</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('user/property/active'); ?>">Active Listing</a>
+                        <a href="<?php echo base_url('admin/property/pending'); ?>">Pending Listing</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('user/property/for_approval'); ?>">For Approval Listing</a>
+                        <a href="<?php echo base_url('admin/property/rejected'); ?>">Rejected Listing</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('user/property/not_approved'); ?>">Not Approval Listing</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url('user/property/expired'); ?>">Expired Listing</a>
+                        <a href="<?php echo base_url('admin/property/expired'); ?>">Expired Listing</a>
                     </li>
                 </ul>
             </li>

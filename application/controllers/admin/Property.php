@@ -25,7 +25,7 @@ class Property extends Base_Controller {
         $this->load->model('misc_model');
     }
     
-    public function approved() {
+    public function active() {
 
         $data = array();
 //        $data['result'] = $this->Offer_model->fetchAllRotation();
@@ -37,7 +37,9 @@ class Property extends Base_Controller {
     public function pending() {
 
         $data = array();
-//        $data['result'] = $this->Offer_model->fetchAllRotation();
+        $data['result'] = $this->property_model->fetchAll(getLoginUserId());
+        var_dump($data['result']);
+        exit();
         $data['title'] = "Approved Properties";
         
         $this->render('admin/property/pending', $data);
@@ -52,6 +54,15 @@ class Property extends Base_Controller {
         $this->render('admin/property/rejected', $data);
     }
     
+    public function expired() {
+
+        $data = array();
+//        $data['result'] = $this->Offer_model->fetchAllRotation();
+        $data['title'] = "Rejected Properties";
+        
+        $this->render('admin/property/expired', $data);
+    }
+    
     public function advance() {
 
         $data = array();
@@ -61,21 +72,45 @@ class Property extends Base_Controller {
         $data['area_units'] = $this->misc_model->getAreaUnits();
         $data['construction_status'] = $this->misc_model->getConstructionStatus();
         $data['title'] = "Post New Listing";
-//        var_dump($data['purpose_list']); exit;
+
         $this->render('admin/property/advance', $data);
     }
     
-    public function quick() {
-
+    public function quick($id = NULL) {
+        
+        if ($this->input->post('submit') && $id !== NULL) {
+            try {
+                $result = $this->property_model->update($id);
+                if ($result == true) {
+                    setNotification('success', 'Record updated successfully');
+                    redirect(base_url('admin/property/pending'));
+                }
+            } catch (Exception $e) {
+                setNotification('error', 'Error in updating record');
+            }
+        } else if ($this->input->post('submit') && $id == NULL) {
+            try {
+                $PropertyID = $this->property_model->insert();
+                $result = $this->property_model->insertContactPerson($PropertyID);
+                if($result) {
+                    setNotification('success', 'Record added successfully');
+                    redirect(base_url('admin/property/pending'));
+                }
+            } catch (Exception $e) {
+                setNotification('error', 'Error in adding record');
+            }
+        }
+        
         $data = array();
         $data['purpose_list'] = $this->misc_model->getPropertyPurpose();
         $data['type_list'] = $this->misc_model->getPropertyType();
         $data['cities'] = $this->misc_model->getCities(1); // country_id
         $data['area_units'] = $this->misc_model->getAreaUnits();
         $data['construction_status'] = $this->misc_model->getConstructionStatus();
+        $data['clients'] = $this->misc_model->getClients(getLoginUserId());
         $data['title'] = "Post New Listing";
-//        var_dump($data['purpose_list']); exit;
+        
         $this->render('admin/property/quick', $data);
     }
-
+    
 }

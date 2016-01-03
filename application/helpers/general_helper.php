@@ -25,6 +25,6 @@ function generatePassword($length = 5) {
 
 function getLoginUserId() {
     $CI = & get_instance();
-    $user = $CI->session->userdata('user');
-    return $user->resource_id;
+    $user = $CI->session->userdata('USER');
+    return $user->user_id;
 }

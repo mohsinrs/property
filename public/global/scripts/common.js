@@ -36,13 +36,15 @@
             
             jQuery(document).on('change', "input[name=is_new_client]", function(){
                     
-                    console.log($(this).val());
+//                console.log($(this).val());
 //                var IsChecked = jQuery("#is_client_property").prop('checked');
-//                if(IsChecked) {
-//                    jQuery("#client_block").removeClass('display-none');
-//                } else {
-//                    jQuery("#client_block").addClass('display-none');
-//                }
+                if(jQuery(this).val() == 'true') {
+                    jQuery("#search_client").addClass('display-none');
+                    jQuery("#add_new_client").removeClass('display-none');
+                } else {
+                    jQuery("#search_client").removeClass('display-none');
+                    jQuery("#add_new_client").addClass('display-none');
+                }
             });
             
         });

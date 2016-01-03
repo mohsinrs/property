@@ -22,7 +22,7 @@
     <div class="row">
         <div class="col-md-12 col-sm-12">
             <!-- BEGIN Form-->
-            <div class="portlet box blue" id="form_wizard_1">
+            <div class="portlet box blue" id="form_wizard_property">
                 <div class="portlet-title">
                     <div class="caption">
                         <i class="fa fa-gift"></i>Post New Listing
@@ -225,18 +225,95 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <div class="radio-list">
-                                                        <label><input type="radio" name="is_new_client" id="new_client" value="true" checked> Existing Client</label>
-                                                        <label><input type="radio" name="is_new_client" id="existing_client" value="false"> New Client </label>
+                                                        <label><input type="radio" name="is_new_client" id="existing_client" value="false" checked> Existing Client</label>
+                                                        <label><input type="radio" name="is_new_client" id="new_client" value="true"> New Client </label>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-6" id="search_client">
                                                 <div class="form-group">
                                                     <label>Search For my Clients</label>
                                                     <input type="text" class="form-control" name="client_id">
                                                 </div>
                                             </div>
                                             <!--/span-->
+                                        </div>
+                                        <div class="display-none" id="add_new_client">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Name</label>
+                                                        <input type="text" class="form-control" name="client_name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Phone</label>
+                                                        <input type="text" class="form-control" name="client_phone">
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Cell</label>
+                                                        <input type="text" class="form-control" name="client_cell">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Fax</label>
+                                                        <input type="text" class="form-control" name="client_fax">
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Email</label>
+                                                        <input type="text" class="form-control" name="client_email">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Address</label>
+                                                        <input type="text" class="form-control" name="client_address">
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Zip Code</label>
+                                                        <input type="text" class="form-control" name="client_zipcode">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Client Type</label>
+                                                        <input type="text" class="form-control" name="client_type">
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Client Rating</label>
+                                                        <input type="text" class="form-control" name="client_rating">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Opportunity</label>
+                                                        <input type="text" class="form-control" name="client_opportunity">
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12">

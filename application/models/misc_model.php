@@ -73,6 +73,16 @@ class Misc_model extends CI_Model {
         return $query->result();
     }
     
+    function getClients($user_id)
+    {
+        $this->db->select('client_id, name');
+        $this->db->from('client');
+        $this->db->where('user_id', $user_id);
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
+    
     function register()
     {
         $data = $this->input->post();
