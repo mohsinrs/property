@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 31, 2015 at 10:39 PM
+-- Generation Time: Jan 05, 2016 at 04:54 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -135,6 +135,29 @@ INSERT INTO `city` (`city_id`, `country_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `client`
+--
+
+CREATE TABLE IF NOT EXISTS `client` (
+  `client_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `name` varchar(60) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `cell` varchar(20) DEFAULT NULL,
+  `fax` varchar(20) DEFAULT NULL,
+  `email` varchar(60) DEFAULT NULL,
+  `address` varbinary(255) DEFAULT NULL,
+  `zipcode` varchar(10) DEFAULT NULL,
+  `type` int(11) DEFAULT NULL,
+  `rating` varchar(10) DEFAULT NULL,
+  `opportunity` int(11) NOT NULL,
+  `created_on` datetime DEFAULT NULL,
+  PRIMARY KEY (`client_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `construction_status`
 --
 
@@ -151,6 +174,31 @@ CREATE TABLE IF NOT EXISTS `construction_status` (
 INSERT INTO `construction_status` (`construction_status_id`, `name`) VALUES
 (1, 'Complete'),
 (2, 'Under Construction');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact_person`
+--
+
+CREATE TABLE IF NOT EXISTS `contact_person` (
+  `contact_person_id` int(11) NOT NULL AUTO_INCREMENT,
+  `property_id` int(11) DEFAULT NULL,
+  `name` int(60) DEFAULT NULL,
+  `cell_no` varchar(20) DEFAULT NULL,
+  `phone_no` varchar(20) DEFAULT NULL,
+  `email` varchar(60) DEFAULT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`contact_person_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `contact_person`
+--
+
+INSERT INTO `contact_person` (`contact_person_id`, `property_id`, `name`, `cell_no`, `phone_no`, `email`, `created_on`, `created_by`) VALUES
+(1, 1, 0, '37849247456', '342346456445', 'john.doe@property.com', '2016-01-02 19:50:28', 5);
 
 -- --------------------------------------------------------
 
@@ -269,15 +317,15 @@ CREATE TABLE IF NOT EXISTS `property` (
   `price` decimal(20,0) NOT NULL,
   `area` varchar(20) DEFAULT NULL,
   `area_unit_id` int(10) DEFAULT NULL,
-  `area_unit` varchar(50) DEFAULT NULL,
   `expires_after` datetime NOT NULL,
   `construction_status_id` int(10) NOT NULL,
-  `property_status` tinyint(1) DEFAULT NULL,
+  `property_status` tinyint(1) DEFAULT '0' COMMENT '0. Pending, 1. Approved, 2. Rejected',
+  `client_id` int(11) NOT NULL,
   `created_on` datetime NOT NULL,
   `created_by` int(10) NOT NULL,
   `modified_on` datetime NOT NULL,
   `modified_by` int(10) NOT NULL,
-  `is_deleted` tinyint(1) NOT NULL,
+  `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`property_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
@@ -285,8 +333,8 @@ CREATE TABLE IF NOT EXISTS `property` (
 -- Dumping data for table `property`
 --
 
-INSERT INTO `property` (`property_id`, `property_purpose_id`, `property_type_id`, `city_id`, `location_id`, `title`, `description`, `price`, `area`, `area_unit_id`, `area_unit`, `expires_after`, `construction_status_id`, `property_status`, `created_on`, `created_by`, `modified_on`, `modified_by`, `is_deleted`) VALUES
-(1, 1, 0, NULL, 0, NULL, NULL, '0', NULL, NULL, NULL, '0000-00-00 00:00:00', 0, NULL, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0);
+INSERT INTO `property` (`property_id`, `property_purpose_id`, `property_type_id`, `city_id`, `location_id`, `title`, `description`, `price`, `area`, `area_unit_id`, `expires_after`, `construction_status_id`, `property_status`, `client_id`, `created_on`, `created_by`, `modified_on`, `modified_by`, `is_deleted`) VALUES
+(1, 1, 16, 1, 1, 'Warehouse for sale in Multan', 'lorem ipsum', '14000000', '20', 2, '0000-00-00 00:00:00', 0, 0, 0, '2016-01-02 19:50:28', 5, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
