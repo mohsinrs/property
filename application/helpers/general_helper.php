@@ -28,3 +28,13 @@ function getLoginUserId() {
     $user = $CI->session->userdata('USER');
     return $user->user_id;
 }
+
+function dbToCalendarDate($date) {
+    $date = new DateTime($date);
+    return $date->format('d-m-Y');
+}
+
+function calendarToDBDate($date) {
+    $date = new DateTime($date);
+    return $date->format('Y-m-d H:i:s');
+}

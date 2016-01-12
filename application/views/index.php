@@ -117,7 +117,7 @@
                                     </div>
                                     <h3><a href="shop-item.html">Home For Sale On Ideal Location</a></h3>
                                     <div class="pi-price">Rs 63, 50, 000</div>
-                                    <a href="javascript:;" class="btn btn-default add2cart">View Detail</a>
+                                    <a href="<?php echo base_url('property/detail/1') ?>" class="btn btn-default add2cart">View Detail</a>
                                 </div>
                             </div>
                             <div>
@@ -128,7 +128,7 @@
                                     </div>
                                     <h3><a href="shop-item.html">Home For Sale On Ideal Location</a></h3>
                                     <div class="pi-price">Rs 63, 50, 000</div>
-                                    <a href="javascript:;" class="btn btn-default add2cart">View Detail</a>
+                                    <a href="<?php echo base_url('property/detail/1') ?>" class="btn btn-default add2cart">View Detail</a>
                                 </div>
                             </div>
                             <div>
@@ -139,7 +139,7 @@
                                     </div>
                                     <h3><a href="shop-item.html">Home For Sale On Ideal Location</a></h3>
                                     <div class="pi-price">Rs 63, 50, 000</div>
-                                    <a href="javascript:;" class="btn btn-default add2cart">View Detail</a>
+                                    <a href="<?php echo base_url('property/detail/1') ?>" class="btn btn-default add2cart">View Detail</a>
                                 </div>
                             </div>
                             <div>
@@ -150,7 +150,7 @@
                                     </div>
                                     <h3><a href="shop-item.html">Home For Sale On Ideal Location</a></h3>
                                     <div class="pi-price">Rs 63, 50, 000</div>
-                                    <a href="javascript:;" class="btn btn-default add2cart"> View Detail</a>
+                                    <a href="<?php echo base_url('property/detail/1') ?>" class="btn btn-default add2cart"> View Detail</a>
                                 </div>
                             </div>
                         </div>

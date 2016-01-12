@@ -8,7 +8,7 @@
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <a href="#">Add Advertisement</a>
+                <a href="<?php echo base_url('admin/advertisement/view') ?>"><?php echo $title; ?></a>
             </li>
         </ul>
         <div class="page-toolbar">
@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-    <h3 class="page-title">New Advertisement</h3>
+    <h3 class="page-title"><?php echo $title; ?></h3>
     <?php renderNotification() ?>
     <!-- END PAGE HEADER-->
     <div class="row">
@@ -26,12 +26,11 @@
             <div class="portlet box blue">
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-gift"></i>Add Advertisement
+                        <i class="fa fa-gift"></i><?php echo $title; ?>
                     </div>
                 </div>
                 <div class="portlet-body form">
                     <!-- BEGIN FORM-->
-                    <?php echo form_open_multipart('advertisement/do_upload'); ?>
                     <form class="horizontal-form" action="" method="POST" enctype="multipart/form-data">
                         <div class="form-body">
                             <div class="row">
@@ -39,7 +38,7 @@
                                     <div class="form-group">
                                         <div class="fileinput fileinput-new" data-provides="fileinput">
                                             <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""/>
+                                                <img src="<?php echo $image_path; ?>" alt=""/>
                                             </div>
                                             <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
                                             <div>
@@ -59,16 +58,15 @@
                                         <label class="control-label">User Name</label>
                                         <select class="select2_category form-control" name="user_id" id="user_id">
                                             <option value="">Select</option>
-                                            <option value="1">User 1</option>
-                                            <option value="2">User 2</option>
-                                            <option value="3">User 5</option>
-                                            <option value="4">User 4</option>
+                                            <?php foreach ($users as $key => $user): ?>
+                                                <option value="<?php echo $user->user_id ?>" <?php if(isset($result)) echo ($user->user_id == $result->user_id) ? 'selected="selected"' : '' ?>><?php echo $user->name ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>From Date</label>
                                         <div class="input-group date date-picker" data-date-format="dd-mm-yyyy">
-                                            <input type="text" class="form-control" readonly name="from_date" id="from_date" value="<?php if (isset($result)) echo $result->from_date; ?>">
+                                            <input type="text" class="form-control" readonly name="from_date" id="from_date" value="<?php if (isset($result)) echo dbToCalendarDate($result->from_date); ?>">
                                             <span class="input-group-btn">
                                                 <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
                                             </span>
@@ -77,7 +75,7 @@
                                     <div class="form-group">
                                         <label>From Date</label>
                                         <div class="input-group date date-picker" data-date-format="dd-mm-yyyy">
-                                            <input type="text" class="form-control" readonly name="to_date" id="to_date" value="<?php if (isset($result)) echo $result->to_date; ?>">
+                                            <input type="text" class="form-control" readonly name="to_date" id="to_date" value="<?php if (isset($result)) echo dbToCalendarDate($result->to_date); ?>">
                                             <span class="input-group-btn">
                                                 <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
                                             </span>
