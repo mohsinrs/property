@@ -23,7 +23,7 @@ class User_model extends CI_Model {
     function fetch($id)
     {
         $query = $this->db->get_where('user', array('user_id' => $id), NULL, NULL);
-        return $query->result();
+        return $query->row();
     }
 
     function insert()
@@ -57,10 +57,16 @@ class User_model extends CI_Model {
             'phone_no' => $data['phone_no'],
             'city_id' => $data['city_id'],
             'location_id' => $data['location_id'],
-            'address' => $data['address'],
+            'listing_quota_id' => $data['listing_quota_id'],
             'zipcode' => $data['zipcode'],
-            'about' => $data['about']
+            'address' => $data['address'],
+            'about' => $data['about'],
+            'modified_on' => date("Y-m-d H:i:s"),
+            'modified_by' => getLoginUserId()
         );
+        if(isset($_FILES) && isset($_FILES['profile_pic'])) {
+            $array['profile_pic'] = $_FILES['profile_pic']['name'];
+        }
 
         $this->db->where('user_id', $id);
         $this->db->update('user', $array);

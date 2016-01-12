@@ -8,7 +8,7 @@
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <a href="<?php echo base_url('admin/users/rejected') ?>">Rejected User</a>
+                <a href="<?php echo base_url('admin/users/profile/'.$result->user_id) ?>"><?php echo $title ?></a>
             </li>
         </ul>
         <div class="page-toolbar">
@@ -94,8 +94,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Address</label>
-                                        <textarea name="address" rows="3" class="form-control"><?php echo $result->address ?></textarea>
+                                        <label for="listing_quota_id" class="control-label"> Listing Quota </label>
+                                        <select class="form-control" id="listing_quota_id" name="listing_quota_id">
+                                            <option> -- Select -- </option>
+                                            <?php foreach ($listing_quota as $quota): ?>
+                                                <option value="<?php echo $quota->listing_quota_id ?>" <?php echo ($quota->listing_quota_id == $result->listing_quota_id) ? 'selected="selected"' : '' ?>><?php echo $quota->name ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
                                     </div>
                                 </div>
                                 <!--/span-->
@@ -110,19 +115,26 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
+                                        <label>Address</label>
+                                        <textarea name="address" rows="3" class="form-control"><?php echo $result->address ?></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
                                         <label>About Yourself</label>
                                         <textarea name="about" rows="3" class="form-control"><?php echo $result->about ?></textarea>
                                     </div>
                                 </div>
                                 <!--/span-->
+                            </div>
+                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="fileinput fileinput-new" data-provides="fileinput">
                                             <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""/>
+                                                <img src="<?php echo $image_path ?>" alt=""/>
                                             </div>
-                                            <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
-                                            </div>
+                                            <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
                                             <div>
                                                 <span class="btn default btn-file">
                                                     <span class="fileinput-new">Select image </span>

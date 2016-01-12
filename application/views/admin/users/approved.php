@@ -8,7 +8,7 @@
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <a href="<?php echo base_url('admin/users/approved') ?>">Approved User</a>
+                <a href="<?php echo base_url('admin/users/approved') ?>"><?php echo $title ?></a>
             </li>
         </ul>
         <div class="page-toolbar">
@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-    <h3 class="page-title">Users Account</h3>
+    <h3 class="page-title"><?php echo $title ?></h3>
     <!-- END PAGE HEADER-->
     <div class="row">
         <div class="col-md-12">
@@ -25,7 +25,7 @@
             <div class="portlet box grey-cascade">
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-globe"></i>Approved Users
+                        <i class="fa fa-globe"></i><?php echo $title ?>
                     </div>
                 </div>
                 <div class="portlet-body">
@@ -49,7 +49,7 @@
                                 <td><?php echo $user->email ?></td>
                                 <td><?php echo $user->phone_no ?></td>
                                 <td>Broker</td>
-                                <td>07/12/2015</td>
+                                <td><?php echo date("D, d M Y", strtotime($user->created_on)); ?></td>
                                 <td>
                                     <a href="#" class="btn btn-default btn-primary">View</a>
                                     <a href="<?php echo base_url('admin/users/profile/'.$user->user_id) ?>" class="btn btn-default">Edit</a>

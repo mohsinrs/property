@@ -87,6 +87,7 @@ class Users extends Base_Controller {
         if ($this->input->post('submit')) {
             $result = $this->user_model->update($user_id);
             if ($result) {
+                $this->do_upload($user_id);
                 setNotification('success', 'User updated successfully');
                 redirect(base_url('admin/profile'));
             } else {
@@ -97,16 +98,41 @@ class Users extends Base_Controller {
         $this->load->model('misc_model');
         $this->load->model('property_model');
         $data = array();
-        $result = $this->user_model->fetch($user_id);
-        if(isset($result)) {
-            $data['result'] = $result[0];
-        }
+        $data['image_path'] = 'http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image';
+        $data['result'] = $this->user_model->fetch($user_id);
+        $data['image_path'] = "http://" . $_SERVER['SERVER_NAME'].'/property/public/uploads/user/'.$user_id.'/'.$data['result']->profile_pic;
+        
         $data['properties'] = $this->property_model->fetchAll($user_id);
         $data['cities'] = $this->misc_model->getCities(1); // country_id
         $data['locations'] = $this->misc_model->getLocations($data['result']->city_id);
+        $data['listing_quota'] = $this->misc_model->getListingQuota();
         $data['title'] = "User Profile";
 
         $this->render('admin/users/profile', $data);
+    }
+
+    private function do_upload($id) {
+
+        $config['upload_path'] = $_SERVER['DOCUMENT_ROOT'].'/property/public/uploads/user/'.$id;
+        $config['allowed_types'] = 'gif|jpg|jpeg|png';
+        $config['max_size'] = 100;
+        $config['max_width'] = 1024;
+        $config['max_height'] = 768;
+        $config['overwrite'] = TRUE;
+
+        if (!file_exists($config['upload_path']) && !is_dir($config['upload_path'])) {
+            mkdir($config['upload_path'], 0777, TRUE);
+        } 
+
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+        
+        if (!$this->upload->do_upload('profile_pic')) {
+            $error = $this->upload->display_errors();
+            setNotification('danger', 'Error. File not uploaded.');
+            return false;
+        }
+        return true;
     }
 
 }

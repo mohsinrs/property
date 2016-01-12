@@ -27,6 +27,15 @@ class Misc_model extends CI_Model {
         return $query->result();
     }
     
+    function getListingQuota()
+    {
+        $this->db->select('listing_quota_id, name, quota');
+        $this->db->from('listing_quota');
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
+
     function getLocations($id = 1) // By default fetch Location of Lahore
     {
         $this->db->select('location_id, city_id, name');

@@ -8,7 +8,7 @@
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <a href="<?php echo base_url('admin/users/pending') ?>">Pending User</a>
+                <a href="<?php echo base_url('admin/users/pending') ?>"><?php echo $title ?></a>
             </li>
         </ul>
         <div class="page-toolbar">
@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-    <h3 class="page-title">Users Account</h3>
+    <h3 class="page-title"><?php echo $title ?></h3>
     <!-- END PAGE HEADER-->
     <div class="row">
         <div class="col-md-12">
@@ -49,7 +49,7 @@
                                 <td><?php echo $user->email ?></td>
                                 <td><?php echo $user->phone_no ?></td>
                                 <td>Broker</td>
-                                <td>07/12/2015</td>
+                                <td><?php echo date("D, d M Y", strtotime($user->created_on)); ?></td>
                                 <td>
                                     <a href="#" class="btn btn-default btn-primary">View</a>
                                     <a href="<?php echo base_url('admin/users/profile/'.$user->user_id) ?>" class="btn btn-default">Edit</a>

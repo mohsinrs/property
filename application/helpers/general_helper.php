@@ -38,3 +38,7 @@ function calendarToDBDate($date) {
     $date = new DateTime($date);
     return $date->format('Y-m-d H:i:s');
 }
+
+function readableDate($date) {
+    return date("D, d M Y", strtotime($date));
+}
