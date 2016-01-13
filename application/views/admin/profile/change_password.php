@@ -8,7 +8,7 @@
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <a href="<?php echo base_url('admin/profile/change_password') ?>">Password</a>
+                <a href="<?php echo base_url('admin/profile/change_password') ?>"><?php echo $title ?></a>
             </li>
         </ul>
         <div class="page-toolbar">
@@ -18,6 +18,7 @@
         </div>
     </div>
     <h3 class="page-title"><?php echo $title ?></h3>
+    <?php renderNotification() ?>
     <!-- END PAGE HEADER-->
     <div class="row">
         <div class="col-md-12 col-sm-12">
@@ -25,7 +26,7 @@
             <div class="portlet box grey-cascade">
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-gift"></i>Change Password
+                        <i class="fa fa-gift"></i><?php echo $title ?>
                     </div>
                 </div>
                 <div class="portlet-body form">
@@ -34,7 +35,7 @@
                         <div class="form-body">
 
                             <div class="row">
-                                <div class="col-md-6 ">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Current Password</label>
                                         <input type="password" name="current_password" class="form-control">
@@ -43,7 +44,7 @@
                                 <!--/span-->
                             </div>
                             <div class="row">
-                                <div class="col-md-6 ">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>New Password</label>
                                         <input type="password" name="password" class="form-control">
@@ -52,7 +53,7 @@
                                 <!--/span-->
                             </div>
                             <div class="row">
-                                <div class="col-md-6 ">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Confirm Password</label>
                                         <input type="password" name="confirm_password" class="form-control">
@@ -74,5 +75,4 @@
         <!-- END Form-->
     </div>
 
-</div>
 </div>

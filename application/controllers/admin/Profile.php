@@ -22,6 +22,7 @@ class Profile extends Base_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('user_model');
+        $this->load->model('misc_model');
     }
     
     public function index() {
@@ -37,13 +38,19 @@ class Profile extends Base_Controller {
 
         if ($this->input->post('submit')) {
             try {
-                $result = $this->misc_model->change_password($id);
-                if ($result == true) {
-                    setNotification('success', 'Record updated successfully');
-                    redirect(base_url('admin/advertisement'));
+                $Verify_Result = $this->misc_model->verify_password(getLoginUserId());
+                if(is_object($Verify_Result)) {
+                    $result = $this->misc_model->update_password(getLoginUserId());
+                    if ($result) {
+                        setNotification('success', 'Record updated successfully');
+                        redirect(base_url('admin/profile/change_password'));
+                    }                    
+                } else {
+                    setNotification('danger', 'New & Confirm password does not match.');
+                    redirect(base_url('admin/profile/change_password'));
                 }
             } catch (Exception $e) {
-                setNotification('error', 'Error in updating record');
+                setNotification('danger', 'Error in updating record');
             }
         }        
         $data = array();

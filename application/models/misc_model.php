@@ -163,16 +163,27 @@ class Misc_model extends CI_Model {
         //return ($this->db->affected_rows() != 1) ? false : true;
         return true;
     }
-    
-    function change_password($id, $pass)
+
+    function verify_password($id)
     {
+        $data = $this->input->post();
+        if($data['password'] == $data['confirm_password']) {
+            $query = $this->db->get_where('user', array('user_id' => $id, 'password' => md5($data['current_password'])), NULL, NULL);
+            return $query->row();            
+        } else {
+            return false;
+        }
+    }
+    
+    function update_password($id)
+    {
+        $data = $this->input->post();
         $array = array(
-            'ConfirmationSent' => 1 ,
-            'Password' => md5 ($pass)
+            'Password' => md5 ($data['password'])
         );
 
-        $this->db->where('property_id', $id);
-        $this->db->update('property', $array);
+        $this->db->where('user_id', $id);
+        $this->db->update('user', $array);
 
         return true;
     }
