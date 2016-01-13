@@ -118,6 +118,29 @@ class Misc_model extends CI_Model {
         return ($this->db->affected_rows() != 1) ? false : true;
     }
 
+    function update_profle($id)
+    {
+        $data = $this->input->post();
+        $array = array(
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'cell_no' => $data['cell_no'],
+            'phone_no' => $data['phone_no'],
+            'zipcode' => $data['zipcode'],
+            'address' => $data['address'],
+            'modified_on' => date("Y-m-d H:i:s"),
+            'modified_by' => getLoginUserId()
+        );
+        if(isset($_FILES) && isset($_FILES['profile_pic'])) {
+            $array['profile_pic'] = $_FILES['profile_pic']['name'];
+        }
+
+        $this->db->where('user_id', $id);
+        $this->db->update('user', $array);
+        //return ($this->db->affected_rows() != 1) ? false : true;
+        return true;
+    }
+
     function getOne($id)
     {
         $query = $this->db->get_where('property', array('property_id' => $id), NULL, NULL);
