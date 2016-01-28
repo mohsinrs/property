@@ -57,7 +57,15 @@
                                         <select class="form-control" name="property_type_id">
                                             <option>-- select --</option>
                                             <?php foreach($type_list as $type): ?>
-                                            <option value="<?php echo $type->property_type_id ?>"><?php echo $type->name ?></option>
+                                                <?php if($type->parent_property_type_id == NULL) { ?>
+                                                <optgroup label="<?php echo $type->name; ?>">
+                                                    <?php foreach($type_list as $sub_type): ?>
+                                                        <?php if($sub_type->parent_property_type_id == $type->property_type_id) { ?>
+                                                        <option value="<?php echo $sub_type->property_type_id ?>"><?php echo $sub_type->name ?></option>
+                                                        <?php } ?>
+                                                    <?php endforeach; ?>
+                                                </optgroup>
+                                                <?php } ?>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>

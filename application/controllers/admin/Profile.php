@@ -28,11 +28,11 @@ class Profile extends Base_Controller {
     
     public function index() {
 
-        $user_id = getLoginUserId();
+        $UserID = getLoginUserId();
         if ($this->input->post('submit')) {
-            $result = $this->misc_model->update_profle($user_id);
+            $result = $this->misc_model->update_profile($UserID);
             if ($result) {
-                $this->do_upload($user_id);
+                $this->do_upload($UserID);
                 setNotification('success', 'Record updated successfully');
                 redirect(base_url('admin/profile'));
             } else {
@@ -42,14 +42,10 @@ class Profile extends Base_Controller {
         }
         
         $data = array();
-        $data['image_path'] = 'http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image';
-        $data['result'] = $this->user_model->fetch($user_id);
-        $data['image_path'] = "http://" . $_SERVER['SERVER_NAME'].'/property/public/uploads/user/'.$user_id.'/'.$data['result']->profile_pic;
-        
-        //$data['properties'] = $this->property_model->fetchAll($user_id);
-        //$data['cities'] = $this->misc_model->getCities(1); // country_id
-        //$data['locations'] = $this->misc_model->getLocations($data['result']->city_id);
-        //$data['listing_quota'] = $this->misc_model->getListingQuota();
+//        $data['image_path'] = 'http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image';
+        $data['result'] = $this->user_model->fetch($UserID);
+        $data['image_path'] = "http://" . $_SERVER['SERVER_NAME'].'/property/public/uploads/user/'.$UserID.'/'.$data['result']->profile_pic;
+
         $data['title'] = "My Profile";
         
         $this->render('admin/profile/index', $data);

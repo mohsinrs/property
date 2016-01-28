@@ -118,7 +118,7 @@ class Misc_model extends CI_Model {
         return ($this->db->affected_rows() != 1) ? false : true;
     }
 
-    function update_profle($id)
+    function update_profile($id)
     {
         $data = $this->input->post();
         $array = array(

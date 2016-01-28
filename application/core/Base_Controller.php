@@ -9,6 +9,7 @@ class Base_Controller extends CI_Controller {
     protected $user;
 
     public function __construct() {
+        
         parent::__construct();
 
         if ($this->router->fetch_class() !== 'login') {

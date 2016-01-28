@@ -28,7 +28,7 @@ class Property extends Base_Controller {
     public function active() {
 
         $data = array();
-//        $data['result'] = $this->Offer_model->fetchAllRotation();
+        $data['result'] = $this->property_model->fetchAll(getLoginUserId(), 1);
         $data['title'] = "Approved Properties";
         
         $this->render('admin/property/approved', $data);
@@ -37,18 +37,16 @@ class Property extends Base_Controller {
     public function pending() {
 
         $data = array();
-        $data['result'] = $this->property_model->fetchAll(getLoginUserId());
-        var_dump($data['result']);
-        exit();
-        $data['title'] = "Approved Properties";
-        
+        $data['result'] = $this->property_model->fetchAll(getLoginUserId(), 0);
+        $data['title'] = "Pending Properties";
+
         $this->render('admin/property/pending', $data);
     }
     
     public function rejected() {
 
         $data = array();
-//        $data['result'] = $this->Offer_model->fetchAllRotation();
+        $data['result'] = $this->property_model->fetchAll(getLoginUserId(), 2);
         $data['title'] = "Rejected Properties";
         
         $this->render('admin/property/rejected', $data);
@@ -57,8 +55,8 @@ class Property extends Base_Controller {
     public function expired() {
 
         $data = array();
-//        $data['result'] = $this->Offer_model->fetchAllRotation();
-        $data['title'] = "Rejected Properties";
+        $data['result'] = $this->property_model->fetchAll(getLoginUserId(), NULL, TRUE);
+        $data['title'] = "Expired Properties";
         
         $this->render('admin/property/expired', $data);
     }
@@ -103,7 +101,19 @@ class Property extends Base_Controller {
         
         $data = array();
         $data['purpose_list'] = $this->misc_model->getPropertyPurpose();
-        $data['type_list'] = $this->misc_model->getPropertyType();
+        $type_list = $this->misc_model->getPropertyType();
+        foreach ($type_list as $key => $value) {
+            # code...
+            if($value->parent_property_type_id == NULL) {
+                $data['type_list'][] = $value;
+                foreach ($type_list as $value2) {
+                    if($value2->parent_property_type_id == $value->property_type_id) {
+                        $data['type_list'][] = $value2;
+                    }
+                }
+            }
+        }
+
         $data['cities'] = $this->misc_model->getCities(1); // country_id
         $data['area_units'] = $this->misc_model->getAreaUnits();
         $data['construction_status'] = $this->misc_model->getConstructionStatus();

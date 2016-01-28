@@ -8,7 +8,7 @@
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <a href="<?php echo base_url('admin/property/pending') ?>"><?php echo $title ?></a>
+                <a href="<?php echo base_url('admin/property/expired') ?>"><?php echo $title ?></a>
             </li>
         </ul>
         <div class="page-toolbar">
@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="portlet-body">
-                    <table class="table table-striped table-bordered table-hover" id="sample_2">
+                    <table class="table table-striped table-bordered table-hover" id="sample_4">
                         <thead>
                             <tr>
                                 <th>ID</th>
