@@ -19,10 +19,17 @@ class Profile extends Base_Controller {
      * map to /index.php/welcome/<method_name>
      * @see http://codeigniter.com/user_guide/general/urls.html
      */
+    function __construct() {
+        parent::__construct();
+        $this->load->model('user_model');
+    }
+    
     public function index() {
 
         $data = array();
-//        $data['result'] = $this->Offer_model->fetchAllRotation();
+        $UserRoleList = $this->user_model->getUserRoles();
+        $data['role_list'] = sortedUserRoles($UserRoleList);
+//        var_dump($data['role_list']); exit;
         $data['title'] = "My Profile";
 
         $this->render('user/profile/index', $data);

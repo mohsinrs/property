@@ -42,3 +42,33 @@ function calendarToDBDate($date) {
 function readableDate($date) {
     return date("D, d M Y", strtotime($date));
 }
+
+function sortedPropertyTypes($PropertyTypeList) {
+    $data = array();
+    foreach ($PropertyTypeList as $value) {
+        if($value->parent_property_type_id == NULL) {
+            $data[] = $value;
+            foreach ($PropertyTypeList as $value2) {
+                if($value2->parent_property_type_id == $value->property_type_id) {
+                    $data[] = $value2;
+                }
+            }
+        }
+    }
+    return $data;
+}
+
+function sortedUserRoles($UserRoleList) {
+    $data = array();
+    foreach ($UserRoleList as $value) {
+        if($value->parent_role_id == NULL) {
+            $data[] = $value;
+            foreach ($UserRoleList as $value2) {
+                if($value2->parent_role_id == $value->role_id) {
+                    $data[] = $value2;
+                }
+            }
+        }
+    }
+    return $data;
+}

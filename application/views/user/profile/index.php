@@ -214,15 +214,15 @@
                                         <form action="#">
                                             <div class="form-group">
                                                 <label class="control-label">Current Password</label>
-                                                <input type="password" class="form-control"/>
+                                                <input type="password" class="form-control" />
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label">New Password</label>
-                                                <input type="password" class="form-control"/>
+                                                <input type="password" class="form-control" />
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label">Re-type New Password</label>
-                                                <input type="password" class="form-control"/>
+                                                <input type="password" class="form-control" />
                                             </div>
                                             <div class="margin-top-10">
                                                 <a href="javascript:;" class="btn green-haze">
@@ -235,81 +235,35 @@
                                     <!-- END CHANGE PASSWORD TAB -->
                                     <!-- PRIVACY SETTINGS TAB -->
                                     <div class="tab-pane" id="tab_1_4">
-                                        <form class="horizontal-form" action="#">
+                                        <form class="horizontal-form" action="" method="post">
                                             <div class="form-body">
-
-
-
-
                                                 <!--/span-->
                                                 <div class="row">
-                                                    <div class="col-md-12">
-                                                        <h3 class="form-section">Individual</h3>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <div class="input-group">
-                                                                    <div class="icheck-list">
-                                                                        <label>
-                                                                            <input type="checkbox" class="icheck"> Owner/ Investor </label>
+                                                    <?php foreach($role_list as $type): ?>
+                                                        <?php if($type->parent_role_id == NULL) { ?>
+                                                            <div class="col-md-12">
+                                                                <h3 class="form-section"><?php echo $type->name; ?></h3>
+                                                                <?php foreach($role_list as $sub_type): ?>
+                                                                    <?php if($sub_type->parent_role_id == $type->role_id) { ?>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <div class="input-group">
+                                                                                <div class="icheck-list">
+                                                                                    <label><input type="checkbox" name="user_roles[]" value="<?php echo $sub_type->role_id; ?>" class="icheck"> <?php echo $sub_type->name ?> </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
+                                                                    <?php } ?>
+                                                                <?php endforeach; ?>
                                                             </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <div class="input-group">
-                                                                    <div class="icheck-list">
-                                                                        <label>
-                                                                            <input type="checkbox" class="icheck"> Tenant </label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <h3 class="form-section">Company</h3>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <div class="input-group">
-                                                                    <div class="icheck-list">
-                                                                        <label>
-                                                                            <input type="checkbox" class="icheck"> Agent/Broker </label>
-                                                                        <label>
-                                                                            <input type="checkbox" checked class="icheck"> Appraiser </label>
-                                                                        <label>
-                                                                            <input type="checkbox" class="icheck"> Builder </label>
-                                                                        <label>
-                                                                            <input type="checkbox" class="icheck"> Mortgage Broker </label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <div class="input-group">
-                                                                    <div class="icheck-list">
-                                                                        <label>
-                                                                            <input type="checkbox" class="icheck"> Developer </label>
-                                                                        <label>
-                                                                            <input type="checkbox" checked class="icheck"> Researcher </label>
-                                                                        <label>
-                                                                            <input type="checkbox" class="icheck"> Property Manager </label>
-                                                                        <label>
-                                                                            <input type="checkbox" class="icheck"> Corporate Investor </label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                        <?php } ?>
+                                                    <?php endforeach; ?>
                                                 </div>
                                             </div>
                                             <div class="form-actions right">
-                                                <button class="btn green-haze" type="submit"><i class="fa fa-check"></i>Submit</button>
+                                                <button class="btn green-haze" type="submit"><i class="fa fa-check"></i> Submit</button>
                                             </div>
-
-
                                         </form>
                                     </div>
                                     <!-- END PRIVACY SETTINGS TAB -->

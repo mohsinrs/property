@@ -98,4 +98,13 @@ class User_model extends CI_Model {
         return ($this->db->affected_rows() != 1) ? false : true;
     }
     
+    function getUserRoles()
+    {
+        $this->db->select('role_id, parent_role_id, name');
+        $this->db->from('role');
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
+    
 }

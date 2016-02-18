@@ -11,13 +11,9 @@
                 <a href="<?php echo base_url('admin/property/quick') ?>">Add Property</a>
             </li>
         </ul>
-        <div class="page-toolbar">
-            <div id="dashboard-report-range" class="pull-right tooltips btn btn-sm btn-default" data-container="body" data-placement="bottom" data-original-title="Change dashboard date range">
-                <i class="icon-calendar"></i>&nbsp; <span class="thin uppercase visible-lg-inline-block"></span>&nbsp; <i class="fa fa-angle-down"></i>
-            </div>
-        </div>
     </div>
     <h3 class="page-title">Property Management</h3>
+    <?php renderNotification() ?>
     <!-- END PAGE HEADER-->
     <div class="row">
         <div class="col-md-12 col-sm-12">
@@ -166,7 +162,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <div class="checkbox-list">
-                                            <input type="checkbox" name="is_client_property" id="is_client_property"> If you are entering this property for a client then please enter client data.
+                                            <input type="checkbox" name="is_client_property" id="is_client_property" value="1"> If you are entering this property for a client then please enter client data.
                                         </div>
                                     </div>
                                 </div>
@@ -184,7 +180,13 @@
                                 <div class="col-md-6" id="search_client">
                                     <div class="form-group">
                                         <label>Search For my Clients</label>
-                                        <input type="text" class="form-control" name="client_id">
+                                        <!--<input type="text" class="form-control" name="client_id">-->
+                                        <select class="form-control" name="client_id">
+                                            <option> -- Select -- </option>
+                                            <?php foreach ($clients as $client): ?>
+                                            <option value="<?php echo $client->client_id; ?>"><?php echo $unit->name; ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
                                     </div>
                                 </div>
                                 <!--/span-->
@@ -259,8 +261,10 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Opportunity</label>
-                                            <input type="text" class="form-control" name="client_opportunity">
+                                            <label></label>
+                                            <input type="checkbox" class="form-control" name="future_opportunity" value="1"> Future Opportunity
+                                            <input type="checkbox" class="form-control" name="int_opportunity" value="1"> International Opportunity
+                                            <input type="checkbox" class="form-control" name="local_opportunity" value="1"> Local Opportunity
                                         </div>
                                     </div>
                                     <!--/span-->
@@ -305,7 +309,7 @@
 
                         </div>
                         <div class="form-actions right">
-                            <button class="btn blue" type="submit" name="submit" value="save"> Submit Property</button>
+                            <button class="btn blue" type="submit" name="submit" value="save">Submit Property</button>
                         </div>
                     </form>
                     <!-- END FORM-->

@@ -8,7 +8,7 @@
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <a href="<?php echo base_url('admin/property/rejected') ?>"><?php echo $title ?></a>
+                <a href="<?php echo base_url('admin/property/active') ?>"><?php echo $title ?></a>
             </li>
         </ul>
     </div>
@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="portlet-body">
-                    <table class="table table-striped table-bordered table-hover" id="RejectedProperties">
+                    <table class="table table-striped table-bordered table-hover" id="ActiveProperties">
                         <thead>
                             <tr>
                                 <th>ID</th>

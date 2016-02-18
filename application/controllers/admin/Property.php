@@ -25,33 +25,78 @@ class Property extends Base_Controller {
         $this->load->model('misc_model');
     }
     
-    public function active() {
-
-        $data = array();
-        $data['result'] = $this->property_model->fetchAll(getLoginUserId(), 1);
-        $data['title'] = "Approved Properties";
-        
-        $this->render('admin/property/approved', $data);
+    // Funtion to approve a property
+    // ADMIN ONLY
+    public function approve($PropertyID) {
+        try {
+            $result = $this->property_model->approve($PropertyID);
+            if ($result) {
+                setNotification('success', 'Record updated successfully');
+                redirect(base_url('admin/dashboard'));
+            }
+        } catch (Exception $e) {
+            setNotification('error', 'Error in updating record');
+            redirect(base_url('admin/dashboard'));
+        }
     }
     
-    public function pending() {
+    // Function to reject a property
+    // ADMIN ONLY
+    public function reject($PropertyID) {
+        try {
+            $result = $this->property_model->reject($PropertyID);
+            if ($result) {
+                setNotification('success', 'Record updated successfully');
+                redirect(base_url('admin/dashboard'));
+            }
+        } catch (Exception $e) {
+            setNotification('error', 'Error in updating record');
+            redirect(base_url('admin/dashboard'));
+        }
+    }
+    
+    // Get approved properties from all users
+    // ADMIN ONLY
+    public function approved() {
 
         $data = array();
         $data['result'] = $this->property_model->fetchAll(getLoginUserId(), 0);
+        $data['title'] = "Approved Properties";
+
+        $this->render('admin/property/pending', $data);
+    }
+    
+    // Get all active properties of User
+    public function active() {
+
+        $data = array();
+        $data['result'] = $this->property_model->fetchAll(getLoginUserId(), 1); // Approved
+        $data['title'] = "Active Properties";
+        
+        $this->render('admin/property/active', $data);
+    }
+    
+    // Get all pending properties of User
+    public function pending() {
+
+        $data = array();
+        $data['result'] = $this->property_model->fetchAll(getLoginUserId(), 0); // Pending
         $data['title'] = "Pending Properties";
 
         $this->render('admin/property/pending', $data);
     }
     
+    // Get all rejected properties of User
     public function rejected() {
 
         $data = array();
-        $data['result'] = $this->property_model->fetchAll(getLoginUserId(), 2);
+        $data['result'] = $this->property_model->fetchAll(getLoginUserId(), 2); // Rejected
         $data['title'] = "Rejected Properties";
         
         $this->render('admin/property/rejected', $data);
     }
     
+    // Get all expired properties of User
     public function expired() {
 
         $data = array();
@@ -61,7 +106,7 @@ class Property extends Base_Controller {
         $this->render('admin/property/expired', $data);
     }
     
-    public function advance() {
+    public function advance($id = NULL) {
 
         $data = array();
         $data['purpose_list'] = $this->misc_model->getPropertyPurpose();
@@ -79,7 +124,7 @@ class Property extends Base_Controller {
         if ($this->input->post('submit') && $id !== NULL) {
             try {
                 $result = $this->property_model->update($id);
-                if ($result == true) {
+                if ($result) {
                     setNotification('success', 'Record updated successfully');
                     redirect(base_url('admin/property/pending'));
                 }
@@ -89,8 +134,12 @@ class Property extends Base_Controller {
         } else if ($this->input->post('submit') && $id == NULL) {
             try {
                 $PropertyID = $this->property_model->insert();
-                $result = $this->property_model->insertContactPerson($PropertyID);
-                if($result) {
+                $PostData = $this->input->post();
+                if(array_key_exists('is_client_property', $PostData) && $PostData['is_new_client'] == 'true') {
+                    $this->property_model->insertClient();
+                }
+                $this->property_model->insertContactPerson($PropertyID);
+                if($PropertyID) {
                     setNotification('success', 'Record added successfully');
                     redirect(base_url('admin/property/pending'));
                 }
@@ -102,17 +151,17 @@ class Property extends Base_Controller {
         $data = array();
         $data['purpose_list'] = $this->misc_model->getPropertyPurpose();
         $type_list = $this->misc_model->getPropertyType();
-        foreach ($type_list as $key => $value) {
-            # code...
-            if($value->parent_property_type_id == NULL) {
-                $data['type_list'][] = $value;
-                foreach ($type_list as $value2) {
-                    if($value2->parent_property_type_id == $value->property_type_id) {
-                        $data['type_list'][] = $value2;
-                    }
-                }
-            }
-        }
+//        foreach ($type_list as $value) {
+//            if($value->parent_property_type_id == NULL) {
+//                $data['type_list'][] = $value;
+//                foreach ($type_list as $value2) {
+//                    if($value2->parent_property_type_id == $value->property_type_id) {
+//                        $data['type_list'][] = $value2;
+//                    }
+//                }
+//            }
+//        }
+        $data['type_list'] = sortedPropertyTypes($type_list);
 
         $data['cities'] = $this->misc_model->getCities(1); // country_id
         $data['area_units'] = $this->misc_model->getAreaUnits();
@@ -121,6 +170,20 @@ class Property extends Base_Controller {
         $data['title'] = "Post New Listing";
         
         $this->render('admin/property/quick', $data);
+    }
+    
+    // Funtion to delete a property
+    public function delete($PropertyID) {
+        try {
+            $result = $this->property_model->delete($PropertyID);
+            if ($result) {
+                setNotification('success', 'Record deleted successfully');
+                redirect(base_url('admin/dashboard')); // Pending: Get last state and redirect there...
+            }
+        } catch (Exception $e) {
+            setNotification('error', 'Error in deleting record');
+            redirect(base_url('admin/dashboard')); // Pending: Get last state and redirect there...
+        }
     }
     
 }

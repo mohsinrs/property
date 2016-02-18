@@ -19,12 +19,17 @@ class Dashboard extends Base_Controller {
      * map to /index.php/welcome/<method_name>
      * @see http://codeigniter.com/user_guide/general/urls.html
      */
+    function __construct() {
+        parent::__construct();
+        $this->load->model('property_model');
+    }
+    
     public function index() {
-
-        $data = array();
-//        $data['result'] = $this->Offer_model->fetchAllRotation();
-        $data['title'] = "Dashboard";
         
+        $data = array();
+        $data['result'] = $this->property_model->dashboardProperties(getLoginUserId(), 0);
+        $data['title'] = "Dashobard";
+
         $this->render('admin/dashboard', $data);
     }
 

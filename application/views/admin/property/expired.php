@@ -11,13 +11,9 @@
                 <a href="<?php echo base_url('admin/property/expired') ?>"><?php echo $title ?></a>
             </li>
         </ul>
-        <div class="page-toolbar">
-            <div id="dashboard-report-range" class="pull-right tooltips btn btn-sm btn-default" data-container="body" data-placement="bottom" data-original-title="Change dashboard date range">
-                <i class="icon-calendar"></i>&nbsp; <span class="thin uppercase visible-lg-inline-block"></span>&nbsp; <i class="fa fa-angle-down"></i>
-            </div>
-        </div>
     </div>
     <h3 class="page-title">Property Management</h3>
+    <?php renderNotification() ?>
     <!-- END PAGE HEADER-->
     <div class="row">
         <div class="col-md-12">
@@ -29,7 +25,7 @@
                     </div>
                 </div>
                 <div class="portlet-body">
-                    <table class="table table-striped table-bordered table-hover" id="sample_4">
+                    <table class="table table-striped table-bordered table-hover" id="ExpiredProperties">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -55,9 +51,9 @@
                                 <td><?php echo date("D, d M Y", strtotime($property->created_on)); ?></td>
                                 <td><a href="#"><?php echo $property->property_id ?></a></td>
                                 <td>
-                                    <a href="#" class="btn btn-default btn-primary">View</a>
-                                    <a href="#" class="btn btn-default btn-primary">Edit</a>
-                                    <a href="#" class="btn btn-default btn-danger">Delete</a>
+                                    <a href="<?php echo base_url('/property/detail/'.$property->property_id); ?>" target="_blank" class="btn btn-default btn-primary">View</a>
+                                    <a href="<?php echo base_url('/admin/property/edit/'.$property->property_id); ?>" class="btn btn-default btn-primary">Edit</a>
+                                    <a href="<?php echo base_url('/admin/property/delete/'.$property->property_id); ?>" class="btn btn-default btn-danger">Delete</a>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
