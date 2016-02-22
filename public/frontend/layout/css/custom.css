@@ -1,6 +1,44 @@
 /* here you can put your own css to customize and override the theme */
-.additional-shop-info{margin-top:35px}
+body{ background: #fff url(../img/bg.png) no-repeat bottom center;}
+.additional-shop-info{margin-top:23px}
+h2{ background: url(../img/hicon.png) no-repeat top center; padding-top: 25px; display: table; }
 .btn-primary{margin:8px}
- .top-banner {     position: absolute;     z-index: 9999;     top: 278px; width: 100%;}
- .top-banner .container{padding: 20px 20px 0px !important;  background: rgba(255, 255, 255, 0.9);}
- .content-page { background: none;}
+.top-banner { position: relative; z-index: 9999; top: -200px; width: auto;}
+.top-banner .container{padding: 0px;  background: #fff; }
+.content-page { background: none;}
+.pre-header { background: #222222; color: #9d9c9c; line-height: 2; border-bottom: 1px solid #222;}
+.pre-header a { color: #9d9c9c; }
+.pre-header a:hover { color: #9d9c9c; }
+.site-logo {float: left; margin-right: 30px; padding: 0; position: absolute; left: 0; top: -47px; box-shadow: 0px 0px 3px #555}
+.header { background: #41b1ff; }
+.header-navigation > ul > li > a { padding: 29px 12px 29px; color: #fff; text-transform: uppercase;}
+.btn-warning { background-color: #f7c000; border-color: #f7c000; color: #000;  font-size: 16px;}
+.slide_title_white { font-size: 40px !important;  line-height: 40px; margin-left: 100px; top: 138px !important;}
+.slide_title_white_bold {font-size: 24px !important; font-weight: 400;}
+.fullwidthabnner { max-height: 514px !important; height: 514px !important;}
+.innerslider{ max-height: 300px !important; height: 300px !important; overflow: hidden;}
+.innerslider .tparrows {display: none;}
+.panel-default > .panel-heading { font-size: 18px; text-align: center; background-color: #3b9bf9; border-color: #3b9bf9 !important; color: #fff;
+}
+.panel {background-color: #fff; border:2px solid #eee;}
+.panel-heading { padding: 10px 30px;}
+.panel-body { border-top: 45px solid #eee; padding: 0 30px 30px; }
+.position200 {position: relative; top: -200px;}
+.margin200 { margin-top: 200px;}
+.maing { background-color: #fff;}
+.pre-footer, .footer { background-color: #f8f8f8; color: #717171;}
+.pre-footer h2 { color: #394041; background: none;}
+.pre-footer a { color: #717171; }
+.maingray { background-color: #f4f4f4; padding-top: 40px;}
+.recent-news-inner {padding: auto; }
+
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+.pre-header .list-inline li {display: inline-block;}
+.pre-header .pull-right {float: right !important;}
+.site-logo { top: -60px; }
+.header { height: 67px; }
+.header .mobi-toggler { margin: 25px 30px 0 0; }
+.header .header-navigation { border-top: 10px solid transperent ;  }
+}

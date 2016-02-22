@@ -1,40 +1,40 @@
-        <div class="pre-footer">
+        <div class="pre-footer position200">
             <div class="container">
                 <div class="row">
-                    <!--BEGIN BOTTOM ABOUT BLOCK -->
+                    <!-- BEGIN BOTTOM ABOUT BLOCK -->
                     <div class="col-md-4 col-sm-6 pre-footer-col">
-                        <h2>About us</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam sit nonummy nibh euismod tincidunt ut laoreet dolore magna aliquarm erat sit volutpat.</p>
-                    </div>
-                    <!--END BOTTOM ABOUT BLOCK -->
-
-                    <!--BEGIN BOTTOM CONTACTS -->
-                    <div class="col-md-4 col-sm-6 pre-footer-col">
-                        <h2>Our Contacts</h2>
+                        <h2>Al Wasey Properties</h2>
                         <address class="margin-bottom-40">
-                            35, Lorem Lis Street, Park Ave California, US<br>
-                            Phone: 300 323 3456<br>
-                            Fax: 300 323 1456<br>
-                            Email: <a href="#">info@alwasey.com</a><br>
-                            Skype: <a href="#">alwasey</a>
+                            <i class="fa fa-map-marker"></i> DHA Phase 12  EME Sector, Canal Bank <br>Road, Multan Raod, Lahore. Pakistan<br>
+                            <i class="fa fa-phone-square"></i> +92-42-35239225<br>
+                            <i class="fa fa-envelope"></i><a href="#">info@alwaseyproperties.com</a>
                         </address>
                     </div>
-                    <!--END BOTTOM CONTACTS -->
-
-                    <!--BEGIN TWITTER BLOCK -->
-                    <div class="col-md-4 col-sm-6 pre-footer-col">
-                        <h2>Information</h2>
+                    <!-- END BOTTOM ABOUT BLOCK -->
+                    <!-- BEGIN BOTTOM CONTACTS -->
+                    <div class="col-md-2 col-sm-6 pre-footer-col">
+                        <h2>Quick Links</h2>
                         <ul class="list-unstyled">
-                            <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Delivery Information</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Customer Service</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Order Tracking</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Shipping & Returns</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Contact Us</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Careers</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Payment Methods</a></li>
+                            <li><i class="fa fa-angle-right"></i><a href="#">About Us</a></li>
+                            <li><i class="fa fa-angle-right"></i><a href="#">Contact Us</a></li>
+                            <li><i class="fa fa-angle-right"></i><a href="#">Work with Us</a></li>
+                            <li><i class="fa fa-angle-right"></i><a href="#">Help & Support</a></li>
+                            <li><i class="fa fa-angle-right"></i><a href="#">Privacy Policy</a></li>
                         </ul>
                     </div>
-                    <!--END TWITTER BLOCK -->
+                    <!-- END BOTTOM CONTACTS -->
+                    <!-- BEGIN TWITTER BLOCK --> 
+                    <div class="col-md-6 col-sm-12 pre-footer-col">
+                        <h2>Advertisement</h2>
+                        <div class="row margin-bottom-10">
+                            <?php foreach($advertisements as $ad): ?>
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <img alt="" src="<?php echo base_url('/public/uploads/advertisement/'.$ad->advertisement_id.'/'.$ad->image_name) ?>" class="img-responsive">
+                            </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                    <!-- END TWITTER BLOCK -->
                 </div>
             </div>
         </div>

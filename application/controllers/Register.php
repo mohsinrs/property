@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Register extends CI_Controller {
+class Register extends Base_Controller {
 
     /**
      * Index Page for this controller.
@@ -22,6 +22,8 @@ class Register extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('misc_model');
+        $this->load->model('advertisement_model');
+        $this->setLayout();
     }
 
     public function index() {
@@ -54,9 +56,11 @@ class Register extends CI_Controller {
         }
 
         $data = array();
+        $data['advertisements'] = $this->advertisement_model->getLatestAdvertisements();
         $data['cities'] = $this->misc_model->getCities(1); // country_id
-        $data['content'] = $this->load->view('register', $data, TRUE);
-        $this->load->view('layout/main', $data);
+//        $data['content'] = $this->load->view('register', $data, TRUE);
+//        $this->load->view('layout/main', $data);
+        $this->render('register', $data);
     }
 
 }

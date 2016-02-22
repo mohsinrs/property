@@ -17,7 +17,6 @@ License: You must have a valid license purchased only from themeforest (the abov
 <!--[if !IE]><!-->
 <html lang="en">
     <!--<![endif]-->
-
     <!-- Head BEGIN -->
     <head>
         <meta charset="utf-8">
@@ -62,13 +61,13 @@ License: You must have a valid license purchased only from themeforest (the abov
         <link href="<?php echo base_url('/public/frontend/layout/css/style-responsive.css') ?>" rel="stylesheet">
         <link href="<?php echo base_url('/public/frontend/layout/css/themes/red.css') ?>" rel="stylesheet" id="style-color">
         <link href="<?php echo base_url('/public/frontend/layout/css/custom.css') ?>" rel="stylesheet">
-
         <!-- Theme styles END -->
     </head>
     <!-- Head END -->
 
     <!-- Body BEGIN -->
     <body class="corporate">
+        <!-- BEGIN TOP BAR -->
         <?php $this->load->view('layout/pre-header.php'); ?>
         <!-- END TOP BAR -->
         <!-- BEGIN HEADER -->
@@ -79,23 +78,21 @@ License: You must have a valid license purchased only from themeforest (the abov
         <?php $this->load->view('layout/slider.php'); ?>
         <!-- END SLIDER -->
 
-        <?php $this->load->view('layout/top-banner.php'); ?>
-        
         <?php echo $content; ?>
 
-        <!--BEGIN PRE-FOOTER -->
+        <!-- BEGIN PRE-FOOTER -->
         <?php $this->load->view('layout/pre-footer.php'); ?>
-        <!--END PRE-FOOTER -->
+        <!-- END PRE-FOOTER -->
 
-        <!--BEGIN FOOTER -->
+        <!-- BEGIN FOOTER -->
         <?php $this->load->view('layout/footer.php'); ?>
-        <!--END FOOTER -->
+        <!-- END FOOTER -->
 
-        <!--Load javascripts at bottom, this will reduce page load time -->
-        <!--BEGIN CORE PLUGINS (REQUIRED FOR ALL PAGES) -->
+        <!-- Load javascripts at bottom, this will reduce page load time -->
+        <!-- BEGIN CORE PLUGINS (REQUIRED FOR ALL PAGES) -->
         <!--[if lt IE 9]>
-        <script src = "<?php echo base_url('/public/global/plugins/respond.min.js') ?>"></script>
-                            <![endif]--> 
+        <script src="<?php echo base_url('/public/global/plugins/respond.min.js') ?>"></script>
+        <![endif]--> 
         <script src="<?php echo base_url('/public/global/plugins/jquery.min.js') ?>" type="text/javascript"></script>
         <script src="<?php echo base_url('/public/global/plugins/jquery-migrate.min.js') ?>" type="text/javascript"></script>
         <script src="<?php echo base_url('/public/global/plugins/bootstrap/js/bootstrap.min.js') ?>" type="text/javascript"></script>      
@@ -106,14 +103,13 @@ License: You must have a valid license purchased only from themeforest (the abov
         <script src="<?php echo base_url('/public/global/plugins/fancybox/source/jquery.fancybox.pack.js') ?>" type="text/javascript"></script><!-- pop up -->
         <script src="<?php echo base_url('/public/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.min.js') ?>" type="text/javascript"></script><!-- slider for products -->
 
-        <!-- BEGIN RevolutionSlider -->
+        <!-- BEGIN RevolutionSlider -->  
         <script src="<?php echo base_url('/public/global/plugins/slider-revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js') ?>" type="text/javascript"></script> 
         <script src="<?php echo base_url('/public/global/plugins/slider-revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js') ?>" type="text/javascript"></script> 
         <script src="<?php echo base_url('/public/frontend/pages/scripts/revo-slider-init.js') ?>" type="text/javascript"></script>
         <!-- END RevolutionSlider -->
 
         <script src="<?php echo base_url('/public/frontend/layout/scripts/layout.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo base_url('/public/global/scripts/common.js') ?>" type="text/javascript"></script> 
         <script type="text/javascript">
             jQuery(document).ready(function () {
                 Layout.init();

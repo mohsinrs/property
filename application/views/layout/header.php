@@ -1,22 +1,20 @@
         <div class="header">
             <div class="container">
-                <a class="site-logo" href="<?php echo base_url(); ?>"><img src="<?php echo base_url('/public/frontend/layout/img/logo.png') ?>" alt="Metronic FrontEnd"></a>
-                <div class="additional-shop-info pull-right">
-                    <ul class="list-unstyled list-inline">
-                        <li><i class="fa fa-phone"></i><span>+1 456 6717</span></li>
-                        <li><i class="fa fa-envelope-o"></i><span>info@alwaseyproperty.com</span></li>
-                    </ul>
+                <a class="site-logo" href="index.html"><img src="<?php echo base_url('/public/frontend/layout/img/logo.png') ?>" alt="Metronic FrontEnd"></a>
+                <div class="additional-shop-info pull-right col-md-offset-2">
+                    <button type="button" class="btn btn-warning">ADD  PROPERTY</button>  
                 </div>
-                <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
+                <a href="#" class="mobi-toggler"><i class="fa fa-bars"></i></a>
+
                 <!-- BEGIN NAVIGATION -->
-                <div class="header-navigation pull-right font-transform-inherit">
+                <div class="header-navigation font-transform-inherit pull-right ">
                     <ul>
-                        <li><a href="#">Homes</a></li>
-                        <li><a href="#">Plots</a></li>
-                        <li><a href="#">Commercial</a></li>
-                        <li><a href="<?php echo base_url('page/about'); ?>">About us</a></li>
-                        <li><a href="<?php echo base_url('page/contact'); ?>">Contact us</a></li>
-                        <li><a href="<?php echo base_url('admin/property/view'); ?>" target="_blank">Add property</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About </a></li>
+                        <li><a href="#">Residential</a></li>
+                        <li><a href="#">Commercial</a></li>            
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact us</a></li>
                     </ul>
                 </div>
                 <!-- END NAVIGATION -->

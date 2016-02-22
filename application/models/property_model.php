@@ -8,6 +8,34 @@ class Property_model extends CI_Model {
         parent::__construct();
     }
     
+    // Dummy logic
+    function getFeaturedProperties()
+    {
+        $this->db->select('property_id, title, price, created_on');
+        $this->db->from('property');
+        $this->db->where('property_status', 1); // Pending properties
+        $this->db->where('is_deleted', 0);
+//        $this->db->where('expires_after >=', date("Y-m-d H:i:s"));
+        $this->db->limit(7);
+        
+        $query = $this->db->get();
+        return $query->result();
+    }
+    
+    // Dummy logic
+    function getLatestProperties()
+    {
+        $this->db->select('property_id, title, price, created_on');
+        $this->db->from('property');
+        $this->db->where('property_status', 1); // Pending properties
+        $this->db->where('is_deleted', 0);
+//        $this->db->where('expires_after >=', date("Y-m-d H:i:s"));
+        $this->db->limit(4);
+        
+        $query = $this->db->get();
+        return $query->result();
+    }
+    
     function dashboardProperties()
     {
         $this->db->select('p.property_id, pp.name AS property_purpose_name, pt.name AS property_type_name, loc.name AS location_name, p.price, p.created_on, p.property_status, p.area, au.name AS area_unit_name, u.name AS user_name');

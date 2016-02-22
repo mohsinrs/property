@@ -7,6 +7,18 @@ class Advertisement_model extends CI_Model {
         parent::__construct();
     }
 
+    function getLatestAdvertisements() {
+        $this->db->select('advertisement_id, from_date, to_date, image_name');
+        $this->db->from('advertisement');
+        $this->db->where('is_deleted', 0);
+        // Add between condition here.... and fetch ads which are valid for today date....
+        $this->db->limit(6);
+        $this->db->order_by('advertisement_id', 'DESC');
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
     function fetchAll() {
         $this->db->select('advertisement.advertisement_id, user.name, user.email, user.phone_no, advertisement.from_date, advertisement.to_date');
         $this->db->from('advertisement');

@@ -1,11 +1,14 @@
-        <div class="main">
-            <div class="container">
-                <!-- BEGIN BLOCKQUOTE BLOCK -->   
-                <div class="row">
-                    <h1>Create an account</h1>
-                    <?php renderNotification() ?>
-                    <div class="content-form-page">
-                        
+<div class="main">
+    <div class="container">
+        <?php $this->load->view('layout/search.php'); ?> 
+        <?php renderNotification() ?>
+        <!-- BEGIN BLOCKQUOTE BLOCK -->   
+        <div class="row position200 margin-bottom-40">
+            <div class="col-md-12">
+                <h2>Create an account</h2>
+                <?php renderNotification() ?>
+                <div class="content-form-page">
+                    <div class="row">
                         <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-6">
@@ -25,7 +28,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -44,7 +47,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -63,7 +66,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -72,7 +75,7 @@
                                             <select class="form-control" id="city_id" name="city_id">
                                                 <option> -- Select -- </option>
                                                 <?php foreach ($cities as $key => $city): ?>
-                                                <option value="<?php echo $city->city_id ?>"><?php echo $city->name ?></option>
+                                                    <option value="<?php echo $city->city_id ?>"><?php echo $city->name ?></option>
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>
@@ -89,7 +92,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -108,7 +111,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -127,7 +130,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="col-lg-8 col-md-offset-2 padding-left-0 padding-top-20">                        
                                     <button type="submit" name="submit" value="submit" class="btn btn-primary">Create account</button>
@@ -135,9 +138,10 @@
                                 </div>
                             </div>
                         </form>
-                        
                     </div>
                 </div>
-                <!-- END CLIENTS -->
             </div>
         </div>
+        <!-- END CLIENTS -->
+    </div>
+</div>

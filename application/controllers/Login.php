@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Login extends CI_Controller {
+class Login extends Base_Controller {
 
     /**
      * Index Page for this controller.
@@ -22,6 +22,8 @@ class Login extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('misc_model');
+        $this->load->model('advertisement_model');
+        $this->setLayout();
     }
     
     public function index() {
@@ -38,8 +40,10 @@ class Login extends CI_Controller {
         }
         
         $data = array();
-        $data['content'] = $this->load->view('login', $data, TRUE);
-        $this->load->view('layout/main', $data);
+        $data['advertisements'] = $this->advertisement_model->getLatestAdvertisements();
+//        $data['content'] = $this->load->view('login', $data, TRUE);
+//        $this->load->view('layout/main', $data);
+        $this->render('login', $data);
     }
 
 }
