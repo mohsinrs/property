@@ -37,24 +37,19 @@ class Base_Controller extends CI_Controller {
 //        if ($this->enableLayout === false) {
 //            $this->load->view($file, $viewData);
 //        } else {
-        // Remove following items & Use $this->user instead
-        if($this->user) {
-            $data['user_id'] = $this->user->user_id;
-            $data['user_name'] = $this->user->name;
-            $data['user_email'] = $this->user->email;
-            $data['user_image'] = $this->user->profile_pic;
-            $data['user_type'] = $this->user->user_type;
-        }
+            // Remove following items & Use $this->user instead
+            if($this->user) {
+                $data['user_id'] = $this->user->user_id;
+                $data['user_name'] = $this->user->name;
+                $data['user_email'] = $this->user->email;
+                $data['user_image'] = $this->user->profile_pic;
+                $data['user_type'] = $this->user->user_type;
+            }
 
             $data['content'] = $this->load->view($file, $viewData, TRUE);
 //                $data['admin'] = $this->session->userdata('USER');
             $this->load->view($this->layout, $data);
 //        }
-    }
-
-    protected function disableLayout() 
-    {
-        $this->enableLayout = false;
     }
     
     public function setLayout($layout = 'layout/main') {

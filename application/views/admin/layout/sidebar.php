@@ -131,7 +131,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="<?php echo base_url('user/search/index'); ?>">Inventory Search</a>
+                        <a href="<?php echo base_url('user/search'); ?>">Inventory Search</a>
                     </li>
                     <li>
                         <a href="javascript:;">
@@ -161,16 +161,10 @@
                 </ul>
             </li>
             <li>
-                <a href="javascript:;">
+                <a href="<?php echo base_url('user/profile'); ?>">
                     <i class="icon-rocket"></i>
                     <span class="title">My Account</span>
-                    <span class="arrow "></span>
                 </a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="<?php echo base_url('user/profile/index'); ?>">My Profile</a>
-                    </li>
-                </ul>
             </li>
             <li>
                 <a href="javascript:;">
@@ -180,7 +174,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="<?php echo base_url('user/traffic/index'); ?>">Traffic Summary</a>
+                        <a href="<?php echo base_url('user/traffic'); ?>">Traffic Summary</a>
                     </li>
                 </ul>
             </li>
@@ -192,17 +186,16 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="<?php echo base_url('user/favourite/index'); ?>">Favorites</a>
+                        <a href="<?php echo base_url('user/favourite'); ?>">Favorites</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('user/alert/index'); ?>">Create Alert</a>
+                        <a href="<?php echo base_url('user/alert'); ?>">Create Alert</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url('user/alert/manage'); ?>">Manage Alert</a>
                     </li>
                 </ul>
             </li>
-
           <?php endif; ?>
         </ul>
         <!-- END SIDEBAR MENU -->

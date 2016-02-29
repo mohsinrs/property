@@ -1,26 +1,4 @@
 <div class="page-content">
-    <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-    <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                    <h4 class="modal-title">Modal title</h4>
-                </div>
-                <div class="modal-body">
-                    Widget settings form goes here
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn blue">Save changes</button>
-                    <button type="button" class="btn default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
-    <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
     <!-- BEGIN PAGE HEADER-->
     <div class="page-bar">
         <ul class="page-breadcrumb">
@@ -30,17 +8,11 @@
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <a href="#">Alerts</a>
+                <a href="<?php echo base_url('user/alert'); ?>"><?php echo $title; ?></a>
             </li>
         </ul>
-        <div class="page-toolbar">
-            <div id="dashboard-report-range" class="pull-right tooltips btn btn-sm btn-default" data-container="body" data-placement="bottom" data-original-title="Change dashboard date range">
-                <i class="icon-calendar"></i>&nbsp; <span class="thin uppercase visible-lg-inline-block"></span>&nbsp; <i class="fa fa-angle-down"></i>
-            </div>
-        </div>
     </div>
-    <h3 class="page-title">
-        Email Alerts</h3>
+    <h3 class="page-title"><?php echo $title; ?></h3>
     <!-- END PAGE HEADER-->
     <div class="row">
         <div class="col-md-12 col-sm-12">
@@ -48,21 +20,21 @@
             <div class="portlet box blue">
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-gift"></i>Personal info
+                        <i class="fa fa-gift"></i>Basic Alert Criteria
                     </div>
-
                 </div>
                 <div class="portlet-body form">
                     <!-- BEGIN FORM-->
-                    <form class="horizontal-form" action="#">
+                    <form class="horizontal-form" action="" method="post">
                         <div class="form-body">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Receive Alert on</label>
-                                        <select class="form-control">
-                                            <option>Daily</option>
-                                            <option>Monthly</option>
+                                        <select class="form-control" name="alert_type">
+                                            <option>-- select --</option>
+                                            <option value="1">Daily</option>
+                                            <option value="2">Monthly</option>
                                         </select>
                                     </div>
                                 </div>
@@ -70,9 +42,19 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Property Type</label>
-                                        <select class="form-control">
-                                            <option>House</option>
-                                            <option>Shop</option>
+                                        <select class="form-control" name="property_type_id">
+                                            <option>-- select --</option>
+                                            <?php foreach($type_list as $type): ?>
+                                                <?php if($type->parent_property_type_id == NULL) { ?>
+                                                <optgroup label="<?php echo $type->name; ?>">
+                                                    <?php foreach($type_list as $sub_type): ?>
+                                                        <?php if($sub_type->parent_property_type_id == $type->property_type_id) { ?>
+                                                        <option value="<?php echo $sub_type->property_type_id ?>"><?php echo $sub_type->name ?></option>
+                                                        <?php } ?>
+                                                    <?php endforeach; ?>
+                                                </optgroup>
+                                                <?php } ?>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -82,10 +64,11 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Purpose</label>
-                                        <select class="form-control">
-                                            <option>For sale</option>
-                                            <option>Rent</option>
-                                            <option>Wanted</option>
+                                        <select class="form-control" name="property_purpose_id">
+                                            <option>-- select --</option>
+                                            <?php foreach($purpose_list as $purpose): ?>
+                                            <option value="<?php echo $purpose->property_purpose_id ?>"><?php echo $purpose->name ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -94,7 +77,7 @@
                                     <div class="form-group">
                                         <label>Price Range</label>
                                         <select class="form-control">
-                                            <option>select</option>
+                                            <option>-- select --</option>
                                         </select>
                                     </div>
                                 </div>
@@ -104,20 +87,48 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Beds</label>
-                                        <select class="form-control">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
+                                        <select class="form-control" name="beds">
+                                            <option>-- select --</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="5">4</option>
+                                            <option value="5">5</option>
                                         </select>
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Baths</label>
+                                        <select class="form-control" name="baths">
+                                            <option>-- select --</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="5">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <!--/span-->
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="control-label">Enter Location</label>
-                                        <select class="form-control select2me " data-placeholder="Select...">
-                                            <option value="AL">Alabama</option>
-                                            <option value="WY">Wyoming</option>
+                                        <label class="control-label">City</label>
+                                        <select class="form-control select2me" id="city_id" name="city_id" data-placeholder="Select...">
+                                            <option> -- Select -- </option>
+                                            <?php foreach ($cities as $key => $city): ?>
+                                                <option value="<?php echo $city->city_id ?>"><?php echo $city->name ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Location</label>
+                                        <select class="form-control select2me" id="location_id" name="location_id" data-placeholder="Select...">
+                                            <option> -- Select -- </option>
                                         </select>
                                     </div>
                                 </div>
@@ -135,7 +146,7 @@
                                     <div class="form-group">
                                         <label>Covered Area</label>
                                         <select class="form-control">
-                                            <option>Select</option>
+                                            <option>-- select --</option>
                                         </select>
                                     </div>
                                 </div>
@@ -145,30 +156,21 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">Agent</label>
-                                        <select class="form-control select2me " data-placeholder="Select...">
-                                            <option value="AL">Alabama</option>
-                                            <option value="WY">Wyoming</option>
+                                        <select class="form-control select2me" name="" data-placeholder="Select...">
+                                            <option>-- select --</option>
+                                            <?php foreach ($agents as $key => $agent): ?>
+                                                <option value="<?php echo $agent->user_id ?>"><?php echo $agent->name ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
                                 <!--/span-->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Beds</label>
-                                        <select class="form-control">
-                                            <option>Select</option>
-                                        </select>
-                                    </div>
-                                </div>
                             </div>
                             <!--/span-->
-
                         </div>
                         <div class="form-actions right">
-                            <button class="btn blue" type="submit"><i class="fa fa-check"></i> Add Alert</button>
+                            <button class="btn blue" type="submit" name="submit" value="add_alert"><i class="fa fa-check"></i> Add Alert</button>
                         </div>
-
-
                     </form>
                 </div>
                 <!-- END FORM-->

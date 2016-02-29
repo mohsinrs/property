@@ -74,7 +74,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="<?php echo base_url('admin/profile/index'); ?>">My Profile</a>
+                        <a href="<?php echo base_url('admin/profile'); ?>">My Profile</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url('admin/profile/change_password'); ?>">Change Password</a>
@@ -157,7 +157,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="<?php echo base_url('user/profile/index'); ?>">My Profile</a>
+                        <a href="<?php echo base_url('user/profile'); ?>">My Profile</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url('user/profile/change_password'); ?>">Change Password</a>

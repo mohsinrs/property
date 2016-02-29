@@ -118,15 +118,13 @@ class Property_model extends CI_Model {
             'email' => $data['client_email'],
             'address' => $data['client_address'],
             'zipcode' => $data['client_zipcode'],
-            'type' => $data['client_type'],
-            'rating' => $data['client_rating'],
             'future_opportunity' => array_key_exists('future_opportunity', $data) ? 1 : 0,
             'int_opportunity' => array_key_exists('int_opportunity', $data) ? 1 : 0,
             'local_opportunity' => array_key_exists('local_opportunity', $data) ? 1 : 0,
             'created_on' => date("Y-m-d H:i:s"),
         );
 
-        $this->db->insert('contact_person', $array);
+        $this->db->insert('client', $array);
         return ($this->db->affected_rows() != 1) ? false : true;
     }
     

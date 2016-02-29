@@ -32,7 +32,6 @@
                                 <div class="col-md-12">
                                     <h3 class="form-section">Property Type and Location</h3>
                                 </div>
-                                <!--/span-->
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
@@ -46,7 +45,6 @@
                                         </select>
                                     </div>
                                 </div>
-                                <!--/span-->
                                 <div class="col-md-6">                                    
                                     <div class="form-group">
                                         <label>Type</label>
@@ -66,7 +64,6 @@
                                         </select>
                                     </div>
                                 </div>
-                                <!--/span-->
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
@@ -80,7 +77,6 @@
                                         </select>
                                     </div>
                                 </div>
-                                <!--/span-->
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Location</label>
@@ -89,13 +85,11 @@
                                         </select>
                                     </div>
                                 </div>
-                                <!--/span-->
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <h3 class="form-section">Property Details</h3>
                                 </div>
-                                <!--/span-->
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
@@ -108,14 +102,12 @@
                                         <input type="text" class="form-control" name="price">
                                     </div>
                                 </div>
-                                <!--/span-->
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Description</label>
                                         <textarea class="form-control" rows="4" name="description"></textarea>
                                     </div>
                                 </div>
-                                <!--/span-->
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
@@ -135,13 +127,11 @@
                                         </select>
                                     </div>
                                 </div>
-                                <!--/span-->
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <h3 class="form-section">Add Images</h3>
                                 </div>
-                                <!--/span-->
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
@@ -150,13 +140,11 @@
                                         <input type="file" id="property_images" name="property_images[]" multiple="multiple">                                        
                                     </div>
                                 </div>
-                                <!--/span-->
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <h3 class="form-section">Client Detail</h3>
                                 </div>
-                                <!--/span-->
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
@@ -166,7 +154,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--/span-->
                             </div>
                             <div class="row display-none" id="client_block">
                                 <div class="col-md-6">
@@ -189,7 +176,6 @@
                                         </select>
                                     </div>
                                 </div>
-                                <!--/span-->
                             </div>
                             <div class="display-none" id="add_new_client">
                                 <div class="row">
@@ -205,7 +191,6 @@
                                             <input type="text" class="form-control" name="client_phone">
                                         </div>
                                     </div>
-                                    <!--/span-->
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -220,7 +205,6 @@
                                             <input type="text" class="form-control" name="client_fax">
                                         </div>
                                     </div>
-                                    <!--/span-->
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -235,7 +219,6 @@
                                             <input type="text" class="form-control" name="client_address">
                                         </div>
                                     </div>
-                                    <!--/span-->
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -246,35 +229,18 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Client Type</label>
-                                            <input type="text" class="form-control" name="client_type">
-                                        </div>
-                                    </div>
-                                    <!--/span-->
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Client Rating</label>
-                                            <input type="text" class="form-control" name="client_rating">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
                                             <label></label>
                                             <input type="checkbox" class="form-control" name="future_opportunity" value="1"> Future Opportunity
                                             <input type="checkbox" class="form-control" name="int_opportunity" value="1"> International Opportunity
                                             <input type="checkbox" class="form-control" name="local_opportunity" value="1"> Local Opportunity
                                         </div>
                                     </div>
-                                    <!--/span-->
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <h3 class="form-section">Contact Details</h3>
                                 </div>
-                                <!--/span-->
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
@@ -289,7 +255,6 @@
                                         <input type="text" class="form-control" name="cp_cell_no">
                                     </div>
                                 </div>
-                                <!--/span-->
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
@@ -304,9 +269,7 @@
                                         <input type="text" class="form-control" name="cp_email">
                                     </div>
                                 </div>
-                                <!--/span-->
                             </div>
-
                         </div>
                         <div class="form-actions right">
                             <button class="btn blue" type="submit" name="submit" value="save">Submit Property</button>
@@ -317,6 +280,5 @@
             </div>
             <!-- END Form-->
         </div>
-
     </div>
 </div>
