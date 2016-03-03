@@ -8,7 +8,7 @@
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <a href="<?php echo base_url('admin/property/quick') ?>">Add Property</a>
+                <a href="<?php echo base_url('admin/property/quick') ?>"><?php echo $title; ?></a>
             </li>
         </ul>
     </div>
@@ -21,12 +21,12 @@
             <div class="portlet box blue">
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-gift"></i>Post New Listing
+                        <i class="fa fa-gift"></i><?php echo $title; ?>
                     </div>
                 </div>
                 <div class="portlet-body form">
                     <!-- BEGIN FORM-->
-                    <form class="horizontal-form" action="" method="post">
+                    <form class="horizontal-form" action="" method="post" name="SavePropertyQuick" id="SavePropertyQuick">
                         <div class="form-body">
                             <div class="row">
                                 <div class="col-md-12">
@@ -171,7 +171,7 @@
                                         <select class="form-control" name="client_id">
                                             <option> -- Select -- </option>
                                             <?php foreach ($clients as $client): ?>
-                                            <option value="<?php echo $client->client_id; ?>"><?php echo $unit->name; ?></option>
+                                            <option value="<?php echo $client->client_id; ?>"><?php echo $client->name; ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>

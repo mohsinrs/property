@@ -4,20 +4,16 @@
         <ul class="page-breadcrumb">
             <li>
                 <i class="fa fa-home"></i>
-                <a href="#">Property Management</a>
+                <a href="<?php echo base_url('admin/dashboard') ?>">Dashboard</a>
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <a href="#">Search</a>
+                <a href="<?php echo base_url('admin/property/advance') ?>"><?php echo $title; ?></a>
             </li>
         </ul>
-        <div class="page-toolbar">
-            <div id="dashboard-report-range" class="pull-right tooltips btn btn-sm btn-default" data-container="body" data-placement="bottom" data-original-title="Change dashboard date range">
-                <i class="icon-calendar"></i>&nbsp; <span class="thin uppercase visible-lg-inline-block"></span>&nbsp; <i class="fa fa-angle-down"></i>
-            </div>
-        </div>
     </div>
     <h3 class="page-title">Property Management</h3>
+    <?php renderNotification() ?>
     <!-- END PAGE HEADER-->
     <div class="row">
         <div class="col-md-12 col-sm-12">
@@ -25,7 +21,7 @@
             <div class="portlet box blue" id="form_wizard_property">
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-gift"></i>Post New Listing
+                        <i class="fa fa-gift"></i><?php echo $title; ?>
                     </div>
                 </div>
                 <div class="portlet-body form">

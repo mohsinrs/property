@@ -103,6 +103,7 @@ class Property_model extends CI_Model {
         }
 
         $this->db->insert('property', $array);
+        
         return ($this->db->affected_rows() != 1) ? NULL : $this->db->insert_id();
     }
     
@@ -125,14 +126,27 @@ class Property_model extends CI_Model {
         );
 
         $this->db->insert('client', $array);
-        return ($this->db->affected_rows() != 1) ? false : true;
+        
+        return ($this->db->affected_rows() != 1) ? NULL : $this->db->insert_id();
     }
     
-    function insertContactPerson($property_id)
+    function updateClientIDofProperty($ClientID, $PropertyID)
+    {
+        $array = array(
+            'client_id' => $ClientID
+        );
+
+        $this->db->where('property_id', $PropertyID);
+        $this->db->update('property', $array);
+
+        return true;
+    }
+    
+    function insertContactPerson($PropertyID)
     {
         $data = $this->input->post();
         $array = array(
-            'property_id' => $property_id,
+            'property_id' => $PropertyID,
             'name' => $data['cp_name'],
             'cell_no' => $data['cp_cell_no'],
             'phone_no' => $data['cp_phone_no'],
@@ -142,6 +156,7 @@ class Property_model extends CI_Model {
         );
 
         $this->db->insert('contact_person', $array);
+        
         return ($this->db->affected_rows() != 1) ? false : true;
     }
     

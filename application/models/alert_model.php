@@ -10,7 +10,7 @@ class Alert_model extends CI_Model {
 
     function fetchAll($user_id)
     {
-        $this->db->select('client_id, name');
+        $this->db->select('alert_id, created_on');
         $this->db->from('alert');
         $this->db->where('created_by', $user_id);
         $query = $this->db->get();

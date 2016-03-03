@@ -35,9 +35,7 @@
             });
             
             jQuery(document).on('change', "input[name=is_new_client]", function(){
-                    
-//                console.log($(this).val());
-//                var IsChecked = jQuery("#is_client_property").prop('checked');
+                
                 if(jQuery(this).val() == 'true') {
                     jQuery("#search_client").addClass('display-none');
                     jQuery("#add_new_client").removeClass('display-none');
@@ -45,6 +43,42 @@
                     jQuery("#search_client").removeClass('display-none');
                     jQuery("#add_new_client").addClass('display-none');
                 }
+            });
+            
+            // Populate price ranges according to Property Purpose
+            jQuery(document).on('change', "#property_purpose_id", function(){
+                
+                var PropertyPurpose = jQuery("#property_purpose_id").val();
+                if( PropertyPurpose == 1 ) { // Sale
+                    var HTMLResult = '<option> -- Select -- </option>';
+                    HTMLResult += '<option value="100000-500000"> 100,000 - 500,000 </option>';
+                    HTMLResult += '<option value="600000-1000000"> 600,000 - 1,000,000 </option>';
+                    HTMLResult += '<option value="1100000-1500000"> 1,100,000 - 1,500,000 </option>';
+                    HTMLResult += '<option value="1600000-2000000"> 1,600,000 - 2,000,000 </option>';
+                    jQuery("#price_range").html(HTMLResult);
+                } else if ( PropertyPurpose == 2 ) { // Rent
+                    var HTMLResult = '<option> -- Select -- </option>';
+                    HTMLResult += '<option value="1000-5000"> 1,000 - 5,000 </option>';
+                    HTMLResult += '<option value="6000-10000"> 6,000 - 10,000 </option>';
+                    HTMLResult += '<option value="11000-15000"> 11,000 - 15,000 </option>';
+                    HTMLResult += '<option value="16000-20000"> 16,000 - 20,000 </option>';
+                    jQuery("#price_range").html(HTMLResult);
+                } else if ( PropertyPurpose == 3 ) { // Wanted
+                    var HTMLResult = '<option> -- Select -- </option>';
+                    HTMLResult += '<option value="100000-500000"> 100,000 - 500,000 </option>';
+                    HTMLResult += '<option value="600000-1000000"> 600,000 - 1,000,000 </option>';
+                    HTMLResult += '<option value="1100000-1500000"> 1,100,000 - 1,500,000 </option>';
+                    HTMLResult += '<option value="1600000-2000000"> 1,600,000 - 2,000,000 </option>';
+                    HTMLResult += '<option value="1000-5000"> 1,000 - 5,000 </option>';
+                    HTMLResult += '<option value="6000-10000"> 6,000 - 10,000 </option>';
+                    HTMLResult += '<option value="11000-15000"> 11,000 - 15,000 </option>';
+                    HTMLResult += '<option value="16000-20000"> 16,000 - 20,000 </option>';
+                    jQuery("#price_range").html(HTMLResult);
+                } else {
+                    var HTMLResult = '<option> -- Select -- </option>';
+                    jQuery("#price_range").html(HTMLResult);
+                }
+ 
             });
             
         });

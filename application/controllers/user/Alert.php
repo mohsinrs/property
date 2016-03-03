@@ -26,23 +26,36 @@ class alert extends Base_Controller {
         $this->load->model('user_model');
     }
     
-    public function index() {
+    public function index($id = NULL) {
         
-        if ($this->input->post('submit')) {
+        if ($this->input->post('submit') && id == NULL) {
             $result = $this->alert_model->insert();
             if ($result) {
-                setNotification('success', 'Record inserted successfully');
-                redirect(base_url('user/alert'));
+                setNotification('success', 'Alert created successfully');
+                redirect(base_url('user/alert/manage'));
             } else {
-                setNotification('error', 'Error in inserting new record');
-                redirect(base_url('user/alert'));
+                setNotification('error', 'Error in adding alert');
+                redirect(base_url('user/alert/manage'));
+            }
+        } else if ($this->input->post('submit') && id != NULL) {
+            $result = $this->alert_model->update();
+            if ($result) {
+                setNotification('success', 'Alert updated successfully');
+                redirect(base_url('user/alert/manage'));
+            } else {
+                setNotification('error', 'Error in updating alert');
+                redirect(base_url('user/alert/manage'));
             }
         }
         
         $data = array();
-        $type_list = $this->misc_model->getPropertyType();
+        if($id !== NULL) {
+            $data['result'] = $this->alert_model->getOne($id);
+        }
+        
+        $type_list = $this->misc_model->getPropertyTypeList();
         $data['type_list'] = sortedPropertyTypes($type_list);
-        $data['purpose_list'] = $this->misc_model->getPropertyPurpose();
+        $data['purpose_list'] = $this->misc_model->getPropertyPurposeList();
         $data['cities'] = $this->misc_model->getCities(1); // country_id
         $data['agents'] = $this->user_model->fetchAll();
         $data['title'] = "Create Alert";
@@ -53,10 +66,24 @@ class alert extends Base_Controller {
     public function manage() {
 
         $data = array();
-//        $data['result'] = $this->Offer_model->fetchAllRotation();
+        $data['result'] = $this->alert_model->fetchAll(getLoginUserId());
         $data['title'] = "Manage Alert";
 
         $this->render('user/alert/manage', $data);
+    }
+    
+    // Funtion to delete an alert
+    public function delete($AlertID) {
+        try {
+            $result = $this->alert_model->delete($AlertID);
+            if ($result) {
+                setNotification('success', 'Record deleted successfully');
+                redirect(base_url('user/alert/manage'));
+            }
+        } catch (Exception $e) {
+            setNotification('error', 'Error in deleting record');
+            redirect(base_url('user/alert/manage'));
+        }
     }
 
 }
