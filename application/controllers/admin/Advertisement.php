@@ -21,9 +21,7 @@ class advertisement extends Base_Controller {
      */
     function __construct() {
         parent::__construct();
-        $this->load->helper(array('form', 'url'));
-        $this->load->model('advertisement_model');
-        $this->load->model('user_model');
+//        $this->load->helper(array('form', 'url'));
     }
 
     public function index() {
@@ -75,7 +73,6 @@ class advertisement extends Base_Controller {
             setNotification('notice', 'Record not found');
             redirect(base_url('admin/advertisement'));
         }
-
         try {
             $this->load->model('advertisement_model');
             $result = $this->advertisement_model->delete($id);
@@ -94,9 +91,9 @@ class advertisement extends Base_Controller {
 //        $path = $_SERVER['DOCUMENT_ROOT'].'/property/public/uploads/advertisement';
         $config['upload_path'] = $_SERVER['DOCUMENT_ROOT'].'/property/public/uploads/advertisement/'.$id;
         $config['allowed_types'] = 'gif|jpg|jpeg|png';
-        $config['max_size'] = 100;
-        $config['max_width'] = 1024;
-        $config['max_height'] = 768;
+//        $config['max_size'] = 100;
+//        $config['max_width'] = 1024;
+//        $config['max_height'] = 768;
         $config['overwrite'] = TRUE;
 
         if (!file_exists($config['upload_path']) && !is_dir($config['upload_path'])) {

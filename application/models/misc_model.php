@@ -219,4 +219,24 @@ class Misc_model extends CI_Model {
         return ($this->db->affected_rows() != 1) ? false : true;
     }
     
+    function addPropertyToFeatured()
+    {
+        $data = $this->input->post();
+        var_dump($data); exit;
+        $array = array(
+            'property_purpose_id' => $data['property_purpose_id'],
+            'property_type_id' => $data['property_type_id'],
+            'city_id' => $data['city_id'],
+            'location_id' => $data['location_id'],
+            'title' => $data['title'],
+            'description' => $data['description'],
+            'price' => $data['price'],
+            'area' => $data['area'],
+            'area_unit_id' => $data['area_unit_id']
+        );
+
+        $this->db->insert('property', $array);
+        return ($this->db->affected_rows() != 1) ? false : true;
+    }
+    
 }

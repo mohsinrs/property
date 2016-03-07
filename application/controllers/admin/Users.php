@@ -21,7 +21,6 @@ class Users extends Base_Controller {
      */
     function __construct() {
         parent::__construct();
-        $this->load->model('user_model');
     }
     
     public function roles() {
@@ -115,9 +114,9 @@ class Users extends Base_Controller {
 
         $config['upload_path'] = $_SERVER['DOCUMENT_ROOT'].'/property/public/uploads/user/'.$id;
         $config['allowed_types'] = 'gif|jpg|jpeg|png';
-        $config['max_size'] = 100;
-        $config['max_width'] = 1024;
-        $config['max_height'] = 768;
+//        $config['max_size'] = 100;
+//        $config['max_width'] = 1024;
+//        $config['max_height'] = 768;
         $config['overwrite'] = TRUE;
 
         if (!file_exists($config['upload_path']) && !is_dir($config['upload_path'])) {

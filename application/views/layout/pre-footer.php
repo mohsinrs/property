@@ -29,7 +29,7 @@
                         <div class="row margin-bottom-10">
                             <?php foreach($advertisements as $ad): ?>
                             <div class="col-md-4 col-sm-4 col-xs-6">
-                                <img alt="" src="<?php echo base_url('/public/uploads/advertisement/'.$ad->advertisement_id.'/'.$ad->image_name) ?>" class="img-responsive">
+                                <img alt="Advertisement" src="<?php echo base_url('/public/uploads/advertisement/'.$ad->advertisement_id.'/'.$ad->image_name) ?>" class="img-responsive">
                             </div>
                             <?php endforeach; ?>
                         </div>

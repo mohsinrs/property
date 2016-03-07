@@ -11,13 +11,9 @@
                 <a href="<?php echo base_url('admin/users/profile/'.$result->user_id) ?>"><?php echo $title ?></a>
             </li>
         </ul>
-        <div class="page-toolbar">
-            <div id="dashboard-report-range" class="pull-right tooltips btn btn-sm btn-default" data-container="body" data-placement="bottom" data-original-title="Change dashboard date range">
-                <i class="icon-calendar"></i>&nbsp; <span class="thin uppercase visible-lg-inline-block"></span>&nbsp; <i class="fa fa-angle-down"></i>
-            </div>
-        </div>
     </div>
-    <h3 class="page-title"><?php echo $title; ?></h3>
+    <h3 class="page-title">My Account</h3>
+    <?php renderNotification() ?>
     <!-- END PAGE HEADER-->
     <div class="row">
         <div class="col-md-12 col-sm-12">
@@ -25,9 +21,8 @@
             <div class="portlet box grey-cascade">
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-gift"></i>Personal info
+                        <i class="fa fa-gift"></i><?php echo $title; ?>
                     </div>
-
                 </div>
                 <div class="portlet-body form">
                     <!-- BEGIN FORM-->
@@ -172,7 +167,7 @@
                     </div>
                 </div>
                 <div class="portlet-body">
-                    <table class="table table-striped table-bordered table-hover" id="sample_2">
+                    <table class="table table-striped table-bordered table-hover" id="UserProfile">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -195,10 +190,12 @@
                                     <td><?php echo $property->price ?></td>
                                     <td><?php echo $property->area ?></td>
                                     <td><?php echo $property->property_purpose_name ?></td>
+                                    <td><?php echo date("D, d M Y", strtotime($property->created_on)); ?></td>
+                                    <td><?php echo ($property->property_status == 0) ? 'pending' : (($property->property_status == 1) ? 'Approved' : 'Rejected'); ?></td>
                                     <td>
-                                        <a href="#" class="btn btn-default btn-primary">View</a>
-                                        <a href="<?php echo base_url('admin/users/updatestatus/' . $property->user_id . '/1') ?>" class="btn btn-default btn-danger">Reject</a>
-                                        <a href="<?php echo base_url('admin/users/delete/' . $property->user_id) ?>" class="btn btn-default btn-danger">Delete</a>
+                                        <a href="<?php echo base_url('property/detail/'.$property->property_id); ?>" target="_blank" class="btn btn-default btn-primary">View</a>
+                                        <a href="<?php echo base_url('admin/property/delete/'.$property->property_id) ?>" class="btn btn-default btn-danger">Delete</a>
+                                        <a href="<?php echo base_url('admin/property/reject/'.$property->property_id); ?>" class="btn btn-default btn-danger">Reject</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

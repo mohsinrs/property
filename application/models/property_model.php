@@ -54,6 +54,7 @@ class Property_model extends CI_Model {
 
     function fetchAll($UserID, $property_status = NULL, $is_expired = FALSE)
     {
+//        var_dump($property_status); exit;
 //        $this->db->select('*');
         $this->db->select('p.property_id, pp.name AS property_purpose_name, pt.name AS property_type_name, loc.name AS location_name, p.price, p.created_on, p.property_status, p.area');
         $this->db->from('property p');
@@ -66,7 +67,8 @@ class Property_model extends CI_Model {
             $this->db->where('expires_after <=', date("Y-m-d H:i:s"));
         else
             $this->db->where('expires_after >', date("Y-m-d H:i:s"));
-        $this->db->where('created_by', $UserID);
+        if(getLoginUserType() == 2) // USER type User/Agent
+            $this->db->where('created_by', $UserID);
         $this->db->where('is_deleted', 0);
         $query = $this->db->get();
         

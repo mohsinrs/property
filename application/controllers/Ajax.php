@@ -26,8 +26,17 @@ class Ajax extends CI_Controller {
     
     public function get_locations($city_id) {
         
-        $data = array();
+//        $data = array();
         $locations = $this->misc_model->getLocations($city_id);
+        exit(json_encode($locations));
+//        $data['content'] = $this->load->view('register', $data, TRUE);
+//        $this->load->view('layout/main', $data);
+    }
+    
+    public function featured_property() {
+        
+//        $data = array();
+        $locations = $this->misc_model->addPropertyToFeatured();
         exit(json_encode($locations));
 //        $data['content'] = $this->load->view('register', $data, TRUE);
 //        $this->load->view('layout/main', $data);

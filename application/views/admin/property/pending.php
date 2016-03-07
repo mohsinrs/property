@@ -52,8 +52,14 @@
                                 <td><a href="#"><?php echo $property->property_id ?></a></td>
                                 <td>
                                     <a href="<?php echo base_url('/property/detail/'.$property->property_id); ?>" target="_blank" class="btn btn-default btn-primary">View</a>
-                                    <a href="<?php echo base_url('/admin/property/edit/'.$property->property_id); ?>" class="btn btn-default btn-primary">Edit</a>
+                                    <?php if(getLoginUserType() == 1): ?>
+                                    <a href="<?php echo base_url('/admin/property/approve/'.$property->property_id); ?>" class="btn btn-default btn-success">Approve</a>
+                                    <a href="<?php echo base_url('/admin/property/reject/'.$property->property_id); ?>" class="btn btn-default btn-danger">Reject</a>
+                                    <?php endif; ?>
+                                    <?php if(getLoginUserType() == 2): ?>
+                                    <a href="<?php echo base_url('/admin/property/edit/'.$property->property_id); ?>" class="btn btn-default">Edit</a>
                                     <a href="<?php echo base_url('/admin/property/delete/'.$property->property_id); ?>" class="btn btn-default btn-danger">Delete</a>
+                                    <?php endif; ?>
                                 </td>
                             </tr>
                             <?php endforeach; ?>

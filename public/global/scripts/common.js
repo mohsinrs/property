@@ -81,4 +81,45 @@
  
             });
             
+            // Pages defaut requests
+            if ( jQuery('#e_price_range').length > 0 ) {
+                jQuery("#property_purpose_id").trigger('change');
+                jQuery("#price_range").val( jQuery('#e_price_range').val() );
+                jQuery("#city_id").trigger('change');
+                jQuery("#location_id").val( jQuery('#e_location_id').val() );
+            }
+            
+            jQuery(document).on('click', '.mdlFeaturedPropertiesBtn', function(){
+                console.log('hsadf ksdkfs');
+                jQuery("#from_date").val('');
+                jQuery("#to_date").val('');
+                console.log(jQuery(this).data('prop-id'));
+                jQuery("#property_id").val( jQuery(this).data('prop-id') );
+            });
+            
+            jQuery(document).on('click', '#btnFeaturedProperty', function(){
+                var data = jQuery("#frmFeatureProperty").serialize();
+                console.log(data);
+                jQuery.ajax({
+                    type: "POST",
+                    cache: false,
+                    data: data,
+                    url: BaseURL + 'ajax/featured_property',
+                    dataType: "JSON",
+                    success: function(res) {
+                        console.log(res);
+//                        if( jQuery("#location_id").length > 0 ) {
+//                            var HTMLResult = '<option> -- Select -- </option>';
+//                            for(i = 0; i < res.length; i++) {
+//                                HTMLResult += '<option value="'+res[i].location_id+'">'+res[i].name+'</option>';                                
+//                            }
+//                            jQuery("#location_id").html(HTMLResult);
+//                        }
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        console.log(xhr, ajaxOptions, thrownError);
+                    }
+                });
+            });
+            
         });

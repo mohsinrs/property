@@ -11,11 +11,6 @@
                 <a href="<?php echo base_url('admin/search') ?>">Search</a>
             </li>
         </ul>
-        <div class="page-toolbar">
-            <div id="dashboard-report-range" class="pull-right tooltips btn btn-sm btn-default" data-container="body" data-placement="bottom" data-original-title="Change dashboard date range">
-                <i class="icon-calendar"></i>&nbsp; <span class="thin uppercase visible-lg-inline-block"></span>&nbsp; <i class="fa fa-angle-down"></i>
-            </div>
-        </div>
     </div>
     <h3 class="page-title">Property Management</h3>
     <!-- END PAGE HEADER-->
@@ -37,6 +32,18 @@
                                     <div class="form-group">
                                         <label>Property Type</label>
                                         <select name="property_type_id" id="property_type_id" class="form-control">
+                                            <option>-- select --</option>
+                                            <?php foreach($type_list as $type): ?>
+                                                <?php if($type->parent_property_type_id == NULL) { ?>
+                                                <optgroup label="<?php echo $type->name; ?>">
+                                                    <?php foreach($type_list as $sub_type): ?>
+                                                        <?php if($sub_type->parent_property_type_id == $type->property_type_id) { ?>
+                                                        <option value="<?php echo $sub_type->property_type_id ?>"><?php echo $sub_type->name ?></option>
+                                                        <?php } ?>
+                                                    <?php endforeach; ?>
+                                                </optgroup>
+                                                <?php } ?>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -45,6 +52,10 @@
                                     <div class="form-group">
                                         <label>Purpose</label>
                                         <select name="property_purpose_id" id="property_purpose_id" class="form-control">
+                                            <option>-- select --</option>
+                                            <?php foreach($purpose_list as $purpose): ?>
+                                            <option value="<?php echo $purpose->property_purpose_id ?>"><?php echo $purpose->name ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -62,7 +73,11 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Area Type</label>
-                                        <select name="area_unit" id="area_unit" class="form-control">
+                                        <select name="area_unit_id" id="area_unit_id" class="form-control">
+                                            <option> -- Select -- </option>
+                                            <?php foreach ($area_units as $unit): ?>
+                                            <option value="<?php echo $unit->area_unit_id ?>"><?php echo $unit->name ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -72,7 +87,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Price Range</label>
-                                        <select name="price" id="price" class="form-control">
+                                        <select name="price_range" id="price_range" class="form-control">
+                                            <option> -- Select -- </option>
                                         </select>
                                     </div>
                                 </div>
@@ -80,7 +96,11 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>User</label>
-                                        <select name="name" id="name" class="form-control">
+                                        <select name="user_id" id="user_id" class="form-control">
+                                            <option> -- Select -- </option>
+                                            <?php foreach ($agents as $agent): ?>
+                                            <option value="<?php echo $agent->user_id ?>"><?php echo $agent->name ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -91,6 +111,10 @@
                                     <div class="form-group">
                                         <label>City</label>
                                         <select name="city_id" id="city_id" class="form-control">
+                                            <option> -- Select -- </option>
+                                            <?php foreach ($cities as $key => $city): ?>
+                                            <option value="<?php echo $city->city_id ?>"><?php echo $city->name ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -99,6 +123,7 @@
                                     <div class="form-group">
                                         <label>Location</label>
                                         <select name="location_id" id="location_id" class="form-control">
+                                            <option> -- Select -- </option>
                                         </select>
                                     </div>
                                 </div>
@@ -109,6 +134,10 @@
                                     <div class="form-group">
                                         <label>Construction Status</label>
                                         <select name="construction_status_id" id="construction_status_id" class="form-control">
+                                            <option> -- Select -- </option>
+                                            <?php foreach ($construction_status as $status): ?>
+                                            <option value="<?php echo $status->construction_status_id ?>"><?php echo $status->name ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -125,7 +154,7 @@
                                     <div class="form-group">
                                         <label>From Date</label>
                                         <div class="input-group date date-picker" data-date-format="dd-mm-yyyy">
-                                            <input type="text" class="form-control" readonly name="created_on" id="created_on">
+                                            <input type="text" class="form-control" readonly name="from_date" id="from_date">
                                             <span class="input-group-btn">
                                                 <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
                                             </span>
@@ -138,7 +167,7 @@
                                     <div class="form-group">
                                         <label>To Date</label>
                                         <div class="input-group date date-picker" data-date-format="dd-mm-yyyy">
-                                            <input type="text" class="form-control" readonly name="datepicker">
+                                            <input type="text" class="form-control" readonly name="to_date" id="to_date">
                                             <span class="input-group-btn">
                                                 <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
                                             </span>

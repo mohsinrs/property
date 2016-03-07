@@ -110,6 +110,7 @@ License: You must have a valid license purchased only from themeforest (the abov
         <!-- END RevolutionSlider -->
 
         <script src="<?php echo base_url('/public/frontend/layout/scripts/layout.js') ?>" type="text/javascript"></script>
+        <script src="<?php echo base_url('/public/global/scripts/common.js') ?>" ></script>
         <script type="text/javascript">
             jQuery(document).ready(function () {
                 Layout.init();

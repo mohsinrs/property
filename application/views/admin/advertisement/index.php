@@ -8,16 +8,11 @@
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <a href="<?php echo base_url('admin/advertisement') ?>">Advertisement</a>
+                <a href="<?php echo base_url('admin/advertisement') ?>"><?php echo $title; ?></a>
             </li>
         </ul>
-        <div class="page-toolbar">
-            <div id="dashboard-report-range" class="pull-right tooltips btn btn-sm btn-default" data-container="body" data-placement="bottom" data-original-title="Change dashboard date range">
-                <i class="icon-calendar"></i>&nbsp; <span class="thin uppercase visible-lg-inline-block"></span>&nbsp; <i class="fa fa-angle-down"></i>
-            </div>
-        </div>
     </div>
-    <h3 class="page-title">All Advertisement</h3>
+    <h3 class="page-title">Tools</h3>
     <?php renderNotification() ?>
 
     <!-- END PAGE HEADER-->
@@ -27,11 +22,11 @@
         <div class="portlet box grey-cascade">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-globe"></i>All Advertisement
+                    <i class="fa fa-globe"></i><?php echo $title; ?>
                 </div>
             </div>
             <div class="portlet-body">
-                <table class="table table-striped table-bordered table-hover" id="sample_2">
+                <table class="table table-striped table-bordered table-hover" id="AllAdevertisements">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -50,8 +45,8 @@
                             <td><?php echo $advertisment->name ?></td>
                             <td><?php echo $advertisment->email ?></td>
                             <td><?php echo $advertisment->phone_no ?></td>
-                            <td>11/11/2015</td>
-                            <td>07/12/2015</td>
+                            <td><?php echo date("D, d M Y", strtotime($advertisment->from_date)); ?></td>
+                            <td><?php echo date("D, d M Y", strtotime($advertisment->to_date)); ?></td>
                             <td>
                                 <a href="<?php echo base_url('admin/advertisement/view/'.$advertisment->advertisement_id) ?>" class="btn btn-default">Edit</a>
                                 <a href="<?php echo base_url('admin/advertisement/delete/'.$advertisment->advertisement_id) ?>" class="btn btn-default btn-danger">Delete</a>

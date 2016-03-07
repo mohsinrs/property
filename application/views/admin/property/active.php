@@ -52,7 +52,7 @@
                                 <td><a href="#"><?php echo $property->property_id ?></a></td>
                                 <td>
                                     <a href="<?php echo base_url('/property/detail/'.$property->property_id); ?>" target="_blank" class="btn btn-default btn-primary">View</a>
-                                    <a href="<?php echo base_url('/admin/property/edit/'.$property->property_id); ?>" class="btn btn-default btn-primary">Edit</a>
+                                    <a href="<?php echo base_url('/admin/property/edit/'.$property->property_id); ?>" class="btn btn-default">Edit</a>
                                     <a href="<?php echo base_url('/admin/property/delete/'.$property->property_id); ?>" class="btn btn-default btn-danger">Delete</a>
                                 </td>
                             </tr>

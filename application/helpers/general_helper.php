@@ -29,6 +29,12 @@ function getLoginUserId() {
     return $user->user_id;
 }
 
+function getLoginUserType() {
+    $CI = & get_instance();
+    $user = $CI->session->userdata('USER');
+    return $user->user_type;
+}
+
 function dbToCalendarDate($date) {
     $date = new DateTime($date);
     return $date->format('d-m-Y');

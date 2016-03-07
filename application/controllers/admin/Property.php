@@ -21,38 +21,7 @@ class Property extends Base_Controller {
      */
     function __construct() {
         parent::__construct();
-        $this->load->model('property_model');
         $this->load->model('misc_model');
-    }
-    
-    // Funtion to approve a property
-    // ADMIN ONLY
-    public function approve($PropertyID) {
-        try {
-            $result = $this->property_model->approve($PropertyID);
-            if ($result) {
-                setNotification('success', 'Record updated successfully');
-                redirect(base_url('admin/dashboard'));
-            }
-        } catch (Exception $e) {
-            setNotification('error', 'Error in updating record');
-            redirect(base_url('admin/dashboard'));
-        }
-    }
-    
-    // Function to reject a property
-    // ADMIN ONLY
-    public function reject($PropertyID) {
-        try {
-            $result = $this->property_model->reject($PropertyID);
-            if ($result) {
-                setNotification('success', 'Record updated successfully');
-                redirect(base_url('admin/dashboard'));
-            }
-        } catch (Exception $e) {
-            setNotification('error', 'Error in updating record');
-            redirect(base_url('admin/dashboard'));
-        }
     }
     
     // Get approved properties from all users
@@ -60,10 +29,10 @@ class Property extends Base_Controller {
     public function approved() {
 
         $data = array();
-        $data['result'] = $this->property_model->fetchAll(getLoginUserId(), 0);
+        $data['result'] = $this->property_model->fetchAll(getLoginUserId(), 1); // Approved
         $data['title'] = "Approved Properties";
 
-        $this->render('admin/property/pending', $data);
+        $this->render('admin/property/approved', $data);
     }
     
     // Get all active properties of User
@@ -104,6 +73,36 @@ class Property extends Base_Controller {
         $data['title'] = "Expired Properties";
         
         $this->render('admin/property/expired', $data);
+    }
+    
+    // Funtion to approve a property
+    // ADMIN ONLY
+    public function approve($PropertyID) {
+        try {
+            $result = $this->property_model->approve($PropertyID);
+            if ($result) {
+                setNotification('success', 'Record updated successfully');
+                redirect(base_url('admin/dashboard'));
+            }
+        } catch (Exception $e) {
+            setNotification('error', 'Error in updating record');
+            redirect(base_url('admin/dashboard'));
+        }
+    }
+    
+    // Function to reject a property
+    // ADMIN ONLY
+    public function reject($PropertyID) {
+        try {
+            $result = $this->property_model->reject($PropertyID);
+            if ($result) {
+                setNotification('success', 'Record updated successfully');
+                redirect(base_url('admin/dashboard'));
+            }
+        } catch (Exception $e) {
+            setNotification('error', 'Error in updating record');
+            redirect(base_url('admin/dashboard'));
+        }
     }
     
     public function advance($id = NULL) {

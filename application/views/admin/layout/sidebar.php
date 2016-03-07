@@ -87,7 +87,7 @@
                         <a href="<?php echo base_url('admin/users/approved'); ?>">Approved Users</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('admin/users/pending'); ?>">Pending User</a>
+                        <a href="<?php echo base_url('admin/users/pending'); ?>">Pending Users</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url('admin/users/rejected'); ?>">Rejected Users</a>

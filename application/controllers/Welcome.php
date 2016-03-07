@@ -22,8 +22,8 @@ class Welcome extends Base_Controller {
     function __construct() {
         parent::__construct();
 //        $this->load->helper(array('form', 'url'));
-        $this->load->model('property_model');
-        $this->load->model('advertisement_model');
+//        $this->load->model('property_model');
+//        $this->load->model('advertisement_model');
 //        $this->load->model('user_model');
         $this->setLayout();
     }
@@ -35,7 +35,7 @@ class Welcome extends Base_Controller {
         $data['latest_properties'] = $this->property_model->getLatestProperties();
         $data['recent_news'] = array();
         $data['featured_agents'] = array();
-        $data['advertisements'] = $this->advertisement_model->getLatestAdvertisements();
+//        $data['advertisements'] = $this->advertisement_model->getLatestAdvertisements();
 //        var_dump($data['featured_properties']); exit;
 //        $data['content'] = $this->load->view('index', $data['result'], TRUE);
 //        $this->load->view('layout/main', $data);

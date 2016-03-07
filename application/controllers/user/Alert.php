@@ -28,7 +28,7 @@ class alert extends Base_Controller {
     
     public function index($id = NULL) {
         
-        if ($this->input->post('submit') && id == NULL) {
+        if ($this->input->post('submit') && $id == NULL) {
             $result = $this->alert_model->insert();
             if ($result) {
                 setNotification('success', 'Alert created successfully');
@@ -37,8 +37,8 @@ class alert extends Base_Controller {
                 setNotification('error', 'Error in adding alert');
                 redirect(base_url('user/alert/manage'));
             }
-        } else if ($this->input->post('submit') && id != NULL) {
-            $result = $this->alert_model->update();
+        } else if ($this->input->post('submit') && $id != NULL) {
+            $result = $this->alert_model->update($id);
             if ($result) {
                 setNotification('success', 'Alert updated successfully');
                 redirect(base_url('user/alert/manage'));
@@ -51,6 +51,7 @@ class alert extends Base_Controller {
         $data = array();
         if($id !== NULL) {
             $data['result'] = $this->alert_model->getOne($id);
+//            var_dump($data); exit;
         }
         
         $type_list = $this->misc_model->getPropertyTypeList();

@@ -11,13 +11,9 @@
                 <a href="<?php echo base_url('admin/users/rejected') ?>"><?php echo $title ?></a>
             </li>
         </ul>
-        <div class="page-toolbar">
-            <div id="dashboard-report-range" class="pull-right tooltips btn btn-sm btn-default" data-container="body" data-placement="bottom" data-original-title="Change dashboard date range">
-                <i class="icon-calendar"></i>&nbsp; <span class="thin uppercase visible-lg-inline-block"></span>&nbsp; <i class="fa fa-angle-down"></i>
-            </div>
-        </div>
     </div>
-    <h3 class="page-title"><?php echo $title ?></h3>
+    <h3 class="page-title">My Account</h3>
+    <?php renderNotification() ?>
     <!-- END PAGE HEADER-->
     <div class="row">
         <div class="col-md-12">
@@ -29,7 +25,7 @@
                     </div>
                 </div>
                 <div class="portlet-body">
-                    <table class="table table-striped table-bordered table-hover" id="sample_2">
+                    <table class="table table-striped table-bordered table-hover" id="RejectedUsers">
                         <thead>
                             <tr>
                                 <th>ID</th>

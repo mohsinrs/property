@@ -10,7 +10,6 @@ class Base_Controller extends CI_Controller {
     public function __construct() {
         
         parent::__construct();
-
 //        if ($this->router->fetch_class() !== 'login') {
 //            $user_data = $this->session->userdata('USER');
 //            if (empty($user_data)) {
@@ -45,7 +44,7 @@ class Base_Controller extends CI_Controller {
                 $data['user_image'] = $this->user->profile_pic;
                 $data['user_type'] = $this->user->user_type;
             }
-
+            $data['advertisements'] = $this->advertisement_model->getLatestAdvertisements();
             $data['content'] = $this->load->view($file, $viewData, TRUE);
 //                $data['admin'] = $this->session->userdata('USER');
             $this->load->view($this->layout, $data);
