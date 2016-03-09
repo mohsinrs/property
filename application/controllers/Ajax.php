@@ -21,7 +21,7 @@ class Ajax extends CI_Controller {
      */
     function __construct() {
         parent::__construct();
-        $this->load->model('misc_model');
+        $this->load->model('front_model');
     }
     
     public function get_locations($city_id) {
@@ -36,10 +36,22 @@ class Ajax extends CI_Controller {
     public function featured_property() {
         
 //        $data = array();
-        $locations = $this->misc_model->addPropertyToFeatured();
-        exit(json_encode($locations));
+        $Result = $this->misc_model->addPropertyToFeatured();
+        exit($Result);
 //        $data['content'] = $this->load->view('register', $data, TRUE);
 //        $this->load->view('layout/main', $data);
+    }
+    
+    public function favorite_agent() {
+        
+        $Result = $this->front_model->addAgentToFavoriteList();
+        exit($Result);
+    }
+    
+    public function favorite_property() {
+        
+        $Result = $this->front_model->addPropertyToFavoriteList();
+        exit($Result);
     }
 
 }

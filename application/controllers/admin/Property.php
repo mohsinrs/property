@@ -21,7 +21,6 @@ class Property extends Base_Controller {
      */
     function __construct() {
         parent::__construct();
-        $this->load->model('misc_model');
     }
     
     // Get approved properties from all users

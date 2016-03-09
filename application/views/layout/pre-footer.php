@@ -1,4 +1,4 @@
-        <div class="pre-footer position200">
+        <div class="pre-footer position200"> <!-- Class position200 removed due to issue in Property Detail PAGE -->
             <div class="container">
                 <div class="row">
                     <!-- BEGIN BOTTOM ABOUT BLOCK -->

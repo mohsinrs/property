@@ -21,15 +21,13 @@ class Login extends Base_Controller {
      */
     function __construct() {
         parent::__construct();
-        $this->load->model('misc_model');
-        $this->load->model('advertisement_model');
+        $this->load->model('login_model');
         $this->setLayout();
     }
     
     public function index() {
         
         if ($this->input->post('submit')) {
-            $this->load->model('login_model');
             $result = $this->login_model->validate();
             if (!$result) {
                 setNotification('danger', 'Invalid User name or Password.');
@@ -40,9 +38,6 @@ class Login extends Base_Controller {
         }
         
         $data = array();
-        $data['advertisements'] = $this->advertisement_model->getLatestAdvertisements();
-//        $data['content'] = $this->load->view('login', $data, TRUE);
-//        $this->load->view('layout/main', $data);
         $this->render('login', $data);
     }
 

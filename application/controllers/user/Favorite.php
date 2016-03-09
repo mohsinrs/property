@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Favourite extends Base_Controller {
+class Favorite extends Base_Controller {
 
     /**
      * Index Page for this controller.
@@ -19,13 +19,18 @@ class Favourite extends Base_Controller {
      * map to /index.php/welcome/<method_name>
      * @see http://codeigniter.com/user_guide/general/urls.html
      */
+    function __construct() {
+        parent::__construct();
+    }
+    
     public function index() {
 
         $data = array();
-//        $data['result'] = $this->Offer_model->fetchAllRotation();
-        $data['title'] = "Favourite";
+        $data['favorite_agents'] = $this->misc_model->getFavoriteAgents();
+//        var_dump($data); exit;
+        $data['title'] = "Favorite";
 
-        $this->render('user/favourite/index', $data);
+        $this->render('user/favorite/index', $data);
     }
 
 }

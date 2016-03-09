@@ -100,9 +100,22 @@ class User_model extends CI_Model {
     
     function getUserRoles()
     {
-        $this->db->select('r.role_id, r.parent_role_id, r.name, u.user_id');
-        $this->db->from('role r');
-        $this->db->join('user_role u', 'u.role_id = r.role_id', 'left');
+        $this->db->select('role_id, parent_role_id, name');
+        $this->db->from('role');
+//        $this->db->select('r.role_id, r.parent_role_id, r.name, u.user_id');
+//        $this->db->from('role r');
+//        $this->db->join('user_role u', 'u.role_id = r.role_id', 'left');
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
+    
+    function getAgentUserRoles($UserID)
+    {
+        $this->db->select('user_role_id, role_id, user_id');
+        $this->db->from('user_role');
+        $this->db->where('user_id', $UserID);
+        $this->db->where('is_deleted', 0);
         $query = $this->db->get();
         
         return $query->result();

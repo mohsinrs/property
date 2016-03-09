@@ -99,11 +99,18 @@ class Profile extends Base_Controller {
         
         $data = array();
         $data['user'] = $this->user_model->fetch(getLoginUserId());
+//        var_dump($data['user']->location_id); exit;
         $data['image_path'] = "http://" . $_SERVER['SERVER_NAME'].'/property/public/uploads/user/'.$data['user']->user_id.'/'.$data['user']->profile_pic;
         $data['cities'] = $this->misc_model->getCities(1); // country_id
         // Follwoing code will fetch all possible user roles
-        $UserRoles = $this->user_model->getUserRoles(getLoginUserId());
+        $UserRoles = $this->user_model->getUserRoles();
         $data['role_list'] = sortedUserRoles($UserRoles);
+        // Current User's already saved roles
+        $AgentUserRoles = $this->user_model->getAgentUserRoles(getLoginUserId());
+        foreach ($AgentUserRoles as $value) {
+            $data['agent_role_list'][] = $value->role_id;
+        }
+//        var_dump($data['agent_role_list']); exit;
         $data['title'] = "My Profile";
 
         $this->render('user/profile/index', $data);

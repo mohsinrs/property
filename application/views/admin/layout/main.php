@@ -60,6 +60,11 @@ License: You must have a valid license purchased only from themeforest(the above
         <link href="<?php echo base_url('/public/admin/layout/css/custom.css') ?>" rel="stylesheet" type="text/css"/>
         <!-- END THEME STYLES -->
         <link rel="shortcut icon" href="favicon.ico"/>
+        
+        <script src="<?php echo base_url('/public/global/plugins/jquery.min.js') ?>" type="text/javascript"></script>
+        <script src="<?php echo base_url('/public/global/plugins/jquery-migrate.min.js') ?>" type="text/javascript"></script>
+        <script src="<?php echo base_url('/public/global/scripts/common.js') ?>" ></script>
+
     </head>
     <!-- END HEAD -->
     <!-- BEGIN BODY -->
@@ -100,9 +105,6 @@ License: You must have a valid license purchased only from themeforest(the above
         <script src="<?php echo base_url('/public/global/plugins/excanvas.min.js') ?>"></script>
         <![endif]-->
 
-        <script src="<?php echo base_url('/public/global/plugins/jquery.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo base_url('/public/global/plugins/jquery-migrate.min.js') ?>" type="text/javascript"></script>
-
 
         <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
         <script src="<?php echo base_url('/public/global/plugins/jquery-ui/jquery-ui.min.js') ?>" type="text/javascript"></script>
@@ -120,13 +122,13 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- END CORE PLUGINS -->
 
         <!-- BEGIN PAGE LEVEL PLUGINS -->
-        <script src="<?php echo base_url('/public/global/plugins/jqvmap/jqvmap/jquery.vmap.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo base_url('/public/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo base_url('/public/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo base_url('/public/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo base_url('/public/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo base_url('/public/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo base_url('/public/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js') ?>" type="text/javascript"></script>
+        <!--<script src="<?php //echo base_url('/public/global/plugins/jqvmap/jqvmap/jquery.vmap.js') ?>" type="text/javascript"></script>-->
+        <!--<script src="<?php //echo base_url('/public/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js') ?>" type="text/javascript"></script>-->
+        <!--<script src="<?php //echo base_url('/public/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js') ?>" type="text/javascript"></script>-->
+        <!--<script src="<?php //echo base_url('/public/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js') ?>" type="text/javascript"></script>-->
+        <!--<script src="<?php //echo base_url('/public/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js') ?>" type="text/javascript"></script>-->
+        <!--<script src="<?php //echo base_url('/public/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js') ?>" type="text/javascript"></script>-->
+        <!--<script src="<?php //echo base_url('/public/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js') ?>" type="text/javascript"></script>-->
         <script src="<?php echo base_url('/public/global/plugins/flot/jquery.flot.min.js') ?>" type="text/javascript"></script>
         <script src="<?php echo base_url('/public/global/plugins/flot/jquery.flot.resize.min.js') ?>" type="text/javascript"></script>
         <script src="<?php echo base_url('/public/global/plugins/flot/jquery.flot.categories.min.js') ?>" type="text/javascript"></script>
@@ -178,7 +180,6 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- END PAGE LEVEL STYLES -->
 
         <!-- END PAGE LEVEL SCRIPTS -->
-        <script src="<?php echo base_url('/public/global/scripts/common.js') ?>" ></script>
         <script>
             jQuery(document).ready(function () {
                 Metronic.init(); // init metronic core componets

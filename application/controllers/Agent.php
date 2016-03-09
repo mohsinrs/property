@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Agent extends CI_Controller {
+class Agent extends Base_Controller {
 
     /**
      * Index Page for this controller.
@@ -19,12 +19,23 @@ class Agent extends CI_Controller {
      * map to /index.php/welcome/<method_name>
      * @see http://codeigniter.com/user_guide/general/urls.html
      */
-    public function index($id = NULL) {
+    function __construct() {
+        parent::__construct();
+        $this->load->model('front_model');
+        $this->setLayout();
+    }
+    
+    public function detail($id = NULL) {
         
         $data = array();
-        $data['result'] = array();
-        $data['content'] = $this->load->view('agent', $data['result'], TRUE);
-        $this->load->view('layout/main', $data);
+        $data['result'] = $this->front_model->getAgentDetail($id); // agent_id
+        $data['properties'] = $this->front_model->getAgentProperties($id); // agent_id
+        $data['purpose_list'] = $this->misc_model->getPropertyPurposeList();
+        $type_list = $this->misc_model->getPropertyTypeList();
+        $data['type_list'] = sortedPropertyTypes($type_list);
+        $data['cities'] = $this->misc_model->getCities(1); // country_id
+        
+        $this->render('agent', $data);
     }
 
 }

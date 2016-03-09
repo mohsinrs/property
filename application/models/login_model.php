@@ -18,6 +18,7 @@ class Login_model extends CI_Model {
             $this->db->from('user');
             $this->db->where('email', $email);
             $this->db->where('password', ($password));
+            $this->db->where('user_status', 1);
             $this->db->where('is_deleted', 0);
             $this->db->limit(1);
             $query = $this->db->get();

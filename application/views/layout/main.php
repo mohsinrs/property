@@ -61,6 +61,7 @@ License: You must have a valid license purchased only from themeforest (the abov
         <link href="<?php echo base_url('/public/frontend/layout/css/style-responsive.css') ?>" rel="stylesheet">
         <link href="<?php echo base_url('/public/frontend/layout/css/themes/red.css') ?>" rel="stylesheet" id="style-color">
         <link href="<?php echo base_url('/public/frontend/layout/css/custom.css') ?>" rel="stylesheet">
+        <link href="<?php echo base_url('/public/global/css/style.css') ?>" rel="stylesheet">
         <!-- Theme styles END -->
     </head>
     <!-- Head END -->

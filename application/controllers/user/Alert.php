@@ -22,8 +22,6 @@ class alert extends Base_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('alert_model');
-        $this->load->model('misc_model');
-        $this->load->model('user_model');
     }
     
     public function index($id = NULL) {
@@ -51,7 +49,6 @@ class alert extends Base_Controller {
         $data = array();
         if($id !== NULL) {
             $data['result'] = $this->alert_model->getOne($id);
-//            var_dump($data); exit;
         }
         
         $type_list = $this->misc_model->getPropertyTypeList();

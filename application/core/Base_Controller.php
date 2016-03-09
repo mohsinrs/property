@@ -51,9 +51,33 @@ class Base_Controller extends CI_Controller {
 //        }
     }
     
-    public function setLayout($layout = 'layout/main') {
+    protected function setLayout($layout = 'layout/main') {
         
         $this->layout = $layout;
     }
+    
+    protected function uploadImage($Path, $FileName) {
 
+        $config['upload_path'] = $_SERVER['DOCUMENT_ROOT'].'/property/public/uploads/'.$Path;
+        $config['allowed_types'] = 'gif|jpg|jpeg|png';
+//        $config['max_size'] = 100;
+//        $config['max_width'] = 1024;
+//        $config['max_height'] = 768;
+        $config['overwrite'] = TRUE;
+
+        if (!file_exists($config['upload_path']) && !is_dir($config['upload_path'])) {
+            mkdir($config['upload_path'], 0777, TRUE);
+        } 
+
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+        
+        if (!$this->upload->do_upload($FileName)) {
+            $error = $this->upload->display_errors();
+            setNotification('danger', 'Error. File not uploaded.');
+            return false;
+        }
+        return true;
+    }
+    
 }

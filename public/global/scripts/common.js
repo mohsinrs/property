@@ -2,7 +2,6 @@
         jQuery(document).ready(function(){
             
             jQuery(document).on('change', "#city_id", function(){
-                
                 var CityID = jQuery("#city_id").val();
                 jQuery.ajax({
                     type: "GET",
@@ -81,14 +80,6 @@
  
             });
             
-            // Pages defaut requests
-            if ( jQuery('#e_price_range').length > 0 ) {
-                jQuery("#property_purpose_id").trigger('change');
-                jQuery("#price_range").val( jQuery('#e_price_range').val() );
-                jQuery("#city_id").trigger('change');
-                jQuery("#location_id").val( jQuery('#e_location_id').val() );
-            }
-            
             jQuery(document).on('click', '.mdlFeaturedPropertiesBtn', function(){
                 console.log('hsadf ksdkfs');
                 jQuery("#from_date").val('');
@@ -108,6 +99,9 @@
                     dataType: "JSON",
                     success: function(res) {
                         console.log(res);
+                        if(res == 1) {
+                            jQuery("#mdlFeaturedProperties").modal('close');
+                        }
 //                        if( jQuery("#location_id").length > 0 ) {
 //                            var HTMLResult = '<option> -- Select -- </option>';
 //                            for(i = 0; i < res.length; i++) {
@@ -120,6 +114,61 @@
                         console.log(xhr, ajaxOptions, thrownError);
                     }
                 });
+            });
+            
+            jQuery(document).on('click', '.favorite-agent', function(){
+                var AgentID = jQuery(this).data('agent-id');
+                jQuery.ajax({
+                    type: "POST",
+                    cache: false,
+                    data: {agent_id: AgentID},
+                    url: BaseURL + 'ajax/favorite_agent',
+                    dataType: "JSON",
+                    success: function(res) {
+                        console.log(res);
+                        if(res == 1) {
+                            alert('Agent added to favrite list');
+                        } else {
+                            alert('Agent not added to favrite list');
+                        }
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        console.log(xhr, ajaxOptions, thrownError);
+                    }
+                });
+            });
+            
+            jQuery(document).on('click', '.favorite-property', function(){
+                var PropertyID = jQuery(this).data('property-id');
+                jQuery.ajax({
+                    type: "POST",
+                    cache: false,
+                    data: {property_id: PropertyID},
+                    url: BaseURL + 'ajax/favorite_property',
+                    dataType: "JSON",
+                    success: function(res) {
+                        if(res == 1) {
+                            alert('Property added to favrite list');
+                        } else {
+                            alert('Property not added to favrite list');
+                        }
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        console.log(xhr, ajaxOptions, thrownError);
+                    }
+                });
+            });
+            
+            jQuery(document).on('click', '.btnShowEmail', function(){
+                jQuery(".btnShowEmail").hide();
+                jQuery("#agent_email").show();
+                jQuery("#property_email").show();
+            });
+            
+            jQuery(document).on('click', '.btnShowPhone', function(){
+                jQuery(".btnShowPhone").hide();
+                jQuery("#agent_phone_no").show();
+                jQuery("#property_phone_no").show();
             });
             
         });

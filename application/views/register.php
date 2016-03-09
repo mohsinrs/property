@@ -51,7 +51,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="cell_no" class="col-lg-4 control-label"> Cell no <span class="require">*</span></label>
+                                        <label for="cell_no" class="col-lg-4 control-label"> Cell No <span class="require">*</span></label>
                                         <div class="col-lg-8">
                                             <input type="text" class="form-control" id="cell_no" name="cell_no">
                                         </div>
@@ -59,7 +59,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="phone_no" class="col-lg-4 control-label"> Phone no <span class="require">*</span></label>
+                                        <label for="phone_no" class="col-lg-4 control-label"> Phone No <span class="require">*</span></label>
                                         <div class="col-lg-8">
                                             <input type="text" class="form-control" id="phone_no" name="phone_no">
                                         </div>
@@ -96,7 +96,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="zipcode" class="col-lg-4 control-label"> Zip Code <span class="require">*</span></label>
+                                        <label for="zipcode" class="col-lg-4 control-label"> Zip Code </label>
                                         <div class="col-lg-8">
                                             <input type="text" class="form-control" id="zipcode" name="zipcode">
                                         </div>
@@ -104,7 +104,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="profile_pic" class="col-lg-4 control-label"> Profile image <span class="require">*</span></label>
+                                        <label for="profile_pic" class="col-lg-4 control-label"> Profile Image </label>
                                         <div class="col-lg-8">
                                             <input type="file" id="profile_pic" name="profile_pic">                                            
                                         </div>
@@ -123,7 +123,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="about" class="col-lg-4 control-label"> About yourself <span class="require">*</span></label>
+                                        <label for="about" class="col-lg-4 control-label"> About Yourself </label>
                                         <div class="col-lg-8">
                                             <textarea class="form-control" rows="3" id="about" name="about"></textarea>
                                         </div>
@@ -132,8 +132,8 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-lg-8 col-md-offset-2 padding-left-0 padding-top-20">                        
-                                    <button type="submit" name="submit" value="submit" class="btn btn-primary">Create account</button>
+                                <div class="col-lg-8 col-md-offset-2 padding-left-0 padding-top-20">
+                                    <button type="submit" name="submit" value="submit" class="btn btn-primary">Create Account</button>
                                     <button type="button" class="btn btn-default">Cancel</button>
                                 </div>
                             </div>

@@ -196,3 +196,14 @@
         <!-- END Form-->
     </div>
 </div>
+<script type="text/javascript">
+    // Pages defaut requests
+    jQuery(document).ready(function(){
+        if ( jQuery('#e_price_range').length > 0 ) {
+            jQuery("#property_purpose_id").trigger('change');
+            jQuery("#price_range").val( jQuery('#e_price_range').val() );
+            jQuery("#city_id").trigger('change');
+            jQuery("#location_id").val( jQuery('#e_location_id').val() );
+        }
+    });
+</script>

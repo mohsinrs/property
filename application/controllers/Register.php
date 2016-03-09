@@ -21,8 +21,6 @@ class Register extends Base_Controller {
      */
     function __construct() {
         parent::__construct();
-        $this->load->model('misc_model');
-        $this->load->model('advertisement_model');
         $this->setLayout();
     }
 
@@ -30,23 +28,9 @@ class Register extends Base_Controller {
 
         if ($this->input->post('submit')) {
             try {
-                $config['upload_path'] = base_url().'public/uploads/';
-                $config['allowed_types'] = 'gif|jpg|jpeg|png';
-//                $config['max_size'] = 100;
-//                $config['max_width'] = 1024;
-//                $config['max_height'] = 768;
-                $config['overwrite'] = TRUE;
-
-                $this->load->library('upload', $config);
-
-                if (!$this->upload->do_upload('profile_pic')) {
-                    $error = $this->upload->display_errors();
-                    setNotification('danger', 'Error. File not uploaded.');
-                } else {
-                    $data = array('upload_data' => $this->upload->data());
-                }
                 $result = $this->misc_model->register();
                 if ($result) {
+                    $this->uploadImage('user/'.$result, 'profile_pic');
                     setNotification('success', 'Your account created sucessfully.');
                     redirect(base_url('welcome'));
                 }
@@ -56,11 +40,8 @@ class Register extends Base_Controller {
         }
 
         $data = array();
-        $data['advertisements'] = $this->advertisement_model->getLatestAdvertisements();
         $data['cities'] = $this->misc_model->getCities(1); // country_id
-//        $data['content'] = $this->load->view('register', $data, TRUE);
-//        $this->load->view('layout/main', $data);
+        
         $this->render('register', $data);
     }
-
 }

@@ -25,7 +25,6 @@
                                         </div>
                                     </div>
                                 </fieldset>
-
                                 <div class="row">
                                     <div class="col-lg-8 col-md-offset-4 padding-left-0 padding-top-20">                        
                                         <button type="submit" name="submit" value="login" class="btn btn-primary"> Log In</button>

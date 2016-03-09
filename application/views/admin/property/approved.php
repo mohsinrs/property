@@ -39,7 +39,7 @@
                 <div class="modal-footer">
                     <input type="hidden" name="property_id" id="property_id" value="" />
                     <button type="button" class="btn default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn blue" id="btnFeaturedProperty">Save changes</button>
+                    <button type="button" class="btn blue" id="btnFeaturedProperty">Save</button>
                 </div>
             </div>
             </form>

@@ -210,7 +210,7 @@
                                                                         <div class="form-group">
                                                                             <div class="input-group">
                                                                                 <div class="icheck-list">
-                                                                                    <label><input type="checkbox" name="user_roles[]" value="<?php echo $sub_type->role_id; ?>" class="icheck"> <?php echo $sub_type->name ?> </label>
+                                                                                    <label><input type="checkbox" name="user_roles[]" value="<?php echo $sub_type->role_id; ?>" <?php echo (in_array($sub_type->role_id, $agent_role_list) ? 'checked="checked"' : ''); ?> class="icheck"> <?php echo $sub_type->name ?> </label>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -237,5 +237,15 @@
             <!-- END PROFILE CONTENT -->
         </div>
     </div>
-
 </div>
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        jQuery("#city_id").trigger('change');
+        setTimeout(updateLocation(), 5000);
+    });
+    
+    function updateLocation() {
+        jQuery("#location_id").val('<?php echo $user->location_id; ?>');
+        jQuery("#location_id").change();
+    }
+</script>

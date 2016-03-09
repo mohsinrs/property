@@ -186,7 +186,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="<?php echo base_url('user/favourite'); ?>">Favorites</a>
+                        <a href="<?php echo base_url('user/favorite'); ?>">Favorites</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url('user/alert'); ?>">Create Alert</a>

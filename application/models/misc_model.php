@@ -111,11 +111,12 @@ class Misc_model extends CI_Model {
             'profile_pic' => $data['profile_pic'],
             'address' => $data['address'],
             'about' => $data['about'],
-            'created_on' => date("Y-m-d H:i:s")
+            'created_on' => date("Y-m-d H:i:s"),
+            'created_by' => getLoginUserId()
         );
 
         $this->db->insert('user', $array);
-        return ($this->db->affected_rows() != 1) ? false : true;
+        return ($this->db->affected_rows() != 1) ? NULL : $this->db->insert_id();
     }
 
     function update_profile($id)
@@ -222,21 +223,28 @@ class Misc_model extends CI_Model {
     function addPropertyToFeatured()
     {
         $data = $this->input->post();
-        var_dump($data); exit;
         $array = array(
-            'property_purpose_id' => $data['property_purpose_id'],
-            'property_type_id' => $data['property_type_id'],
-            'city_id' => $data['city_id'],
-            'location_id' => $data['location_id'],
-            'title' => $data['title'],
-            'description' => $data['description'],
-            'price' => $data['price'],
-            'area' => $data['area'],
-            'area_unit_id' => $data['area_unit_id']
+            'property_id' => $data['property_id'],
+            'from_date' => calendarToDBDate($data['from_date']),
+            'to_date' => calendarToDBDate($data['to_date']),
+            'created_on' => date("Y-m-d H:i:s")
         );
 
-        $this->db->insert('property', $array);
+        $this->db->insert('featured_property', $array);
+        
         return ($this->db->affected_rows() != 1) ? false : true;
     }
     
+    function getFavoriteAgents() // By defualt fetch Approved Users
+    {
+        $this->db->select('fa.favorite_agent_id, u.name, lo.name as location_name');
+        $this->db->from('favorite_agent fa');
+        $this->db->join('user u', 'u.user_id = fa.created_by');
+        $this->db->join('location lo', 'lo.location_id = u.location_id');
+        $this->db->where('fa.is_deleted', 0);
+        $this->db->where('fa.created_by', getLoginUserId());
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
 }

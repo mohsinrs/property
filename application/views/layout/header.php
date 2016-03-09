@@ -1,6 +1,6 @@
         <div class="header">
             <div class="container">
-                <a class="site-logo" href="index.html"><img src="<?php echo base_url('/public/frontend/layout/img/logo.png') ?>" alt="Metronic FrontEnd"></a>
+                <a class="site-logo" href="<?php echo base_url(''); ?>"><img src="<?php echo base_url('/public/frontend/layout/img/logo.png') ?>" alt="Metronic FrontEnd"></a>
                 <div class="additional-shop-info pull-right col-md-offset-2">
                     <button type="button" class="btn btn-warning">ADD  PROPERTY</button>  
                 </div>
@@ -9,12 +9,12 @@
                 <!-- BEGIN NAVIGATION -->
                 <div class="header-navigation font-transform-inherit pull-right ">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About </a></li>
+                        <li><a href="<?php echo base_url(''); ?>">Home</a></li>
+                        <li><a href="<?php echo base_url('about'); ?>">About </a></li>
                         <li><a href="#">Residential</a></li>
                         <li><a href="#">Commercial</a></li>            
                         <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact us</a></li>
+                        <li><a href="<?php echo base_url('contact'); ?>">Contact us</a></li>
                     </ul>
                 </div>
                 <!-- END NAVIGATION -->
